@@ -56,16 +56,6 @@ class _l_clsKetnoi{
 		oci_free_statement($p_sql);
 		oci_close($conn);
 		return $loai;
-  	/*
-		$stid = oci_parse($conn,"INSERT INTO mytab (id, text) VALUES(:id_bv, :text_bv)");
-		$id = 1;
-		$text = "Data to insert     ";
-		oci_bind_by_name($stid, ":id_bv", $id);
-		oci_bind_by_name($stid, ":text_bv", $text);
-		oci_execute($stid);
-    	*/
     }
-    // Close the Oracle connection
-    //oci_close($conn);
 }
 ?>
