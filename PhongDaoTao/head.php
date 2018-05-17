@@ -1,4 +1,4 @@
-	<title>Học kỳ | Quản lý điểm Đại học Sư phạm Kỹ thuật Vĩnh Long</title>
+	<title>Quản lý điểm Đại học Sư phạm Kỹ thuật Vĩnh Long</title>
 	<meta charset="utf-8">
     <base href="<?php echo $qld['HOST']."PhongDaoTao/"; ?>">
     <link rel="stylesheet" href="../css/bootstrap.min.css">

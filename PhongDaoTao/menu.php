@@ -22,8 +22,8 @@
                     <a class="dropdown-item" href="#">Chi tiết phần trăm cột điểm</a>
                 </div>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Giáo viên</a>
+            <li id="giaovien" class="nav-item">
+                <a class="nav-link" href="giaovien.php">Giáo viên</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Sinh viên</a>
@@ -41,11 +41,11 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="#">Chi tiết đào tạo</a>
                     <a class="dropdown-item" href="#">Ngành đào tạo</a>
-                    <a class="dropdown-item" href="khoachuyenmon.php">Khoa</a>
+                    <a id="khoa" class="dropdown-item" href="khoachuyenmon.php">Khoa</a>
                     <a class="dropdown-item" href="#">Lớp</a>
                     <a class="dropdown-item" href="#">Học phần</a>
                     <a class="dropdown-item" href="#">Danh sách lớp học phần</a>
-                    <a class="dropdown-item" href="#">Lớp học phần</a>
+                    <a id="lophocphan" class="dropdown-item" href="lophocphan.php">Lớp học phần</a>
                     <a id="hocky" class="dropdown-item" href="hocky.php">Học kỳ</a>
                     <a class="dropdown-item" href="#">Môn học</a>
                 </div>

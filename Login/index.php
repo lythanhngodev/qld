@@ -17,7 +17,7 @@ if (isset($_POST['tendangnhap']) && isset($_POST['matkhau'])){
     		$_SESSION['pa'] = $pa;
     		header("Location: ".$qld['HOST']."PhongDaoTao");
     		break;
-    	case 'giangvien':
+    	case 'giaovien':
     		session_start();
     		$_SESSION['us'] = $us;
     		$_SESSION['pa'] = $pa;
@@ -43,7 +43,6 @@ if (isset($_SESSION['us']) && isset($_SESSION['pa']) && !empty($_SESSION['us']) 
             header("Location: ".$qld['HOST']."QuanTri");
             break;
         case 'phongdaotao':
-            session_start();
             header("Location: ".$qld['HOST']."PhongDaoTao");
             break;
         case 'giangvien':

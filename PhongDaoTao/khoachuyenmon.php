@@ -146,6 +146,8 @@
     <script type="text/javascript">
         $(document).ready(function() {
             $('body .dropdown-toggle').dropdown();
+            $('#daotao').addClass('active');
+            $('#khoa').addClass('active');
             var id=0;
             $('#bangkhoa').DataTable();
             $('#btthemkhoa').on('click',function(){

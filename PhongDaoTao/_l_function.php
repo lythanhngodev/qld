@@ -16,4 +16,12 @@
 		oci_execute($p_sql);
 		return $p_sql;
 	}
+	function lay_giao_vien(){
+	    $ketnoi = new _l_clsKetnoi();
+	    $conn = $ketnoi->ketnoi();
+		$sql = "SELECT g.IDGV, g.IDKHOA, g.HOTENGV, g.SDTGV, g.EMAILGV, g.MAGV, k.TENKHOA FROM KHOACM k, GV g WHERE g.IDKHOA = k.IDKHOA";
+		$p_sql = oci_parse($conn, $sql);
+		oci_execute($p_sql);
+		return $p_sql;
+	}
  ?>
