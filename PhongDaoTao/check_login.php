@@ -26,6 +26,8 @@
             $macb = $row['MACBPDT'];
             $mailcb = $row['EMAILCBPDT'];
             $sodienthoaicb = $row['SDTCBPDT'];
+            oci_free_statement($p_sql);
+            oci_close($conn);
         }
     }
     else{

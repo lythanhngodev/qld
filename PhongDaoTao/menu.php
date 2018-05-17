@@ -11,17 +11,44 @@
             <li class="nav-item" id="trangchu">
                 <a class="nav-link" href="#">Trang chủ</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">QL Điểm</a>
+            <li class="nav-item dropdown" id="taikhoan">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Điểm
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Danh sách lớp học phần</a>
+                    <a class="dropdown-item" href="#">Phếu điểm học phần</a>
+                    <a class="dropdown-item" href="#">Kết quả</a>
+                    <a class="dropdown-item" href="#">Chi tiết phần trăm cột điểm</a>
+                </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">QL Giáo viên</a>
+                <a class="nav-link" href="#">Giáo viên</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">QL Sinh viên</a>
+                <a class="nav-link" href="#">Sinh viên</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">QL Môn học</a>
+                <a class="nav-link" href="#"></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Môn học</a>
+            </li>
+            <li class="nav-item dropdown" id="daotao">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Đào tạo
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Chi tiết đào tạo</a>
+                    <a class="dropdown-item" href="#">Ngành đào tạo</a>
+                    <a class="dropdown-item" href="khoachuyenmon.php">Khoa</a>
+                    <a class="dropdown-item" href="#">Lớp</a>
+                    <a class="dropdown-item" href="#">Học phần</a>
+                    <a class="dropdown-item" href="#">Danh sách lớp học phần</a>
+                    <a class="dropdown-item" href="#">Lớp học phần</a>
+                    <a id="hocky" class="dropdown-item" href="hocky.php">Học kỳ</a>
+                    <a class="dropdown-item" href="#">Môn học</a>
+                </div>
             </li>
             <li class="nav-item dropdown" id="taikhoan">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
