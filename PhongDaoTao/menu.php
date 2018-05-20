@@ -47,7 +47,7 @@
                     <a class="dropdown-item" href="#">Danh sách lớp học phần</a>
                     <a id="lophocphan" class="dropdown-item" href="lophocphan.php">Lớp học phần</a>
                     <a id="hocky" class="dropdown-item" href="hocky.php">Học kỳ</a>
-                    <a class="dropdown-item" href="#">Môn học</a>
+                    <a id="monhoc" class="dropdown-item" href="monhoc.php">Môn học</a>
                 </div>
             </li>
             <li class="nav-item dropdown" id="taikhoan">

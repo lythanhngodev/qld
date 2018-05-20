@@ -27,21 +27,23 @@
                     <thead>
                     	<tr style="text-align: center;">
                             <th>STT</th>
-                            <th>Mã khoa</th>
-                            <th>Tên khoa</th>
-                            <th>SĐT khoa</th>
+                            <th>Mã LHP</th>
+                            <th>Tên môn học</th>
+                            <th>Học kỳ - Năm học</th>
+                            <th>GV giảng dạy</th>
                             <th>Thao tác</th>
                         </tr>
                     </thead>
                     <tbody>
-                    	<?php $khoa = lay_khoa_chuyen_mon(); $stt = 1;
+                    	<?php $khoa = lay_lop_hoc_phan(); $stt = 1;
                     	while ($row = oci_fetch_assoc($khoa)){ ?>
                             <tr style="text-align: center;">
                                 <th><?php echo $stt; ?></th>
-                                <td><?php echo $row['MAKHOA'] ?></td>
-                                <td><?php echo $row['TENKHOA'] ?></td>
-                                <td><?php echo $row['SDTKHOA'] ?></td>
-                                <td><button class="btn btn-primary btn-sm sua" lydata="<?php echo $row['IDKHOA'] ?>">Sửa</button>&ensp;<button class="btn btn-danger btn-sm xoa" lydata="<?php echo $row['IDKHOA'] ?>">Xóa</button></td>
+                                <td><?php echo $row['MALHP'] ?></td>
+                                <td><?php echo $row['TENMH'] ?></td>
+                                <td><?php echo $row['TENHK']." - ".$row['NAMHOC'] ?></td>
+                                <td><?php echo $row['HOTENGV']; ?></td>
+                                <td><button class="btn btn-primary btn-sm sua" lydata="<?php echo $row['IDLHP'] ?>">Sửa</button>&ensp;<button class="btn btn-danger btn-sm xoa" lydata="<?php echo $row['IDLHP'] ?>">Xóa</button></td>
                             </tr>
                         <?php $stt++; } ?>
                     </tbody>

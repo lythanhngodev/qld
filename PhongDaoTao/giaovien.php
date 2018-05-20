@@ -170,7 +170,7 @@
         </div>
     </div>
 </div>
-
+ul>li
 
 <link rel="stylesheet" type="text/css" href="../css/datatables.min.css">
 <script src="../js/datatables.min.js" type="text/javascript"></script>
@@ -338,5 +338,5 @@
 
     </script>
     <script src="../js/bootstrap-notify.min.js"></script>
+
 </body>
-</html>

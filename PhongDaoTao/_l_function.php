@@ -24,4 +24,20 @@
 		oci_execute($p_sql);
 		return $p_sql;
 	}
+	function lay_mon_hoc(){
+	    $ketnoi = new _l_clsKetnoi();
+	    $conn = $ketnoi->ketnoi();
+		$sql = "SELECT mh.IDMH, mh.IDKHOA, k.TENKHOA, mh.MAMH, mh.TENMH, SOTINCHI, SOTCLT, SOTCTH FROM MONHOC mh, KHOACM k WHERE mh.IDKHOA = k.IDKHOA";
+		$p_sql = oci_parse($conn, $sql);
+		oci_execute($p_sql);
+		return $p_sql;
+	}
+	function lay_lop_hoc_phan(){
+	    $ketnoi = new _l_clsKetnoi();
+	    $conn = $ketnoi->ketnoi();
+		$sql = "SELECT lhp.IDLHP, hk.IDHK, hk.TENHK, hk.NAMHOC, lhp.IDGV, gv.HOTENGV, mh.IDMH, mh.TENMH, lhp.MALHP, lhp.SISO FROM HOCKY hk, LOPHOCPHAN lhp, GV gv, MONHOC mh WHERE lhp.IDHK = hk.IDHK AND lhp.IDGV = gv.IDGV AND lhp.IDMH = mh.IDMH";
+		$p_sql = oci_parse($conn, $sql);
+		oci_execute($p_sql);
+		return $p_sql;
+	}
  ?>
