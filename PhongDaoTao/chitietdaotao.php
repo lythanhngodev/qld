@@ -15,35 +15,41 @@
 				</div>	
 			</div>
 			<div class="col-md-12">
-				<h5>Lớp học phần</h5>
+				<h5>Chi tiết đào tạo</h5>
 				<hr>
 			</div>	
 		</div>
 		<div class="row">
 			<div class="col-12">
-				<button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#themlophocphan">Thêm lớp học phần</button>
+				<button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#themchitietdaotao">Thêm chi tiết đào tạo</button>
 				<br><br>
                 <table id="banglhp" class="table table-bordered table-hover table-striped">
                     <thead>
                     	<tr style="text-align: center;">
                             <th>STT</th>
-                            <th>Mã LHP</th>
-                            <th>Tên môn học</th>
-                            <th>Học kỳ - Năm học</th>
-                            <th>GV giảng dạy</th>
+                            <th>Mã CTDT</th>
+                            <th>Tên CTDT</th>
+                            <th>Chuyên ngành</th>
+                            <th>Thuộc khoa</th>
+                            <th>Số học phần</th>
+                            <th>Số tín chỉ</th>
+                            <th>Ghi chú</th>
                             <th>Thao tác</th>
                         </tr>
                     </thead>
                     <tbody>
-                    	<?php $khoa = lay_lop_hoc_phan(); $stt = 1;
-                    	while ($row = oci_fetch_assoc($khoa)){ ?>
+                    	<?php $ctdt = lay_chi_tiet_dao_tao(); $stt = 1;
+                    	while ($row = oci_fetch_assoc($ctdt)){ ?>
                             <tr style="text-align: center;">
                                 <th><?php echo $stt; ?></th>
-                                <td><?php echo $row['MALHP'] ?></td>
-                                <td lydata="<?php echo $row['IDMH']; ?>"><?php echo $row['TENMH'] ?></td>
-                                <td lydata="<?php echo $row['IDHK']; ?>"><?php echo $row['TENHK']." - ".$row['NAMHOC'] ?></td>
-                                <td lydata="<?php echo $row['IDGV']; ?>"><?php echo $row['HOTENGV']; ?></td>
-                                <td><button class="btn btn-primary btn-sm sua" lydata="<?php echo $row['IDLHP'] ?>">Sửa</button>&ensp;<button class="btn btn-danger btn-sm xoa" lydata="<?php echo $row['IDLHP'] ?>">Xóa</button></td>
+                                <td><?php echo $row['MACTDT'] ?></td>
+                                <td><?php echo $row['TENCTDT'] ?></td>
+                                <td lydata="<?php echo $row['IDNDT']; ?>"><?php echo $row['TENNDT'] ?></td>
+                                <td lydata="<?php echo $row['IDKHOA']; ?>"><?php echo $row['TENKHOA'] ?></td>
+                                <td><?php echo $row['SOHOCPHAN'] ?></td>
+                                <td><?php echo $row['SOTINCHI'] ?></td>
+                                <td><?php echo $row['GHICHU'] ?></td>
+                                <td><button class="btn btn-primary btn-sm sua" lydata="<?php echo $row['IDCTDT'] ?>">Sửa</button>&ensp;<button class="btn btn-danger btn-sm xoa" lydata="<?php echo $row['IDCTDT'] ?>">Xóa</button></td>
                             </tr>
                         <?php $stt++; } ?>
                     </tbody>
@@ -53,50 +59,68 @@
 	</div>
 
 <!-- Thêm -->
-<div class="modal fade" id="themlophocphan" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="themchitietdaotao" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Thêm lớp học phần</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Thêm chi tiết đào tạo</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-            <div class="form-group">
-                <label for="recipient-name" class="col-form-label">Mã lớp học phần</label>
-                <input type="text" class="form-control" id="mlhp">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Mã CTDT</label>
+                        <input type="text" class="form-control" id="mct">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Tên CTDT</label>
+                        <input type="text" class="form-control" id="tct">
+                    </div>
+                </div>
             </div>
             <div class="form-group">
-                <label for="recipient-name" class="col-form-label">Môn học</label>
-                <select class="form-control" id="mhlhp">
-                    <option value="">--- Chọn lớp học phần ---</option>
-                <?php $mh = lay_mon_hoc();
-                while ($row = oci_fetch_assoc($mh)) {
-                     echo "<option value='".$row['IDMH']."'>".$row['MAMH']." - ".$row['TENMH']."</option>";
+                <label for="recipient-name" class="col-form-label">Ngành đào tạo</label>
+                <select class="form-control" id="ndtct">
+                    <option value="">--- Chọn ngành đào tạo ---</option>
+                <?php $nganh = lay_nganh_dao_tao();
+                while ($row = oci_fetch_assoc($nganh)) {
+                     echo "<option value='".$row['IDNDT']."'>".$row['MANDT']," - ".$row['TENNDT']."</option>";
+                 } ?>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="recipient-name" class="col-form-label">Thuộc khoa</label>
+                <select class="form-control" id="kct">
+                    <option value="">--- Chọn khoa ---</option>
+                <?php $khoa = lay_khoa_chuyen_mon();
+                while ($row = oci_fetch_assoc($khoa)) {
+                     echo "<option value='".$row['IDKHOA']."'>".$row['MAKHOA']." - ".$row['TENKHOA']."</option>";
                  } ?>
                 </select>
             </div> 
-            <div class="form-group">
-                <label for="recipient-name" class="col-form-label">Học kỳ - Năm học</label>
-                <select class="form-control" id="hklhp">
-                    <option value="">--- Chọn học kỳ năm học ---</option>
-                <?php $hk = lay_hoc_ky();
-                while ($row = oci_fetch_assoc($hk)) {
-                     echo "<option value='".$row['IDHK']."'>".$row['TENHK']," - ".$row['NAMHOC']."</option>";
-                 } ?>
-                </select>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Số học phần</label>
+                        <input type="number" min="0" class="form-control" id="shpct">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Số tín chỉ</label>
+                        <input type="number" min="0" class="form-control" id="stcct">
+                    </div>
+                </div>
             </div>
             <div class="form-group">
-                <label for="recipient-name" class="col-form-label">Giáo viên giảng dạy</label>
-                <select class="form-control" id="gvlhp">
-                    <option value="">--- Chọn giáo viên giảng dạy ---</option>
-                <?php $gv = lay_giao_vien();
-                while ($row = oci_fetch_assoc($gv)) {
-                     echo "<option value='".$row['IDGV']."'>".$row['MAGV']." - ".$row['HOTENGV']."</option>";
-                 } ?>
-                </select>
-            </div> 
+                <label for="recipient-name" class="col-form-label">Ghi chú</label>
+                <input type="text" class="form-control" id="gcct">
+            </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>

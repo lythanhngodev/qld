@@ -1,5 +1,13 @@
 <?php require_once "check_login.php"; ?>
 <?php 
+	function lay_chi_tiet_dao_tao(){
+	    $ketnoi = new _l_clsKetnoi();
+	    $conn = $ketnoi->ketnoi();
+		$sql = "SELECT ct.IDCTDT,ct.IDNDT, n.TENNDT, ct.IDKHOA, k.TENKHOA, ct.MACTDT, TENCTDT, SOHOCPHAN, SOTINCHI, GHICHU FROM CTDAOTAO ct, NGANHDT n, KHOACM k WHERE ct.IDNDT = n.IDNDT AND ct.IDKHOA = k.IDKHOA";
+		$p_sql = oci_parse($conn, $sql);
+		oci_execute($p_sql);
+		return $p_sql;
+	}
 	function lay_hoc_ky(){
 	    $ketnoi = new _l_clsKetnoi();
 	    $conn = $ketnoi->ketnoi();
@@ -28,6 +36,14 @@
 	    $ketnoi = new _l_clsKetnoi();
 	    $conn = $ketnoi->ketnoi();
 		$sql = "SELECT mh.IDMH, mh.IDKHOA, k.TENKHOA, mh.MAMH, mh.TENMH, SOTINCHI, SOTCLT, SOTCTH FROM MONHOC mh, KHOACM k WHERE mh.IDKHOA = k.IDKHOA";
+		$p_sql = oci_parse($conn, $sql);
+		oci_execute($p_sql);
+		return $p_sql;
+	}
+	function lay_nganh_dao_tao(){
+	    $ketnoi = new _l_clsKetnoi();
+	    $conn = $ketnoi->ketnoi();
+		$sql = "SELECT * FROM NGANHDT";
 		$p_sql = oci_parse($conn, $sql);
 		oci_execute($p_sql);
 		return $p_sql;

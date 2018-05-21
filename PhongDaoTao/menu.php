@@ -39,12 +39,11 @@
                     Đào tạo
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Chi tiết đào tạo</a>
-                    <a class="dropdown-item" href="#">Ngành đào tạo</a>
+                    <a id="chitietdaotao" class="dropdown-item" href="chitietdaotao.php">Chi tiết đào tạo</a>
+                    <a id="nganhdaotao" class="dropdown-item" href="nganhdaotao.php">Ngành đào tạo</a>
                     <a id="khoa" class="dropdown-item" href="khoachuyenmon.php">Khoa</a>
                     <a class="dropdown-item" href="#">Lớp</a>
                     <a class="dropdown-item" href="#">Học phần</a>
-                    <a class="dropdown-item" href="#">Danh sách lớp học phần</a>
                     <a id="lophocphan" class="dropdown-item" href="lophocphan.php">Lớp học phần</a>
                     <a id="hocky" class="dropdown-item" href="hocky.php">Học kỳ</a>
                     <a id="monhoc" class="dropdown-item" href="monhoc.php">Môn học</a>
