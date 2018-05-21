@@ -217,7 +217,7 @@
         $(document).ready(function() {
             $('body .dropdown-toggle').dropdown();
             $('#daotao').addClass('active');
-            $('#lophocphan').addClass('active');
+            $('#chitietdaotao').addClass('active');
             var id=0;
             $('#banglhp').DataTable();
             $('#btthemlophocphan').on('click',function(){
