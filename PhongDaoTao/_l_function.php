@@ -8,6 +8,14 @@
 		oci_execute($p_sql);
 		return $p_sql;
 	}
+	function lay_lop(){
+	    $ketnoi = new _l_clsKetnoi();
+	    $conn = $ketnoi->ketnoi();
+		$sql = "SELECT l.IDLOP,l.IDKHOA, k.TENKHOA, dt.IDCTDT,dt.TENCTDT, gv.IDGV, gv.HOTENGV, MALOP, TENLOP, NAMTS, KHOAHOC FROM LOP l, KHOACM k, CTDAOTAO dt, GV gv WHERE l.IDKHOA = k.IDKHOA and l.IDCTDT = dt.IDCTDT AND l.IDGV = gv.IDGV";
+		$p_sql = oci_parse($conn, $sql);
+		oci_execute($p_sql);
+		return $p_sql;
+	}
 	function lay_hoc_ky(){
 	    $ketnoi = new _l_clsKetnoi();
 	    $conn = $ketnoi->ketnoi();
@@ -53,6 +61,15 @@
 	    $conn = $ketnoi->ketnoi();
 		$sql = "SELECT lhp.IDLHP, hk.IDHK, hk.TENHK, hk.NAMHOC, lhp.IDGV, gv.HOTENGV, mh.IDMH, mh.TENMH, lhp.MALHP, lhp.SISO FROM HOCKY hk, LOPHOCPHAN lhp, GV gv, MONHOC mh WHERE lhp.IDHK = hk.IDHK AND lhp.IDGV = gv.IDGV AND lhp.IDMH = mh.IDMH";
 		$p_sql = oci_parse($conn, $sql);
+		oci_execute($p_sql);
+		return $p_sql;
+	}
+	function lay_chi_tiet_lop($id){
+	    $ketnoi = new _l_clsKetnoi();
+	    $conn = $ketnoi->ketnoi();
+		$sql = "SELECT * FROM SV WHERE IDLOP=:id";
+		$p_sql = oci_parse($conn, $sql);
+		oci_bind_by_name($p_sql, ":id", $id);
 		oci_execute($p_sql);
 		return $p_sql;
 	}

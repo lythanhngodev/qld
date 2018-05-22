@@ -25,8 +25,8 @@
             <li id="giaovien" class="nav-item">
                 <a class="nav-link" href="giaovien.php">Giáo viên</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Sinh viên</a>
+            <li id="sinhvien" class="nav-item">
+                <a class="nav-link" href="sinhvien.php">Sinh viên</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#"></a>
@@ -42,8 +42,7 @@
                     <a id="chitietdaotao" class="dropdown-item" href="chitietdaotao.php">Chi tiết đào tạo</a>
                     <a id="nganhdaotao" class="dropdown-item" href="nganhdaotao.php">Ngành đào tạo</a>
                     <a id="khoa" class="dropdown-item" href="khoachuyenmon.php">Khoa</a>
-                    <a class="dropdown-item" href="#">Lớp</a>
-                    <a class="dropdown-item" href="#">Học phần</a>
+                    <a id="lop" class="dropdown-item" href="lop.php">Lớp</a>
                     <a id="lophocphan" class="dropdown-item" href="lophocphan.php">Lớp học phần</a>
                     <a id="hocky" class="dropdown-item" href="hocky.php">Học kỳ</a>
                     <a id="monhoc" class="dropdown-item" href="monhoc.php">Môn học</a>
