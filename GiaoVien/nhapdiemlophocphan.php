@@ -57,7 +57,7 @@
                     <label>Chọn lớp học phần</label>
                     <select class="form-control" id="chonlophp">
                         <option value="">---- Chọn lớp học phần ---</option>
-                    <?php $l = lay_lop_hoc_phan();
+                    <?php $l = lay_lop_hoc_phan_gv($idgv);
                     while ($row = oci_fetch_assoc($l)) {
                          echo "<option value='".$row['IDLHP']."'>".$row['MALHP']." - ".$row['TENMH']."</option>";
                      } ?>
@@ -82,7 +82,7 @@
 <script src="../js/bootstrap.min.js" type="text/javascript"></script>
     <script type="text/javascript">
         <?php $lop = null;
-        $_lop = lay_lop_hoc_phan();
+        $_lop = lay_lop_hoc_phan_gv($idgv);
         while ($row = oci_fetch_row($_lop)) {
            $lop[] = $row;
         }
