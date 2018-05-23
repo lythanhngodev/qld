@@ -73,4 +73,20 @@
 		oci_execute($p_sql);
 		return $p_sql;
 	}
+	function lay_loai_dao_tao(){
+	    $ketnoi = new _l_clsKetnoi();
+	    $conn = $ketnoi->ketnoi();
+		$sql = "SELECT DISTINCT IDCTDT, TENCTDT, TENNDT, TRINHDODT FROM CTDAOTAO dt, NGANHDT n WHERE dt.IDNDT = n.IDNDT";
+		$p_sql = oci_parse($conn, $sql);
+		oci_execute($p_sql);
+		return $p_sql;
+	}
+	function lay_sinh_vien_lop_hoc_phan($id){
+	    $ketnoi = new _l_clsKetnoi();
+	    $conn = $ketnoi->ketnoi();
+		$sql = "SELECT DISTINCT ds.IDLHP,sv.IDSV, sv.HOTENSV, sv.MASV, l.MALOP FROM SV sv, LOPHOCPHAN lhp, DSLHP ds, LOP l WHERE lhp.IDLHP = ds.IDLHP AND sv.IDSV = ds.IDSV AND sv.IDLOP=l.IDLOP AND lhp.IDLHP = '$id'";
+		$p_sql = oci_parse($conn, $sql);
+		oci_execute($p_sql);
+		return $p_sql;
+	}
  ?>

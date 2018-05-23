@@ -23,7 +23,7 @@
 			<div class="col-12">
 				<button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#themchitietdaotao">Thêm chi tiết đào tạo</button>
 				<br><br>
-                <table id="banglhp" class="table table-bordered table-hover table-striped">
+                <table id="banglhp" class="table table-bordered table-hover table-striped" style="width: 100%;">
                     <thead>
                     	<tr style="text-align: center;">
                             <th>STT</th>
@@ -237,7 +237,9 @@
             $('#daotao').addClass('active');
             $('#chitietdaotao').addClass('active');
             var id=0;
-            $('#banglhp').DataTable();
+            $('#banglhp').DataTable({
+                "scrollX": true
+            });
             $('#btthemchitietdaotao').on('click',function(){
             	if(!$('#mct').val().trim()){
             		alert('Nhập mã chi tiết đào tạo');return;

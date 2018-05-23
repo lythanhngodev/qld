@@ -35,7 +35,7 @@ oci_free_statement($p_sqlk);
         <td><?php echo $thongtin['HOTENGV'] ?></td>
     </tr>
 </table>
-<table id="banghocky" class="table table-bordered table-hover table-striped">
+<table id="bangsv" class="table table-bordered table-hover table-striped" style="width: 100%;">
     <thead>
         <tr style="text-align: center;">
             <th>STT</th>
@@ -54,13 +54,19 @@ oci_free_statement($p_sqlk);
             <tr style="text-align: center;">
                 <th><?php echo $stt; ?></th>
                 <td><?php echo $row['MASV'] ?></td>
-                <td><?php echo $row['HOTENSV'] ?></td>
-                <td><?php echo $row['NGAYSINHSV']; ?></td>
-                <td><?php echo $row['GIOITINHSV']; ?></td>
-                <td><?php echo $row['EMAILSV']; ?></td>
-                <td><?php echo $row['QUEQUANSV']; ?></td>
-                <td><button class="btn btn-primary btn-sm sua" lydata="<?php echo $row['IDSV'] ?>">Sửa</button>&ensp;<button class="btn btn-danger btn-sm xoa" lydata="<?php echo $row['IDSV'] ?>">Xóa</button></td>
+                <td style="text-align: left;"><?php echo $row['HOTENSV'] ?></td>
+                <td><?php if($row['NGAYSINHSV']!='null') echo date("d-m-Y", strtotime($row['NGAYSINHSV']));else echo ""; ?></td>
+                <td><?php if($row['GIOITINHSV']!='null')echo $row['GIOITINHSV']; else echo ""; ?></td>
+                <td style="text-align: left;"><?php if($row['EMAILSV']!='null') echo $row['EMAILSV']; else echo ""; ?></td>
+                <td style="text-align: left;"><?php if($row['QUEQUANSV']!='null')echo $row['QUEQUANSV'];  else echo ""; ?></td>
+                <td><button class="btn btn-primary btn-sm sua" lylop="<?php echo $id ?>" lydata="<?php echo $row['IDSV'] ?>">Sửa</button>&ensp;<button class="btn btn-warning btn-sm chuyen" lylop="<?php echo $id ?>" lydata="<?php echo $row['IDSV'] ?>">Chuyển</button>&ensp;<button class="btn btn-danger btn-sm xoa" lylop="<?php echo $id ?>" lydata="<?php echo $row['IDSV'] ?>">Xóa</button></td>
             </tr>
         <?php $stt++; } ?>
     </tbody>
-    </table>
+</table>
+
+<script type="text/javascript">
+    $('#bangsv').DataTable({
+        "scrollX": true
+    });
+</script>

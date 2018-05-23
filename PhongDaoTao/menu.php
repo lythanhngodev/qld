@@ -16,10 +16,9 @@
                     Điểm
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Danh sách lớp học phần</a>
+                    <a id="nhapdiemlophocphan" class="dropdown-item" href="nhapdiemlophocphan.php">Nhập điểm lớp học phần</a>
                     <a class="dropdown-item" href="#">Phếu điểm học phần</a>
                     <a class="dropdown-item" href="#">Kết quả</a>
-                    <a class="dropdown-item" href="#">Chi tiết phần trăm cột điểm</a>
                 </div>
             </li>
             <li id="giaovien" class="nav-item">
@@ -27,6 +26,9 @@
             </li>
             <li id="sinhvien" class="nav-item">
                 <a class="nav-link" href="sinhvien.php">Sinh viên</a>
+            </li>
+            <li id="sinhvienlophocphan" class="nav-item">
+                <a class="nav-link" href="sinhvienlophocphan.php">Sinh viên - Lớp học phần</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#"></a>

@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<?php require_once "head.php"; ?>
+    <?php require_once "head.php"; ?>
     <style>
     .loader {
       margin: 0 auto;
@@ -29,42 +29,42 @@
     </style>
 </head>
 <body>
-	<?php require_once "menu.php"; ?>
-	<br>
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-12">
-				<div id="thongbao">
-				</div>	
-			</div>
-			<div class="col-md-12">
-				<h5>Sinh viên</h5>
-				<hr>
-			</div>	
-		</div>
-		<div class="row">
+    <?php require_once "menu.php"; ?>
+    <br>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div id="thongbao">
+                </div>  
+            </div>
+            <div class="col-md-12">
+                <h5>Sinh viên - Lớp học phần</h5>
+                <hr>
+            </div>  
+        </div>
+        <div class="row">
                 <div class="col-md-4">
-                    <label>Chọn loại đào tạo</label>
-                    <select class="form-control" id="chonnganh">
-                        <option value="">---- Chọn loại đào tạo ---</option>
-                    <?php $ln = lay_loai_dao_tao();
-                    while ($row = oci_fetch_assoc($ln)) {
-                         echo "<option value='".$row['IDCTDT']."'>".$row['TENCTDT']." - ".$row['TRINHDODT']."</option>";
+                    <label>Chọn học kỳ - năm học</label>
+                    <select class="form-control" id="chonhknh">
+                        <option value="">---- Chọn học kỳ - năm học ---</option>
+                    <?php $hk = lay_hoc_ky();
+                    while ($row = oci_fetch_assoc($hk)) {
+                         echo "<option value='".$row['IDHK']."'>".$row['TENHK']." - ".$row['NAMHOC']."</option>";
                      } ?>
                     </select>            
                 </div>
-				<div class="col-md-4">
-                    <label>Chọn lớp</label>
-                    <select class="form-control" id="chonlop">
-                        <option value="">---- Chọn lớp ---</option>
-                    <?php $l = lay_lop();
+                <div class="col-md-4">
+                    <label>Chọn lớp học phần</label>
+                    <select class="form-control" id="chonlophp">
+                        <option value="">---- Chọn lớp học phần ---</option>
+                    <?php $l = lay_lop_hoc_phan();
                     while ($row = oci_fetch_assoc($l)) {
-                         echo "<option value='".$row['IDLOP']."'>".$row['MALOP']." - ".$row['TENLOP']."</option>";
+                         echo "<option value='".$row['IDLHP']."'>".$row['MALHP']." - ".$row['TENMH']."</option>";
                      } ?>
                     </select>            
                 </div>
                 <div class="col-md-4">
-                    <label>Nhập sinh viên</label>
+                    <label>Nhập danh sách sinh viên</label>
                     <br>
                     <button class="btn btn-primary btn-sm" id="nhapfile">Nhập file Excel</button><br><br>
                     <input type="file" hidden="hidden" id="taptin" accept="application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
@@ -74,15 +74,15 @@
                 <div id="than">
                 </div>
             </div>
-		</div>
-	</div>
+        </div>
+    </div>
 
 <link rel="stylesheet" type="text/css" href="../css/datatables.min.css">
 <script src="../js/datatables.min.js" type="text/javascript"></script>
 <script src="../js/bootstrap.min.js" type="text/javascript"></script>
     <script type="text/javascript">
         <?php $lop = null;
-        $_lop = lay_lop();
+        $_lop = lay_lop_hoc_phan();
         while ($row = oci_fetch_row($_lop)) {
            $lop[] = $row;
         }
@@ -90,12 +90,12 @@
         var _lop_ = <?php echo json_encode($lop); ?>;
         $(document).ready(function() {
             $('body .dropdown-toggle').dropdown();
-            $('#sinhvien').addClass('active');
-            $('#chonlop').on('change',function(){
+            $('#sinhvienlophocphan').addClass('active');
+            $('#chonlophp').on('change',function(){
                 $('#than').empty();
                 if(!$(this).val()) return;
                 $.ajax({
-                    url: 'ajax_xu_ly_sinh_vien.php',
+                    url: 'ajax_xu_ly_sinh_vien_lop_hoc_phan.php',
                     type: 'POST',
                     beforeSend: function(){
                         $('#than').html('<div class="loader"></div>');
@@ -112,12 +112,12 @@
                     }
                 });
             });
-            $('#chonnganh').on('change',function(){
+            $('#chonhknh').on('change',function(){
                 var th = $(this).val();
-                $('#chonlop option:not(:first)').remove();
+                $('#chonlophp option:not(:first)').remove();
                 _lop_.forEach(function (l) {
-                    if (th == l[3])
-                        $('#chonlop').append('<option value="'+l[0]+'">'+l[7]+' - '+l[8]+'</option>'); 
+                    if (th == l[1])
+                        $('#chonlophp').append('<option value="'+l[0]+'">'+l[8]+' - '+l[7]+'</option>'); 
                 });
             });
             $(document).on('click','#nhapfile', function(){
@@ -127,10 +127,9 @@
                 var file_data = $('#taptin').prop('files')[0];
                 var form_data = new FormData();
                 form_data.append('file', file_data);
-                console.log(file_data);
                 $('#than').empty();
                 $.ajax({
-                    url: 'ajax_import_file_sinh_vien.php',
+                    url: 'ajax_import_file_sinh_vien_lop_hoc_phan.php',
                     dataType: 'text',
                     cache: false,
                     contentType: false,
