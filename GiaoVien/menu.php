@@ -11,6 +11,11 @@
             <li class="nav-item" id="trangchu">
                 <a class="nav-link" href="#">Trang chủ</a>
             </li>
+            <?php if($covan==1){ ?>
+            <li id="covanhoctap" class="nav-item" id="trangchu">
+                <a class="nav-link" href="covanhoctap.php">Cố vấn học tập</a>
+            </li>
+            <?php } ?>
             <li class="nav-item dropdown" id="taikhoan">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Điểm

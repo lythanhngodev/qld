@@ -63,12 +63,6 @@
                      } ?>
                     </select>            
                 </div>
-                <div class="col-md-4">
-                    <label>Nhập điểm lớp học phần</label>
-                    <br>
-                    <button class="btn btn-primary btn-sm" id="nhapfile">Nhập file Excel</button><br><br>
-                    <input type="file" hidden="hidden" id="taptin" accept="application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
-                </div>
             <div class="col-md-12">
                 <hr>
                 <div id="than">
@@ -118,36 +112,6 @@
                 _lop_.forEach(function (l) {
                     if (th == l[1])
                         $('#chonlophp').append('<option value="'+l[0]+'">'+l[8]+' - '+l[7]+'</option>'); 
-                });
-            });
-            $(document).on('click','#nhapfile', function(){
-                $('#taptin').click();
-            });
-            $(document).on('change','#taptin', function(){
-                var file_data = $('#taptin').prop('files')[0];
-                var form_data = new FormData();
-                form_data.append('file', file_data);
-                console.log(file_data);
-                $('#than').empty();
-                $.ajax({
-                    url: 'ajax_import_file_sinh_vien.php',
-                    dataType: 'text',
-                    cache: false,
-                    contentType: false,
-                    processData: false,
-                    type: 'post',
-                    data: form_data,
-                    beforeSend: function () {
-                        $('#than').html('<div class="loader"></div>');
-                    },
-                    success: function(data){
-                        $.notifyClose();
-                        $('body').append(data);
-                    },
-                    error: function () {
-                        $.notifyClose();
-                        khongthanhcong('Không thể tải file');
-                    }
                 });
             });
         } );

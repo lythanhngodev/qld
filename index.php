@@ -8,7 +8,6 @@
                 header("Location: ".$qld['HOST']."QuanTri");
                 break;
             case 'phongdaotao':
-                session_start();
                 header("Location: ".$qld['HOST']."PhongDaoTao");
                 break;
             case 'giaovien':

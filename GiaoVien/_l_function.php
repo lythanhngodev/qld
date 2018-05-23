@@ -16,6 +16,23 @@
 		oci_execute($p_sql);
 		return $p_sql;
 	}
+	function lay_lop_gv($idgv){
+	    $ketnoi = new _l_clsKetnoi();
+	    $conn = $ketnoi->ketnoi();
+		$sql = "SELECT gv.IDGV,l.IDLOP,l.MALOP, l.TENLOP FROM GV gv, LOP l WHERE l.IDGV = gv.IDGV AND gv.IDGV=$idgv";
+		$p_sql = oci_parse($conn, $sql);
+		oci_execute($p_sql);
+		return $p_sql;
+	}
+	function lay_si_so_lop($idlop){
+	    $ketnoi = new _l_clsKetnoi();
+	    $conn = $ketnoi->ketnoi();
+		$sql = "SELECT COUNT(*) FROM SV WHERE IDLOP=$idlop";
+		$p_sql = oci_parse($conn, $sql);
+		oci_execute($p_sql);
+		$so = oci_fetch_row($p_sql);
+		return $so[0];
+	}
 	function lay_sinh_vien_lop_hoc_phan($id){
 	    $ketnoi = new _l_clsKetnoi();
 	    $conn = $ketnoi->ketnoi();

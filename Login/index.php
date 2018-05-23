@@ -37,7 +37,6 @@ if (isset($_POST['tendangnhap']) && isset($_POST['matkhau'])){
 session_start();
 $ketnoi = new _l_clsKetnoi();
 if (isset($_SESSION['us']) && isset($_SESSION['pa']) && !empty($_SESSION['us']) && !empty($_SESSION['pa'])) {
-    echo $ketnoi->checklogin($_SESSION['us'], $_SESSION['pa']);
 	switch ($ketnoi->checklogin($_SESSION['us'], $_SESSION['pa'])) {
         case 'quantri':
             header("Location: ".$qld['HOST']."QuanTri");

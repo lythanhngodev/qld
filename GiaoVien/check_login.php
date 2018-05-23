@@ -7,7 +7,7 @@
     $magv="";
     $mailgv="";
     $sodienthoaigv="";
-
+    $covan = 0;
     if (isset($_SESSION['us']) && isset($_SESSION['pa']) && !empty($_SESSION['us']) && !empty($_SESSION['pa'])) {
     	if($ketnoi->checklogin($_SESSION['us'], $_SESSION['pa'])!="giaovien")
     		header("Location: ".$qld['HOST']."Login");
@@ -27,6 +27,16 @@
             $mailgv = $row['EMAILGV'];
             $sodienthoaigv = $row['SDTGV'];
             oci_free_statement($p_sql);
+
+            $ck = "SELECT gv.IDGV FROM GV gv, LOP l WHERE l.IDGV = gv.IDGV AND gv.IDGV=$idgv";
+            $p_ck = oci_parse($conn,$ck);
+            oci_execute($p_ck);
+            $r_ck = oci_fetch_assoc($p_ck);
+            $dem_ck = $r_ck['IDGV'];
+            if ($dem_ck > 0) {
+                $covan = 1;
+            }
+            oci_free_statement($p_ck);
             oci_close($conn);
         }
     }
