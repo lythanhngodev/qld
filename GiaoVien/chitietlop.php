@@ -45,6 +45,7 @@
             </div>
             <div class="col-md-12">
                 <h5>Cố vấn học tập</h5>
+                <h6 style="color:red;">DANH SÁCH SINH VIÊN LỚP <?php echo lay_ma_lop($idlop) ?></h6>
                 <hr>
             </div>  
         </div>
@@ -72,7 +73,7 @@
                     <td style="text-align: center;"><?php if(empty($row['NGAYSINHSV'])) echo date('d/m/Y',strtotime($row['NGAYSINHSV'])); else echo "-"; ?></td>
                     <td><?php if($row['EMAILSV']!='null') echo $row['EMAILSV']; else echo "-"; ?></td>
                     <td style="text-align: center;"><?php echo $row['KHOAHOC']; ?></td>
-                    <td style="text-align: center;"><a href="chitietlop.php&id=<?php echo $row['IDSV'] ?>" class="btn btn-primary btn-sm">Xem bảng điểm >></a></td>
+                    <td style="text-align: center;"><a href="xembangdiem.php?id=<?php echo $row['IDSV'] ?>" class="btn btn-primary btn-sm">Xem bảng điểm >></a></td>
                 </tr>
                  <?php $stt++; } ?>
             </tbody>

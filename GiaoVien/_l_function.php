@@ -25,6 +25,32 @@ WHERE l.IDLOP = sv.IDLOP AND l.IDLOP = $idlop AND gv.IDGV = $idgv AND l.IDGV = g
 		oci_execute($p_sql);
 		return $p_sql;
 	}
+	function lay_ma_lop($idlop){
+	    $ketnoi = new _l_clsKetnoi();
+	    $conn = $ketnoi->ketnoi();
+		$sql = "SELECT l.MALOP FROM LOP l WHERE l.IDLOP = $idlop";
+		$p_sql = oci_parse($conn, $sql);
+		oci_execute($p_sql);
+		$so = oci_fetch_row($p_sql);
+		return $so[0];
+	}
+	function lay_thong_tin_cua_sv($idsv){
+	    $ketnoi = new _l_clsKetnoi();
+	    $conn = $ketnoi->ketnoi();
+		$sql = "SELECT HOTENSV, MASV, HOTENSV, NGAYSINHSV, QUEQUANSV, ndt.TENNDT, ndt.TRINHDODT, l.MALOP, l.KHOAHOC FROM SV sv, LOP l, NGANHDT ndt, CTDAOTAO cd WHERE sv.IDLOP = l.IDLOP AND l.IDCTDT = cd.IDCTDT AND cd.IDNDT = ndt.IDNDT AND sv.IDSV = $idsv";
+		$p_sql = oci_parse($conn, $sql);
+		oci_execute($p_sql);
+		$so = oci_fetch_assoc($p_sql);
+		return $so;
+	}
+	function lay_toan_bo_hoc_ky_cua_sv($idsv){
+	    $ketnoi = new _l_clsKetnoi();
+	    $conn = $ketnoi->ketnoi();
+		$sql = "SELECT hk.TENHK, hk.NAMHOC, hk.IDHK FROM LOPHOCPHAN lhp, HOCKY hk, DSLHP dl WHERE dl.IDSV = $idsv AND dl.IDLHP = lhp.IDLHP AND lhp.IDHK = hk.IDHK ORDER BY hk.IDHK DESC";
+		$p_sql = oci_parse($conn, $sql);
+		oci_execute($p_sql);
+		return $p_sql;
+	}
 	function lay_lop_gv($idgv){
 	    $ketnoi = new _l_clsKetnoi();
 	    $conn = $ketnoi->ketnoi();
@@ -50,4 +76,5 @@ WHERE l.IDLOP = sv.IDLOP AND l.IDLOP = $idlop AND gv.IDGV = $idgv AND l.IDGV = g
 		oci_execute($p_sql);
 		return $p_sql;
 	}
+
  ?>
