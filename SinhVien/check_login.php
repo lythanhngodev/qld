@@ -20,6 +20,7 @@
             oci_execute($p_sql);
             $row = oci_fetch_assoc($p_sql);
             $idsv = $row['IDSV'];
+            $_SESSION['_idsv'] = $idsv;
             $hotensv = $row['HOTENSV'];
             $masv = $row['MASV'];
             $mailsv = $row['EMAILSV'];

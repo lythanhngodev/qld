@@ -2,7 +2,7 @@
 <?php require_once "_l_function.php";?>
 <?php 
     $idsv = 0;
-    $idsv = $_GET['id'];
+    $idsv = $_SESSION['_idsv'];
  ?>
 <!DOCTYPE html>
 <html>
@@ -45,7 +45,6 @@
                 </div>  
             </div>
             <div class="col-md-12">
-                <button class="btn btn-primary btn-sm" onclick="history.back(-1)">Trở về trang trước</button>
                 <h5 style="text-align: center;" class="text-success">BẢNG KẾT QUẢ HỌC TẬP</h5>
                 <br>
             </div>  
@@ -140,7 +139,7 @@
     <script type="text/javascript">
         $(document).ready(function() {
             $('body .dropdown-toggle').dropdown();
-            $('#covanhoctap').addClass('active');
+            $('#bangdiem').addClass('active');
         } );
     </script>
     <script src="../js/bootstrap-notify.min.js"></script>

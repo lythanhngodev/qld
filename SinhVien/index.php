@@ -15,7 +15,7 @@
                         <h5>Bảng điểm cá nhân</h5>
                     </div>
                     <div class="card-body">
-                        <a href="#">
+                        <a href="xembangdiem.php">
                             <center>
                                 <img src="../images/bangdiem.png" width="100%" alt="">
                             </center>
@@ -29,7 +29,7 @@
                         <h5>Thông tin cá nhân</h5>
                     </div>
                     <div class="card-body">
-                        <a href="#">
+                        <a href="thongtintaikhoan.php">
                             <center>
                                 <img src="../images/avatar3.png" width="100%" alt="">
                             </center>

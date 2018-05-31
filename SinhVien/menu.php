@@ -11,8 +11,8 @@
             <li class="nav-item" id="trangchu">
                 <a class="nav-link" href="#">Trang chủ</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Bảng điểm cá nhân</a>
+            <li class="nav-item" id="bangdiem">
+                <a class="nav-link" href="xembangdiem.php">Bảng điểm cá nhân</a>
             </li>
             <li class="nav-item active" style="float: right;position:  absolute;right: 0;">
                 <a class="nav-link" href="thongtintaikhoan.php">Xin chào: <?php echo $hotensv; ?></a>
