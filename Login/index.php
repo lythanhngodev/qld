@@ -104,7 +104,7 @@ if (isset($_SESSION['us']) && isset($_SESSION['pa']) && !empty($_SESSION['us']) 
 
 					<div class="text-center p-t-12">
 						<a class="txt2" href="#">
-							Quên tài khoản?
+							Quên mật khẩu?
 						</a>
 					</div>
 				</form>

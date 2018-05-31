@@ -53,7 +53,7 @@
 			</div>
 		</div>
 	</div>
-
+    <?php include_once "footer.php"; ?>
 <!-- Thêm -->
 <div class="modal fade" id="themmonhoc" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered" role="document">

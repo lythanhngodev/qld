@@ -22,6 +22,7 @@
             oci_execute($p_sql);
             $row = oci_fetch_assoc($p_sql);
             $idgv = $row['IDGV'];
+            $_SESSION['_idgv'] = $idgv;
             $hotengv = $row['HOTENGV'];
             $magv = $row['MAGV'];
             $mailgv = $row['EMAILGV'];

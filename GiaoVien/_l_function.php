@@ -16,6 +16,15 @@
 		oci_execute($p_sql);
 		return $p_sql;
 	}
+	function lay_sv_cua_lop_gv($idgv, $idlop){
+	    $ketnoi = new _l_clsKetnoi();
+	    $conn = $ketnoi->ketnoi();
+		$sql = "SELECT IDSV, MASV, HOTENSV, GIOITINHSV, NGAYSINHSV, EMAILSV, l.MALOP, KHOAHOC FROM SV sv, LOP l, GV gv
+WHERE l.IDLOP = sv.IDLOP AND l.IDLOP = $idlop AND gv.IDGV = $idgv AND l.IDGV = gv.IDGV ORDER BY MASV";
+		$p_sql = oci_parse($conn, $sql);
+		oci_execute($p_sql);
+		return $p_sql;
+	}
 	function lay_lop_gv($idgv){
 	    $ketnoi = new _l_clsKetnoi();
 	    $conn = $ketnoi->ketnoi();

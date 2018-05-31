@@ -70,7 +70,7 @@
             </div>
         </div>
     </div>
-
+    <?php include_once "footer.php"; ?>
 <link rel="stylesheet" type="text/css" href="../css/datatables.min.css">
 <script src="../js/datatables.min.js" type="text/javascript"></script>
 <script src="../js/bootstrap.min.js" type="text/javascript"></script>
@@ -162,6 +162,13 @@
             }else{
                 tinhdiem('tl',idsv,idlhp, tl);
             }
+        }
+        function camthi(t){
+            var tr = $(t).parent('td').parent('tr');
+            var ck = ($(t).is(':checked')) ? 1 : 0;
+            var idsv = tr.attr('id');
+            var idlhp = tr.attr('idlhp');
+            tinhdiem('ct', idsv, idlhp, ck);
         }
         function tinhdiem(loai, idsv, idlhp, diem){
             $.ajax({

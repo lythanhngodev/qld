@@ -15,7 +15,7 @@
 				</div>	
 			</div>
 			<div class="col-md-12">
-				<h5>Lớp</h5>
+				<h5>Lớp chuyên ngành</h5>
 				<hr>
 			</div>	
 		</div>
@@ -29,8 +29,8 @@
                             <th>STT</th>
                             <th>Mã lớp</th>
                             <th>Tên lớp</th>
-                            <th>Chi tiết đào tạo</th>
-                            <th>Thuộc khoa</th>
+                            <th>Chương trình đào tạo</th>
+                            <th>Đơn vị quản lý</th>
                             <th>Cố vấn học tập</th>
                             <th>Năm tuyển sinh</th>
                             <th>Khóa học</th>
@@ -57,7 +57,7 @@
 			</div>
 		</div>
 	</div>
-
+<?php include_once "footer.php"; ?>
 <!-- Thêm -->
 <div class="modal fade" id="themlop" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -84,9 +84,9 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="recipient-name" class="col-form-label">Chi tiết đào tạo</label>
+                <label for="recipient-name" class="col-form-label">Chương trình đào tạo</label>
                 <select class="form-control" id="dtl">
-                    <option value="">--- Chọn chi tiết đào tạo ---</option>
+                    <option value="">--- Chọn chương trình đào tạo ---</option>
                 <?php $nganh = lay_chi_tiet_dao_tao();
                 while ($row = oci_fetch_assoc($nganh)) {
                      echo "<option value='".$row['IDCTDT']."'>".$row['MACTDT']," - ".$row['TENCTDT']."</option>";
@@ -94,7 +94,7 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="recipient-name" class="col-form-label">Khoa đào tạo</label>
+                <label for="recipient-name" class="col-form-label">Đơn vị quản lý</label>
                 <select class="form-control chonkhoa" id="kl">
                     <option value="">--- Chọn khoa ---</option>
                 <?php $khoa = lay_khoa_chuyen_mon();
@@ -162,9 +162,9 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="recipient-name" class="col-form-label">Chi tiết đào tạo</label>
+                <label for="recipient-name" class="col-form-label">Chương trình đào tạo</label>
                 <select class="form-control" id="sdtl">
-                    <option value="">--- Chọn chi tiết đào tạo ---</option>
+                    <option value="">--- Chọn chương trình đào tạo ---</option>
                 <?php $nganh = lay_chi_tiet_dao_tao();
                 while ($row = oci_fetch_assoc($nganh)) {
                      echo "<option value='".$row['IDCTDT']."'>".$row['MACTDT']," - ".$row['TENCTDT']."</option>";
@@ -172,7 +172,7 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="recipient-name" class="col-form-label">Khoa đào tạo</label>
+                <label for="recipient-name" class="col-form-label">Đơn vị quản lý</label>
                 <select class="form-control chonkhoa" id="skl">
                     <option value="">--- Chọn khoa ---</option>
                 <?php $khoa = lay_khoa_chuyen_mon();
@@ -226,7 +226,7 @@
             </div>
             <div class="modal-body">
                 <div class="alert alert-danger" role="alert">
-                    <strong>Bạn có chắc xóa chi tiết đào tạo này?</strong><hr>
+                    <strong>Bạn có chắc xóa lớp này?</strong><hr>
                     <b>Mã lớp:</b> <span id="xml"></span><br>
                     <b>Tên lớp:</b> <span id="xtl"></span>
                 </div>
@@ -259,7 +259,7 @@
             		alert('Nhập tên lớp');return;
             	}
                 if(!$('#dtl').val().trim()){
-                    alert('Chọn chi tiết đào tạo');return;
+                    alert('Chọn chương trình đào tạo');return;
                 }
                 if(!$('#kl').val().trim()){
                     alert('Chọn khoa');return;
@@ -271,7 +271,7 @@
                     alert('Nhập năm tuyển sinh');return;
                 }
                 if(!$('#khl').val().trim()){
-                    alert('Nhập khóa lớp');return;
+                    alert('Nhập khóa học');return;
                 }
 	            $.ajax({
 	                url: 'ajax_them_lop.php',
@@ -321,7 +321,7 @@
                     alert('Nhập tên lớp');return;
                 }
                 if(!$('#sdtl').val().trim()){
-                    alert('Chọn chi tiết đào tạo');return;
+                    alert('Chọn chương trình đào tạo');return;
                 }
                 if(!$('#skl').val().trim()){
                     alert('Chọn khoa');return;
@@ -333,7 +333,7 @@
                     alert('Nhập năm tuyển sinh');return;
                 }
                 if(!$('#skhl').val().trim()){
-                    alert('Nhập khóa lớp');return;
+                    alert('Nhập khóa học');return;
                 }
                 $.ajax({
                     url: 'ajax_sua_lop.php',

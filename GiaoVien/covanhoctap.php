@@ -60,7 +60,7 @@
                     <td style="text-align: center;"><?php echo $row['MALOP'] ?></td>
                     <td><?php echo $row['TENLOP'] ?></td>
                     <td style="text-align: center;"><?php echo lay_si_so_lop($row['IDLOP']); ?></td>
-                    <td style="text-align: center;"><a href="chitietlop.php" class="btn btn-primary">Xem chi tiết lớp >></a></td>
+                    <td style="text-align: center;"><a href="chitietlop.php?id=<?php echo $row['IDLOP'] ?>" class="btn btn-primary">Xem chi tiết lớp >></a></td>
                 </tr>
                  <?php $stt++; } ?>
             </tbody>

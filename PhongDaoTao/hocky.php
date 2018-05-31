@@ -27,6 +27,7 @@
                     <thead>
                     	<tr style="text-align: center;">
                             <th>STT</th>
+                            <th>Mã học kỳ</th>
                             <th>Tên học kỳ</th>
                             <th>Năm học</th>
                             <th>Thao tác</th>
@@ -37,6 +38,7 @@
                     	while ($row = oci_fetch_assoc($hocky)){ ?>
                             <tr style="text-align: center;">
                                 <th><?php echo $stt; ?></th>
+                                <td><?php echo $row['MAHK'] ?></td>
                                 <td><?php echo $row['TENHK'] ?></td>
                                 <td><?php echo $row['NAMHOC'] ?></td>
                                 <td><button class="btn btn-primary btn-sm sua" lydata="<?php echo $row['IDHK'] ?>">Sửa</button>&ensp;<button class="btn btn-danger btn-sm xoa" lydata="<?php echo $row['IDHK'] ?>">Xóa</button></td>
@@ -47,7 +49,7 @@
 			</div>
 		</div>
 	</div>
-
+    <?php include_once "footer.php"; ?>
 <!-- Thêm -->
 <div class="modal fade" id="themhocky" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -59,6 +61,10 @@
         </button>
       </div>
       <div class="modal-body">
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Mã học kỳ</label>
+            <input type="text" class="form-control" id="mhk">
+          </div>
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Tên học kỳ</label>
             <input type="text" class="form-control" id="thk">
@@ -87,6 +93,10 @@
         </button>
       </div>
       <div class="modal-body">
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Mã học kỳ</label>
+            <input type="text" class="form-control" id="smhk">
+          </div>
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Tên học kỳ</label>
             <input type="text" class="form-control" id="sthk">
@@ -141,6 +151,9 @@
             var id=0;
             $('#banghocky').DataTable();
             $('#btthemhocky').on('click',function(){
+                if(!$('#mhk').val().trim()){
+                    alert('Nhập mã học kỳ');return;
+                }
             	if(!$('#thk').val().trim()){
             		alert('Nhập tên học kỳ');return;
             	}
@@ -151,6 +164,7 @@
 	                url: 'ajax_them_hoc_ky.php',
 	                type: 'POST',
 	                data: {
+                        mhk: $('#mhk').val().trim(),
 	                    thk: $('#thk').val().trim(),
 	                    nh: $('#nh').val().trim()
 	                },
@@ -163,7 +177,7 @@
                             },800);
 	                    }
 	                    else{
-	                    	khongthanhcong("Lỗi! Kiểm tra lại thông tin");
+	                    	khongthanhcong(mang.thongbao);
 	                    }
 	                },
 	                error: function () {
@@ -172,12 +186,16 @@
 	            });
            });
             $('.sua').on('click',function(){
-                $('#sthk').val($(this).parent('td').parent('tr').find('td:nth-child(2)').text().trim());
-                $('#snh').val($(this).parent('td').parent('tr').find('td:nth-child(3)').text().trim());
+                $('#smhk').val($(this).parent('td').parent('tr').find('td:nth-child(2)').text().trim());
+                $('#sthk').val($(this).parent('td').parent('tr').find('td:nth-child(3)').text().trim());
+                $('#snh').val($(this).parent('td').parent('tr').find('td:nth-child(4)').text().trim());
                 id = $(this).attr('lydata');
                 $('#suahocky').modal('show');
             });
             $('#btsuahocky').on('click',function(){
+                if(!$('#smhk').val().trim()){
+                    alert('Nhập mã học kỳ');return;
+                }
                 if(!$('#sthk').val().trim()){
                     alert('Nhập tên học kỳ');return;
                 }
@@ -188,6 +206,7 @@
                     url: 'ajax_sua_hoc_ky.php',
                     type: 'POST',
                     data: {
+                        mhk: $('#smhk').val().trim(),
                         thk: $('#sthk').val().trim(),
                         nh: $('#snh').val().trim(),
                         id: id
@@ -201,7 +220,7 @@
                             },800);
                         }
                         else{
-                            khongthanhcong("Lỗi! Kiểm tra lại thông tin");
+                            khongthanhcong(mang.thongbao);
                         }
                     },
                     error: function () {
@@ -210,8 +229,8 @@
                 });
             });
             $('.xoa').on('click',function(){
-                $('#xthk').text($(this).parent('td').parent('tr').find('td:nth-child(2)').text().trim());
-                $('#xnh').text($(this).parent('td').parent('tr').find('td:nth-child(3)').text().trim());
+                $('#xthk').text($(this).parent('td').parent('tr').find('td:nth-child(3)').text().trim());
+                $('#xnh').text($(this).parent('td').parent('tr').find('td:nth-child(4)').text().trim());
                 id = $(this).attr('lydata');
                 $('#xoahocky').modal('show');
             });

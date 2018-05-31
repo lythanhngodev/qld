@@ -163,6 +163,13 @@
                 tinhdiem('tl',idsv,idlhp, tl);
             }
         }
+        function camthi(t){
+            var tr = $(t).parent('td').parent('tr');
+            var ck = ($(t).is(':checked')) ? 1 : 0;
+            var idsv = tr.attr('id');
+            var idlhp = tr.attr('idlhp');
+            tinhdiem('ct', idsv, idlhp, ck);
+        }
         function tinhdiem(loai, idsv, idlhp, diem){
             $.ajax({
                 url: 'ajax_nhap_diem.php',

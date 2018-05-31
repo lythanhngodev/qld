@@ -59,7 +59,7 @@ oci_free_statement($p_sqlk);
                 <td><?php if($row['GIOITINHSV']!='null')echo $row['GIOITINHSV']; else echo ""; ?></td>
                 <td style="text-align: left;"><?php if($row['EMAILSV']!='null') echo $row['EMAILSV']; else echo ""; ?></td>
                 <td style="text-align: left;"><?php if($row['QUEQUANSV']!='null')echo $row['QUEQUANSV'];  else echo ""; ?></td>
-                <td><button class="btn btn-primary btn-sm sua" lylop="<?php echo $id ?>" lydata="<?php echo $row['IDSV'] ?>">Sửa</button>&ensp;<button class="btn btn-warning btn-sm chuyen" lylop="<?php echo $id ?>" lydata="<?php echo $row['IDSV'] ?>">Chuyển</button>&ensp;<button class="btn btn-danger btn-sm xoa" lylop="<?php echo $id ?>" lydata="<?php echo $row['IDSV'] ?>">Xóa</button></td>
+                <td><button class="btn btn-primary btn-sm sua" lylop="<?php echo $id ?>" lydata="<?php echo $row['IDSV'] ?>">Sửa</button>&ensp;<button class="btn btn-danger btn-sm xoa" lylop="<?php echo $id ?>" lydata="<?php echo $row['IDSV'] ?>">Xóa</button></td>
             </tr>
         <?php $stt++; } ?>
     </tbody>

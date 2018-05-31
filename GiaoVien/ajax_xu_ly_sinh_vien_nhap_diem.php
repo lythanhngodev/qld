@@ -16,7 +16,7 @@ oci_free_statement($p_sqlk);
 function diem($idlhp, $idsv){
     $ketnoi = new _l_clsKetnoi();
     $conn = $ketnoi->ketnoi();
-    $sql = "SELECT DIEMCC, DIEMGK, DIEMCK, DIEMTHILAI FROM PHIEUDIEMHP WHERE IDLHP=:idlhp AND IDSV=:idsv";
+    $sql = "SELECT DIEMCC, DIEMGK, DIEMCK, DIEMTHILAI, CAMTHI FROM PHIEUDIEMHP WHERE IDLHP=:idlhp AND IDSV=:idsv";
     $p_sql = oci_parse($conn, $sql);
     oci_bind_by_name($p_sql, ":idlhp", $idlhp);
     oci_bind_by_name($p_sql, ":idsv", $idsv);
@@ -51,6 +51,7 @@ function diem($idlhp, $idsv){
             <th style="width: 80px;">Điểm CK (50.0%)</th>
             <th style="width: 80px;">Điểm thi lại</th>
             <th style="width: 80px;">Tổng điểm</th>
+            <th style="width: 80px;">Cấm thi</th>
         </tr>
     </thead>
     <tbody>
@@ -68,6 +69,7 @@ function diem($idlhp, $idsv){
                     <td><input type="number" min="0" max="10" onmouseout="tinhdiemck(this)" class="form-control" style="text-align: center;" value="<?php if($d['DIEMCK']!=0)echo $d['DIEMCK']; ?>"></td>
                     <td><input type="number" min="0" max="10" onmouseout="tinhdiemtl(this)" class="form-control" style="text-align: center;" value="<?php if($d['DIEMCK']!=0)echo $d['DIEMTHILAI']; ?>"></td>
                     <td><input type="number" min="0" max="10" readonly class="form-control" style="text-align: center;"></td>
+                    <td style="text-align: center;"><input type="checkbox" onclick="camthi(this)" <?php if($d['CAMTHI']==1) echo "checked"; ?>>
                 <?php $ktd++;} 
                 if ($ktd==0) {?>
                     <td><input type="number" min="0" max="10" onmouseout="tinhdiemcc(this)" class="form-control" style="text-align: center;"></td>
@@ -75,6 +77,7 @@ function diem($idlhp, $idsv){
                     <td><input type="number" min="0" max="10" onmouseout="tinhdiemck(this)" class="form-control" style="text-align: center;"></td>
                     <td><input type="number" min="0" max="10" onmouseout="tinhdiemtl(this)" class="form-control" style="text-align: center;"></td>
                     <td><input type="number" min="0" max="10" readonly class="form-control" style="text-align: center;"></td>
+                    <td style="text-align: center;"><input type="checkbox" onclick="camthi(this)"></td>
                 <?php } ?>
             </tr>
         <?php $stt++; } ?>

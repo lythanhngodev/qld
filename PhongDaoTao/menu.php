@@ -17,7 +17,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a id="nhapdiemlophocphan" class="dropdown-item" href="nhapdiemlophocphan.php">Nhập điểm lớp học phần</a>
-                    <a class="dropdown-item" href="#">Phếu điểm học phần</a>
+                    <a class="dropdown-item" href="#">Phiếu điểm học phần</a>
                     <a class="dropdown-item" href="#">Kết quả</a>
                 </div>
             </li>
@@ -41,10 +41,10 @@
                     Đào tạo
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a id="chitietdaotao" class="dropdown-item" href="chitietdaotao.php">Chi tiết đào tạo</a>
+                    <a id="chitietdaotao" class="dropdown-item" href="chitietdaotao.php">Chương trình đào tạo</a>
                     <a id="nganhdaotao" class="dropdown-item" href="nganhdaotao.php">Ngành đào tạo</a>
-                    <a id="khoa" class="dropdown-item" href="khoachuyenmon.php">Khoa</a>
-                    <a id="lop" class="dropdown-item" href="lop.php">Lớp</a>
+                    <a id="khoa" class="dropdown-item" href="khoachuyenmon.php">Khoa chuyên môn</a>
+                    <a id="lop" class="dropdown-item" href="lop.php">Lớp chuyên ngành</a>
                     <a id="lophocphan" class="dropdown-item" href="lophocphan.php">Lớp học phần</a>
                     <a id="hocky" class="dropdown-item" href="hocky.php">Học kỳ</a>
                     <a id="monhoc" class="dropdown-item" href="monhoc.php">Môn học</a>

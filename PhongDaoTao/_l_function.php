@@ -19,7 +19,7 @@
 	function lay_hoc_ky(){
 	    $ketnoi = new _l_clsKetnoi();
 	    $conn = $ketnoi->ketnoi();
-		$sql = "SELECT IDHK, NAMHOC, TENHK FROM HOCKY";
+		$sql = "SELECT * FROM HOCKY";
 		$p_sql = oci_parse($conn, $sql);
 		oci_execute($p_sql);
 		return $p_sql;
@@ -59,7 +59,7 @@
 	function lay_lop_hoc_phan(){
 	    $ketnoi = new _l_clsKetnoi();
 	    $conn = $ketnoi->ketnoi();
-		$sql = "SELECT lhp.IDLHP, hk.IDHK, hk.TENHK, hk.NAMHOC, lhp.IDGV, gv.HOTENGV, mh.IDMH, mh.TENMH, lhp.MALHP, lhp.SISO FROM HOCKY hk, LOPHOCPHAN lhp, GV gv, MONHOC mh WHERE lhp.IDHK = hk.IDHK AND lhp.IDGV = gv.IDGV AND lhp.IDMH = mh.IDMH";
+		$sql = "SELECT lhp.IDLHP, hk.IDHK, hk.TENHK, hk.NAMHOC, lhp.IDGV, gv.HOTENGV, k.TENKHOA, mh.IDMH, mh.TENMH, lhp.MALHP, lhp.SISO FROM HOCKY hk, LOPHOCPHAN lhp, GV gv, MONHOC mh, KHOACM k WHERE lhp.IDHK = hk.IDHK AND lhp.IDGV = gv.IDGV AND gv.IDKHOA = k.IDKHOA AND lhp.IDMH = mh.IDMH";
 		$p_sql = oci_parse($conn, $sql);
 		oci_execute($p_sql);
 		return $p_sql;

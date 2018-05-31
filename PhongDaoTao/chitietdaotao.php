@@ -15,13 +15,13 @@
 				</div>	
 			</div>
 			<div class="col-md-12">
-				<h5>Chi tiết đào tạo</h5>
+				<h5>Chương trình đào tạo</h5>
 				<hr>
 			</div>	
 		</div>
 		<div class="row">
 			<div class="col-12">
-				<button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#themchitietdaotao">Thêm chi tiết đào tạo</button>
+				<button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#themchitietdaotao">Thêm chương trình đào tạo</button>
 				<br><br>
                 <table id="banglhp" class="table table-bordered table-hover table-striped" style="width: 100%;">
                     <thead>
@@ -29,12 +29,12 @@
                             <th>STT</th>
                             <th>Mã CTDT</th>
                             <th>Tên CTDT</th>
-                            <th>Chuyên ngành</th>
-                            <th>Thuộc khoa</th>
+                            <th>Ngành đào tạo</th>
+                            <th>Đơn vị quản lý</th>
                             <th>Số học phần</th>
                             <th>Số tín chỉ</th>
                             <th>Ghi chú</th>
-                            <th>Thao tác</th>
+                            <th style="width: 100px;">Thao tác</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -57,13 +57,13 @@
 			</div>
 		</div>
 	</div>
-
+<?php include_once "footer.php"; ?>
 <!-- Thêm -->
 <div class="modal fade" id="themchitietdaotao" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Thêm chi tiết đào tạo</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Thêm chương trình đào tạo</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -84,7 +84,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="recipient-name" class="col-form-label">Chuyên ngành đào tạo</label>
+                <label for="recipient-name" class="col-form-label">Ngành đào tạo</label>
                 <select class="form-control" id="ndtct">
                     <option value="">--- Chọn ngành đào tạo ---</option>
                 <?php $nganh = lay_nganh_dao_tao();
@@ -94,7 +94,7 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="recipient-name" class="col-form-label">Khoa đào tạo</label>
+                <label for="recipient-name" class="col-form-label">Đơn vị quản lý</label>
                 <select class="form-control" id="kct">
                     <option value="">--- Chọn khoa ---</option>
                 <?php $khoa = lay_khoa_chuyen_mon();
@@ -135,7 +135,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Sửa chi tiết đào tạo</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Sửa chương trình đào tạo</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -156,7 +156,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="recipient-name" class="col-form-label">Chuyên ngành đào tạo</label>
+                <label for="recipient-name" class="col-form-label">Ngành đào tạo</label>
                 <select class="form-control" id="sndtct">
                     <option value="">--- Chọn ngành đào tạo ---</option>
                 <?php $nganh = lay_nganh_dao_tao();
@@ -166,7 +166,7 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="recipient-name" class="col-form-label">Khoa đào tạo</label>
+                <label for="recipient-name" class="col-form-label">Đơn vị quản lý</label>
                 <select class="form-control" id="skct">
                     <option value="">--- Chọn khoa ---</option>
                 <?php $khoa = lay_khoa_chuyen_mon();
@@ -207,14 +207,14 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Xóa chi tiết đào tạo</h5>
+                <h5 class="modal-title" id="exampleModalLongTitle">Xóa chương trình đào tạo</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
                 <div class="alert alert-danger" role="alert">
-                    <strong>Bạn có chắc xóa chi tiết đào tạo này?</strong><hr>
+                    <strong>Bạn có chắc xóa chương trình đào tạo này?</strong><hr>
                     <b>Mã CTDT:</b> <span id="xmct"></span><br>
                     <b>Tên CTDT:</b> <span id="xtct"></span>
                 </div>
@@ -242,16 +242,16 @@
             });
             $('#btthemchitietdaotao').on('click',function(){
             	if(!$('#mct').val().trim()){
-            		alert('Nhập mã chi tiết đào tạo');return;
+            		alert('Nhập mã chương trình đào tạo');return;
             	}
             	if(!$('#tct').val().trim()){
-            		alert('Nhập tên chi tiết đào tạo');return;
+            		alert('Nhập tên chương trình đào tạo');return;
             	}
                 if(!$('#ndtct').val().trim()){
                     alert('Chọn ngành đào tạo');return;
                 }
                 if(!$('#kct').val().trim()){
-                    alert('Chọn khoa đào tạo');return;
+                    alert('Chọn đơn vị quản lý');return;
                 }
 	            $.ajax({
 	                url: 'ajax_them_chi_tiet_dao_tao.php',
@@ -268,7 +268,7 @@
 	                success: function (data) {
 	                    var mang = $.parseJSON(data);
 	                    if(mang.trangthai==1){
-	                        thanhcong('Đã lưu chi tiết đào tạo');
+	                        thanhcong('Đã lưu chương trình đào tạo');
                             setTimeout(function () {
                                 window.location.reload(true);
                             },800);
@@ -295,16 +295,16 @@
             });
             $('#btsuachitietdaotao').on('click',function(){
                 if(!$('#smct').val().trim()){
-                    alert('Nhập mã chi tiết đào tạo');return;
+                    alert('Nhập mã chương trình đào tạo');return;
                 }
                 if(!$('#stct').val().trim()){
-                    alert('Nhập tên chi tiết đào tạo');return;
+                    alert('Nhập tên chương trình đào tạo');return;
                 }
                 if(!$('#sndtct').val().trim()){
                     alert('Chọn ngành đào tạo');return;
                 }
                 if(!$('#skct').val().trim()){
-                    alert('Chọn khoa đào tạo');return;
+                    alert('Chọn đơn vị quản lý');return;
                 }
                 $.ajax({
                     url: 'ajax_sua_chi_tiet_dao_tao.php',
@@ -322,7 +322,7 @@
                     success: function (data) {
                         var mang = $.parseJSON(data);
                         if(mang.trangthai==1){
-                            thanhcong('Đã sửa chi tiết đào tạo');
+                            thanhcong('Đã sửa chương trình đào tạo');
                             setTimeout(function () {
                                 window.location.reload(true);
                             },800);
@@ -352,7 +352,7 @@
                     success: function (data) {
                         var mang = $.parseJSON(data);
                         if(mang.trangthai==1){
-                            thanhcong('Đã xóa chi tiết đào tạo');
+                            thanhcong('Đã xóa chương trình đào tạo');
                             setTimeout(function () {
                                 window.location.reload(true);
                             }, 800);

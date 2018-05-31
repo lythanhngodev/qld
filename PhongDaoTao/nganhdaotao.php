@@ -29,7 +29,7 @@
                             <th>STT</th>
                             <th>Mã ngành</th>
                             <th>Tên ngành</th>
-                            <th>Hệ đào tạo</th>
+                            <th>Hình thức đào tạo</th>
                             <th>Thời gian đào tạo</th>
                             <th>Trình độ đào tạo</th>
                             <th>Thao tác</th>
@@ -53,7 +53,7 @@
 			</div>
 		</div>
 	</div>
-
+<?php include_once "footer.php"; ?>
 <!-- Thêm -->
 <div class="modal fade" id="themlophocphan" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -74,7 +74,7 @@
             <input type="text" class="form-control" id="tn">
         </div> 
         <div class="form-group">
-            <label for="recipient-name" class="col-form-label">Hệ đào tạo</label>
+            <label for="recipient-name" class="col-form-label">Hình thức đào tạo</label>
             <select class="form-control" id="hdtn">
                 <option value="">--- Chọn hệ đào tạo ---</option>
                 <option value="Chính quy">Chính quy</option>
@@ -108,7 +108,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Sửa nhành đào tạo</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Sửa ngành đào tạo</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -123,7 +123,7 @@
             <input type="text" class="form-control" id="stn">
         </div> 
         <div class="form-group">
-            <label for="recipient-name" class="col-form-label">Hệ đào tạo</label>
+            <label for="recipient-name" class="col-form-label">Hình thức đào tạo</label>
             <select class="form-control" id="shdtn">
                 <option value="">--- Chọn hệ đào tạo ---</option>
                 <option value="Chính quy">Chính quy</option>
@@ -196,7 +196,7 @@
             		alert('Nhập tên ngành');return;
             	}
                 if(!$('#hdtn').val().trim()){
-                    alert('Chọn hệ đào tạo');return;
+                    alert('Chọn hình thức đào tạo');return;
                 }
                 if(!$('#tgdtn').val().trim()){
                     alert('Nhập thời gian đào tạo');return;
@@ -248,7 +248,7 @@
                     alert('Nhập tên ngành');return;
                 }
                 if(!$('#shdtn').val().trim()){
-                    alert('Chọn hệ đào tạo');return;
+                    alert('Chọn hình thức đào tạo');return;
                 }
                 if(!$('#stgdtn').val().trim()){
                     alert('Nhập thời gian đào tạo');return;

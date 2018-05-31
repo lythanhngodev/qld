@@ -57,7 +57,7 @@
 			</div>
 		</div>
 	</div>
-
+    <?php include_once "footer.php"; ?>
 <!-- Thêm -->
 <div class="modal fade" id="themgiaovien" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">

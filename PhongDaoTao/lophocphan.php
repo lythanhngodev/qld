@@ -37,12 +37,12 @@
                     <tbody>
                     	<?php $khoa = lay_lop_hoc_phan(); $stt = 1;
                     	while ($row = oci_fetch_assoc($khoa)){ ?>
-                            <tr style="text-align: center;">
-                                <th><?php echo $stt; ?></th>
+                            <tr>
+                                <th style="text-align: center;"><?php echo $stt; ?></th>
                                 <td><?php echo $row['MALHP'] ?></td>
                                 <td lydata="<?php echo $row['IDMH']; ?>"><?php echo $row['TENMH'] ?></td>
                                 <td lydata="<?php echo $row['IDHK']; ?>"><?php echo $row['TENHK']." - ".$row['NAMHOC'] ?></td>
-                                <td lydata="<?php echo $row['IDGV']; ?>"><?php echo $row['HOTENGV']; ?></td>
+                                <td lydata="<?php echo $row['IDGV']; ?>"><?php echo $row['HOTENGV']."- ".$row['TENKHOA']; ?></td>
                                 <td><button class="btn btn-primary btn-sm sua" lydata="<?php echo $row['IDLHP'] ?>">Sửa</button>&ensp;<button class="btn btn-danger btn-sm xoa" lydata="<?php echo $row['IDLHP'] ?>">Xóa</button></td>
                             </tr>
                         <?php $stt++; } ?>
@@ -51,7 +51,7 @@
 			</div>
 		</div>
 	</div>
-
+<?php include_once "footer.php"; ?>
 <!-- Thêm -->
 <div class="modal fade" id="themlophocphan" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -93,7 +93,7 @@
                     <option value="">--- Chọn giáo viên giảng dạy ---</option>
                 <?php $gv = lay_giao_vien();
                 while ($row = oci_fetch_assoc($gv)) {
-                     echo "<option value='".$row['IDGV']."'>".$row['MAGV']." - ".$row['HOTENGV']."</option>";
+                     echo "<option value='".$row['IDGV']."'>".$row['MAGV']." - ".$row['HOTENGV']." - ".$row['TENKHOA']."</option>";
                  } ?>
                 </select>
             </div> 
@@ -147,7 +147,7 @@
                     <option value="">--- Chọn giáo viên giảng dạy ---</option>
                 <?php $gv = lay_giao_vien();
                 while ($row = oci_fetch_assoc($gv)) {
-                     echo "<option value='".$row['IDGV']."'>".$row['MAGV']." - ".$row['HOTENGV']."</option>";
+                     echo "<option value='".$row['IDGV']."'>".$row['MAGV']." - ".$row['HOTENGV']." - ".$row['TENKHOA']."</option>";
                  } ?>
                 </select>
             </div>  
