@@ -36,7 +36,7 @@
                     <tbody>
                     	<?php $khoa = lay_khoa_chuyen_mon(); $stt = 1;
                     	while ($row = oci_fetch_assoc($khoa)){ ?>
-                            <tr style="text-align: center;">
+                            <tr>
                                 <th><?php echo $stt; ?></th>
                                 <td><?php echo $row['MAKHOA'] ?></td>
                                 <td><?php echo $row['TENKHOA'] ?></td>

@@ -56,6 +56,14 @@
 		oci_execute($p_sql);
 		return $p_sql;
 	}
+	function lay_trinh_do(){
+	    $ketnoi = new _l_clsKetnoi();
+	    $conn = $ketnoi->ketnoi();
+		$sql = "SELECT DISTINCT TRINHDODT FROM NGANHDT";
+		$p_sql = oci_parse($conn, $sql);
+		oci_execute($p_sql);
+		return $p_sql;
+	}
 	function lay_lop_hoc_phan(){
 	    $ketnoi = new _l_clsKetnoi();
 	    $conn = $ketnoi->ketnoi();

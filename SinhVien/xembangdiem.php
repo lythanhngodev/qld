@@ -65,7 +65,7 @@
                     </tr>
                     <tr>
                         <td>Ngày sinh</td>
-                        <th><?php echo $tt['NGAYSINHSV'] ?></th>
+                        <th><?php if(empty($tt['NGAYSINHSV']) || $tt['NGAYSINHSV'] == 'null') echo ""; else echo date('d/m/Y', strtotime($tt['NGAYSINHSV'])); ?></th>
                         <td>Lớp</td>
                         <th><?php echo $tt['MALOP'] ?></th>
                     </tr>

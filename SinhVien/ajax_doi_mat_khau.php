@@ -10,7 +10,7 @@ $kq = array(
         echo json_encode($kq);
         exit();
     }
-	$sql = "UPDATE NQT SET MATKHAU=:mk WHERE IDNQT = :id";
+	$sql = "UPDATE SV SET MATKHAU=:mk WHERE IDSV = :id";
 	$p_sql = oci_parse($conn, $sql);
     $mk = md5($mk);
 	oci_bind_by_name($p_sql, ":mk", $mk);

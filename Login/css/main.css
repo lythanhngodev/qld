@@ -171,6 +171,7 @@ iframe {
 }
 
 .wrap-login100 {
+  border: 2px inset #50c5df;
   width: 960px;
   background: #fff;
   border-radius: 10px;

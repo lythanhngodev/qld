@@ -24,6 +24,8 @@
             $hotensv = $row['HOTENSV'];
             $masv = $row['MASV'];
             $mailsv = $row['EMAILSV'];
+            $quequansv = $row['QUEQUANSV'];
+            $ngaysinhsv = $row['NGAYSINHSV'];
         }
     }
     else{

@@ -73,7 +73,7 @@
                 type: 'POST',
                 data: {
                     mk: mk1,
-                    id: '<?php echo $idnqt; ?>'
+                    id: '<?php echo $idsv; ?>'
                 },
                 success: function (data) {
                     var mang = $.parseJSON(data);

@@ -55,7 +55,7 @@ oci_free_statement($p_sqlk);
                 <th><?php echo $stt; ?></th>
                 <td><?php echo $row['MASV'] ?></td>
                 <td style="text-align: left;"><?php echo $row['HOTENSV'] ?></td>
-                <td><?php if($row['NGAYSINHSV']!='null') echo date("d-m-Y", strtotime($row['NGAYSINHSV']));else echo ""; ?></td>
+                <td><?php if($row['NGAYSINHSV']!='null' && !empty($row['NGAYSINHSV'])) echo date("d-m-Y", strtotime($row['NGAYSINHSV'])); else echo ""; ?></td>
                 <td><?php if($row['GIOITINHSV']!='null')echo $row['GIOITINHSV']; else echo ""; ?></td>
                 <td style="text-align: left;"><?php if($row['EMAILSV']!='null') echo $row['EMAILSV']; else echo ""; ?></td>
                 <td style="text-align: left;"><?php if($row['QUEQUANSV']!='null')echo $row['QUEQUANSV'];  else echo ""; ?></td>

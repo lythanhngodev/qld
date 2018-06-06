@@ -21,30 +21,37 @@
 		<div class="row">
 			<div class="col-md-6">
 			  <div class="form-group">
-			    <label for="tags">Mã người quản trị</label>
-			    <input type="email" class="form-control" id="ma" placeholder="VD: NQT001" value="<?php echo $ma; ?>">
+			    <label for="tags">Mã sinh viên</label>
+			    <input type="email" class="form-control" placeholder="VD: 140040xx" disabled="disabled" value="<?php echo $masv; ?>">
                   <small id="loima" class="form-text text-danger"></small>
 			  </div>
 			</div>
 			<div class="col-md-6">
 			  <div class="form-group">
 			    <label for="tags">Họ và Tên</label>
-			    <input type="email" class="form-control" id="hoten" placeholder="VD: Nguyễn Văn An" value="<?php echo $hoten ?>">
+			    <input type="email" class="form-control" id="hoten" disabled="disabled" value="<?php echo $hotensv ?>">
                   <small id="loihoten" class="form-text text-danger"></small>
 			  </div>
 			</div>
 			<div class="col-md-6">
 			  <div class="form-group">
-			    <label for="tags">Số điện thoại</label>
-			    <input type="text" class="form-control" id="sodienthoai" placeholder="VD: 090 xxx xxx" value="<?php echo $sodienthoai; ?>">
-                  <small id="loisodienthoai" class="form-text text-danger"></small>
+			    <label for="tags">Quê quán</label>
+			    <input type="text" class="form-control" id="quequan" placeholder="VD: Vĩnh Long" value="<?php echo $quequansv; ?>">
+                  <small id="loiquequan" class="form-text text-danger"></small>
 			  </div>
 			</div>
 			<div class="col-md-6">
 			  <div class="form-group">
 			    <label for="tags">Địa chỉ mail</label>
-			    <input type="text" class="form-control" id="mail" placeholder="VD: xyz@gmail.com" value="<?php echo $mail ?>">
+			    <input type="text" class="form-control" id="mail" placeholder="VD: xyz@gmail.com" value="<?php if(empty($mailsv)||$mailsv=='null') echo "";else echo $mailsv; ?>">
                   <small id="loimail" class="form-text text-danger"></small>
+			  </div>
+			</div>
+			<div class="col-md-6">
+			  <div class="form-group">
+			    <label for="tags">Ngày sinh</label>
+			    <input class="form-control" id="ngaysinh" type="date" value="<?php if(empty($ngaysinhsv)||$ngaysinhsv=='null') echo ""; else echo date('Y-m-d', strtotime($ngaysinhsv)); ?>" disabled="disabled" >
+                  <small id="loingaysinh" class="form-text text-danger"></small>
 			  </div>
 			</div>
 			<div class="col-md-12">
@@ -59,26 +66,23 @@
 	$(document).ready(function(){
 		$('#taikhoan').addClass('active');
 		$('#luu').on('click', function(){
-		    var ma = $('#ma').val().trim();
-		    var hoten = $('#hoten').val().trim();
-		    var sodienthoai = $('#sodienthoai').val().trim();
+		    var quequan = $('#quequan').val().trim();
 		    var mail = $('#mail').val().trim();
-		    if (!ma) {
-		    	$('#loima').html('Không được bỏ trống');return;
-		    }else $('#loima').html('');
-            if(!hoten){$('#loihoten').html('Không được bỏ trống');return;}
-            else $('#loihoten').html('');
-            if(!sodienthoai){$('#loisodienthoai').html('Không được bỏ trống');return;}else $('#loisodienthoai').html('');
-            if(!mail){$('#loimail').html('Không được bỏ trống');return;} else $('#loimail').html('');
+		    var ngaysinh = $('#ngaysinh').val().trim();
+		    if (!quequan) {
+		    	$('#loiquequan').html('Không được bỏ trống');return;
+		    }else $('#loiquequan').html('');
+            if(!mail){$('#loimail').html('Không được bỏ trống');return;}
+            else $('#loimail').html('');
+            if(!ngaysinh){$('#loingaysinh').html('Không được bỏ trống');return;} else $('#loingaysinh').html('');
             $.ajax({
                 url: 'ajax_luu_thong_tin_tai_khoan.php',
                 type: 'POST',
                 data: {
-                    ma: ma,
-                    hoten: hoten,
-                    sodienthoai: sodienthoai,
+                    quequan: quequan,
                     mail: mail,
-                    id: '<?php echo $idnqt; ?>'
+                    ngaysinh: ngaysinh,
+                    id: '<?php echo $idsv; ?>'
                 },
                 success: function (data) {
                     var mang = $.parseJSON(data);

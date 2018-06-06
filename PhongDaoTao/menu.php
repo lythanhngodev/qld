@@ -11,14 +11,14 @@
             <li class="nav-item" id="trangchu">
                 <a class="nav-link" href="#">Trang chủ</a>
             </li>
-            <li class="nav-item dropdown" id="taikhoan">
+            <li class="nav-item dropdown" id="diem">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Điểm
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a id="nhapdiemlophocphan" class="dropdown-item" href="nhapdiemlophocphan.php">Nhập điểm lớp học phần</a>
                     <a class="dropdown-item" href="#">Phiếu điểm học phần</a>
-                    <a class="dropdown-item" href="#">Kết quả</a>
+                    <a id="tonghopketqua" class="dropdown-item" href="tonghopketqua.php">Tổng hợp kết quả học tập</a>
                 </div>
             </li>
             <li id="giaovien" class="nav-item">
