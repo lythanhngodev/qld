@@ -124,4 +124,11 @@ WHERE l.IDLOP = sv.IDLOP AND l.IDLOP = $idlop AND gv.IDGV = $idgv AND l.IDGV = g
 		if($diem>=4.0) return "1";
 		if($diem<4.0) return "0";
 	}
+    function xep_loai($diem){
+        if($diem>3.6) return "Xuất sắc";
+        if($diem>=3.2) return "Giỏi";
+        if ($diem>=2.5) return "Khá";
+        if($diem>=2.0) return "Trung bình";
+        if($diem<2.0) return "Yếu";
+    }
  ?>

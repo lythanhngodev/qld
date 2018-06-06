@@ -30,12 +30,6 @@
             <li id="sinhvienlophocphan" class="nav-item">
                 <a class="nav-link" href="sinhvienlophocphan.php">Sinh viên - Lớp học phần</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#"></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Môn học</a>
-            </li>
             <li class="nav-item dropdown" id="daotao">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Đào tạo

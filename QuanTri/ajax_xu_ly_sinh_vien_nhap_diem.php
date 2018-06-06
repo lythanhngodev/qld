@@ -25,10 +25,6 @@ function diem($idlhp, $idsv){
     return $p_sql;
 }
  ?>
-<form action="xuatphieudiem.php" method="POST" target="_blank">
-    <input type="text" name="lophocphan" hidden="hidden" value="<?php echo $id; ?>">
-    <input type="submit" name="" value="Xuất phiếu điểm" class="btn btn-warning" style="float: right;margin-bottom: 1rem;" >
-</form>
 <table class="table">
     <tr>
         <th>Mã lớp học phần:</th>
@@ -73,7 +69,7 @@ function diem($idlhp, $idsv){
                     <td><input type="number" min="0" max="10" onmouseout="tinhdiemck(this)" class="form-control" style="text-align: center;" value="<?php if($d['DIEMCK']!=0)echo $d['DIEMCK']; ?>"></td>
                     <td><input type="number" min="0" max="10" onmouseout="tinhdiemtl(this)" class="form-control" style="text-align: center;" value="<?php if($d['DIEMCK']!=0)echo $d['DIEMTHILAI']; ?>"></td>
                     <td><input type="number" min="0" max="10" readonly class="form-control" style="text-align: center;"></td>
-                    <td style="text-align: center;"><input type="checkbox" onclick="camthi(this)" <?php if($d['CAMTHI']==1) echo "checked"; ?>>
+                    <td style="text-align: center;"><input type="checkbox" onclick="camthi(this)" <?php if($d['CAMTHI']==1) echo "checked"; ?>></td>
                 <?php $ktd++;} 
                 if ($ktd==0) {?>
                     <td><input type="number" min="0" max="10" onmouseout="tinhdiemcc(this)" class="form-control" style="text-align: center;"></td>

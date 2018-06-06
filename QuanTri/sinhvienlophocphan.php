@@ -38,7 +38,7 @@
                 </div>  
             </div>
             <div class="col-md-12">
-                <h5>Nhập điểm lớp học phần</h5>
+                <h5>Sinh viên - Lớp học phần</h5>
                 <hr>
             </div>  
         </div>
@@ -63,6 +63,12 @@
                      } ?>
                     </select>            
                 </div>
+                <div class="col-md-4">
+                    <label>Nhập danh sách sinh viên</label>
+                    <br>
+                    <button class="btn btn-primary btn-sm" id="nhapfile">Nhập file Excel</button><br><br>
+                    <input type="file" hidden="hidden" id="taptin" accept="application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
+                </div>
             <div class="col-md-12">
                 <hr>
                 <div id="than">
@@ -84,13 +90,12 @@
         var _lop_ = <?php echo json_encode($lop); ?>;
         $(document).ready(function() {
             $('body .dropdown-toggle').dropdown();
-            $('#diem').addClass('active');
-            $('#nhapdiemlophocphan').addClass('active');
+            $('#sinhvienlophocphan').addClass('active');
             $('#chonlophp').on('change',function(){
                 $('#than').empty();
                 if(!$(this).val()) return;
                 $.ajax({
-                    url: 'ajax_xu_ly_sinh_vien_nhap_diem.php',
+                    url: 'ajax_xu_ly_sinh_vien_lop_hoc_phan.php',
                     type: 'POST',
                     beforeSend: function(){
                         $('#than').html('<div class="loader"></div>');
@@ -115,80 +120,36 @@
                         $('#chonlophp').append('<option value="'+l[0]+'">'+l[8]+' - '+l[7]+'</option>'); 
                 });
             });
-        } );
-        function tinhdiemcc(t){
-            var tr = $(t).parent('td').parent('tr');
-            var idsv = tr.attr('id');
-            var idlhp = tr.attr('idlhp');
-            var cc = (!tr.find('td:nth-child(5) input').val().trim() || !$.isNumeric(tr.find('td:nth-child(5) input').val().trim()) || parseFloat(tr.find('td:nth-child(5) input').val().trim()) <= 0 || parseFloat(tr.find('td:nth-child(5) input').val().trim()) > 10) ? 0 :parseFloat(tr.find('td:nth-child(5) input').val().trim());
-            if(cc<=0){
-                $(t).val('');
-                tinhdiem('cc',idsv,idlhp, 0);
-            }else{
-                tinhdiem('cc',idsv,idlhp, cc);
-            }
-        }
-        function tinhdiemgk(t){
-            var tr = $(t).parent('td').parent('tr');
-            var idsv = tr.attr('id');
-            var idlhp = tr.attr('idlhp');
-            var gk = (!tr.find('td:nth-child(6) input').val().trim() || !$.isNumeric(tr.find('td:nth-child(6) input').val().trim()) || parseFloat(tr.find('td:nth-child(6) input').val().trim()) <= 0 || parseFloat(tr.find('td:nth-child(6) input').val().trim()) > 10) ? 0 :parseFloat(tr.find('td:nth-child(6) input').val().trim());
-            if(gk<=0){
-                $(t).val('');
-                tinhdiem('gk',idsv,idlhp, 0);
-            }else{
-                tinhdiem('gk',idsv,idlhp, gk);
-            }
-        }
-        function tinhdiemck(t){
-            var tr = $(t).parent('td').parent('tr');
-            var idsv = tr.attr('id');
-            var idlhp = tr.attr('idlhp');
-            var ck = (!tr.find('td:nth-child(7) input').val().trim() || !$.isNumeric(tr.find('td:nth-child(7) input').val().trim()) || parseFloat(tr.find('td:nth-child(7) input').val().trim()) <= 0 || parseFloat(tr.find('td:nth-child(7) input').val().trim()) > 10) ? 0 :parseFloat(tr.find('td:nth-child(7) input').val().trim());
-            if(ck<=0){
-                $(t).val('');
-                tinhdiem('ck',idsv,idlhp, 0);
-            }else{
-                tinhdiem('ck',idsv,idlhp, ck);
-            }
-        }
-        function tinhdiemtl(t){
-            var tr = $(t).parent('td').parent('tr');
-            var idsv = tr.attr('id');
-            var idlhp = tr.attr('idlhp');
-            var tl = (!tr.find('td:nth-child(8) input').val().trim() || !$.isNumeric(tr.find('td:nth-child(8) input').val().trim()) || parseFloat(tr.find('td:nth-child(8) input').val().trim()) <= 0 || parseFloat(tr.find('td:nth-child(8) input').val().trim()) > 10) ? 0 :parseFloat(tr.find('td:nth-child(8) input').val().trim());
-            if(tl<=0){
-                $(t).val('');
-                tinhdiem('tl',idsv,idlhp, 0);
-            }else{
-                tinhdiem('tl',idsv,idlhp, tl);
-            }
-        }
-        function camthi(t){
-            var tr = $(t).parent('td').parent('tr');
-            var ck = ($(t).is(':checked')) ? 1 : 0;
-            var idsv = tr.attr('id');
-            var idlhp = tr.attr('idlhp');
-            tinhdiem('ct', idsv, idlhp, ck);
-        }
-        function tinhdiem(loai, idsv, idlhp, diem){
-            $.ajax({
-                url: 'ajax_nhap_diem.php',
-                type: 'POST',
-                data: {
-                    loai: loai,
-                    idsv: idsv,
-                    idlhp: idlhp,
-                    diem: diem
-                },
-                success: function (data) {
-                    return;
-                },
-                error: function () {
-                    khongthanhcong('Không có mạng internet');
-                }
+            $(document).on('click','#nhapfile', function(){
+                $('#taptin').click();
             });
-        }
+            $(document).on('change','#taptin', function(){
+                var file_data = $('#taptin').prop('files')[0];
+                var form_data = new FormData();
+                form_data.append('file', file_data);
+                $('#than').empty();
+                $.ajax({
+                    url: 'ajax_import_file_sinh_vien_lop_hoc_phan.php',
+                    dataType: 'text',
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    type: 'post',
+                    data: form_data,
+                    beforeSend: function () {
+                        $('#than').html('<div class="loader"></div>');
+                    },
+                    success: function(data){
+                        $.notifyClose();
+                        $('body').append(data);
+                    },
+                    error: function () {
+                        $.notifyClose();
+                        khongthanhcong('Không thể tải file');
+                    }
+                });
+            });
+        } );
     </script>
     <script src="../js/bootstrap-notify.min.js"></script>
 </body>
