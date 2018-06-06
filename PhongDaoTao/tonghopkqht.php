@@ -1,4 +1,6 @@
-<?php require_once "check_login.php"; ?>
+<?php require_once "check_login.php";
+        require_once "_l_function.php";
+?>
 <?php 
 	if(!isset($_POST['trinhdo']) || !isset($_POST['hocky']) || empty($_POST['trinhdo']) || empty($_POST['hocky'])){
 		echo "Không có dữ liệu";
@@ -62,7 +64,7 @@
         $objPHPExcel->getActiveSheet()->getColumnDimension('A')->setWidth(7);
         $objPHPExcel->setActiveSheetIndex(0)->mergeCells('B6:B9'); // mã sv
         $sheet->setCellValue("B6","MÃ SV");
-        $objPHPExcel->getActiveSheet()->getColumnDimension('B')->setWidth(8);
+        $objPHPExcel->getActiveSheet()->getColumnDimension('B')->setWidth(10);
         $objPHPExcel->setActiveSheetIndex(0)->mergeCells('C6:C9'); // học và tên
         $sheet->setCellValue("C6","HỌ VÀ TÊN");
         $objPHPExcel->getActiveSheet()->getColumnDimension('C')->setWidth(25);
@@ -132,9 +134,9 @@
                     )
                 )
             ));
-        $numrowsv = 10;
+
         // xử lý sinh viên
-        $sql_lop_sv = "SELECT DISTINCT sv.IDSV, sv.HOTENSV FROM LOPHOCPHAN lhp, DSLHP ds, SV sv, LOP l WHERE lhp.IDHK =:hocky AND lhp.IDLHP = ds.IDLHP AND ds.IDSV = sv.IDSV AND sv.IDLOP = l.IDLOP AND l.IDLOP=:lop order by sv.IDSV";
+        $sql_lop_sv = "SELECT DISTINCT sv.IDSV, sv.HOTENSV, sv.MASV FROM LOPHOCPHAN lhp, DSLHP ds, SV sv, LOP l WHERE lhp.IDHK =:hocky AND lhp.IDLHP = ds.IDLHP AND ds.IDSV = sv.IDSV AND sv.IDLOP = l.IDLOP AND l.IDLOP=:lop order by sv.MASV ASC";
         $p_sql_lop_sv = oci_parse($conn, $sql_lop_sv);
         oci_bind_by_name($p_sql_lop_sv, ":hocky", $_POST['hocky']);
         oci_bind_by_name($p_sql_lop_sv, ":lop", $row_lop['IDLOP']);
@@ -142,8 +144,57 @@
         while ($row_lop_sv = oci_fetch_assoc($p_sql_lop_sv)){
             $sinhvien[] = $row_lop_sv;
         }
-        // nạp sinh viên và didemr sinh viên
+        // nạp sinh viên và điểm sinh viên
+        $numrowsv = 10;
+        for ($j=0;$j<count($sinhvien);$j++){
+            $sheet->setCellValue("A$numrowsv",$j+1);
+            $sheet->setCellValue("B$numrowsv",$sinhvien[$j]['MASV']);
+            $sheet->setCellValue("C$numrowsv",$sinhvien[$j]['HOTENSV']);
+            $cot_diem = 4;
+            for ($k=0;$k<count($lophocphan);$k++){
+                $idsv = $sinhvien[$j]['IDSV'];
+                $idlhp = $lophocphan[$k]['IDLHP'];
+                $sql_diem = "SELECT DIEMCC, DIEMGK, DIEMCK, DIEMTHILAI, CAMTHI FROM PHIEUDIEMHP WHERE IDLHP=:idlhp AND IDSV =:idsv";
+                $p_sql_diem = oci_parse($conn, $sql_diem);
+                oci_bind_by_name($p_sql_diem, ":idlhp", $idlhp);
+                oci_bind_by_name($p_sql_diem, ":idsv", $idsv);
+                oci_execute($p_sql_diem);
+                $demdiem = 0; $dchu="";$dso="";$camthi = 0;
+                while ($row_diem = oci_fetch_assoc($p_sql_diem)){
+                    $demdiem++;
+                    $dchu = diem_chu($row_diem['DIEMCC'],$row_diem['DIEMGK'],$row_diem['DIEMCK'],$row_diem['DIEMTHILAI']);
+                    $dso = diem_he_4($row_diem['DIEMCC'],$row_diem['DIEMGK'],$row_diem['DIEMCK'], $row_diem['DIEMTHILAI']);
+                    $camthi = $row_diem['CAMTHI'];
+                }
+                if ($demdiem==0){
+                    $sheet->setCellValue(getNameFromNumber($cot_diem).$numrowsv,"");
+                    $sheet->setCellValue(getNameFromNumber($cot_diem+1).$numrowsv,"");
+                }else{
+                    if ($camthi==1){
+                        $sheet->setCellValue(getNameFromNumber($cot_diem).$numrowsv,"F");
+                        $sheet->setCellValue(getNameFromNumber($cot_diem+1).$numrowsv,"0.0");
+                    }else{
+                        $sheet->setCellValue(getNameFromNumber($cot_diem).$numrowsv,$dchu);
+                        $sheet->setCellValue(getNameFromNumber($cot_diem+1).$numrowsv,$dso);
+                    }
+                }
+                $cot_diem+=2;
+            }
+            $numrowsv++;
+        }
 
+        $sheet->getStyle("A10:"."B".($numrowsv-1))->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+        $sheet->getStyle("A10:"."B".($numrowsv-1))->getAlignment()->setVertical(PHPExcel_Style_Alignment::VERTICAL_CENTER);
+        $sheet->getStyle("D10:"."E".($numrowsv-1))->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+        $sheet->getStyle("D10:"."E".($numrowsv-1))->getAlignment()->setVertical(PHPExcel_Style_Alignment::VERTICAL_CENTER);
+        $sheet->getStyle("A10:".getNameFromNumber($cot_lhp).($numrowsv-1))
+            ->applyFromArray(array(
+                'borders' => array(
+                    'allborders' => array(
+                        'style' => PHPExcel_Style_Border::BORDER_THIN
+                    )
+                )
+            ));
     }
     if ($tontai_lop==0) {echo "Không có dữ liệu";die();}
     else{

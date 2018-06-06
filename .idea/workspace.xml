@@ -2,22 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1adc70ce-3879-4dd5-a3c9-3a6de5ce998f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GiaoVien/_l_function.php" beforeDir="false" afterPath="$PROJECT_DIR$/GiaoVien/_l_function.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GiaoVien/xembangdiem.php" beforeDir="false" afterPath="$PROJECT_DIR$/GiaoVien/xembangdiem.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/Login/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PhongDaoTao/_l_function.php" beforeDir="false" afterPath="$PROJECT_DIR$/PhongDaoTao/_l_function.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhongDaoTao/ajax_xu_ly_sinh_vien.php" beforeDir="false" afterPath="$PROJECT_DIR$/PhongDaoTao/ajax_xu_ly_sinh_vien.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhongDaoTao/khoachuyenmon.php" beforeDir="false" afterPath="$PROJECT_DIR$/PhongDaoTao/khoachuyenmon.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhongDaoTao/menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/PhongDaoTao/menu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SinhVien/_l_function.php" beforeDir="false" afterPath="$PROJECT_DIR$/SinhVien/_l_function.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SinhVien/ajax_doi_mat_khau.php" beforeDir="false" afterPath="$PROJECT_DIR$/SinhVien/ajax_doi_mat_khau.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SinhVien/ajax_luu_thong_tin_tai_khoan.php" beforeDir="false" afterPath="$PROJECT_DIR$/SinhVien/ajax_luu_thong_tin_tai_khoan.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SinhVien/check_login.php" beforeDir="false" afterPath="$PROJECT_DIR$/SinhVien/check_login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SinhVien/doimatkhau.php" beforeDir="false" afterPath="$PROJECT_DIR$/SinhVien/doimatkhau.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SinhVien/menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/SinhVien/menu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SinhVien/thongtintaikhoan.php" beforeDir="false" afterPath="$PROJECT_DIR$/SinhVien/thongtintaikhoan.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SinhVien/xembangdiem.php" beforeDir="false" afterPath="$PROJECT_DIR$/SinhVien/xembangdiem.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PhongDaoTao/tonghopkqht.php" beforeDir="false" afterPath="$PROJECT_DIR$/PhongDaoTao/tonghopkqht.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -74,6 +60,13 @@
         <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="NGANHDT: table" type="be4db629:OracleImplModel$Table" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@desktop-84pbfhu" type="feb32156:DbDataSourceImpl" />
+        <item name="SA: schema" type="ac44c5e0:OracleImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="PHIEUDIEMHP: table" type="be4db629:OracleImplModel$Table" />
+      </path>
     </expand>
     <select />
   </component>
@@ -82,8 +75,17 @@
       <file leaf-file-name="console_8.sql" pinned="false" current-in-tab="false">
         <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/c63c0dc6-36b2-4ba9-b7fe-378ddc1ba968/console_8.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" selection-start-line="11" selection-end-line="11" selection-end-column="201" />
+            <state relative-caret-position="255">
+              <caret line="15" column="99" lean-forward="true" selection-start-line="15" selection-start-column="99" selection-end-line="15" selection-end-column="99" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PHIEUDIEMHP" pinned="false" current-in-tab="false">
+        <entry file="das://c63c0dc6-36b2-4ba9-b7fe-378ddc1ba968/schema/SA/table/PHIEUDIEMHP">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
@@ -91,21 +93,26 @@
       <file leaf-file-name="tonghopkqht.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PhongDaoTao/tonghopkqht.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="144" column="44" selection-start-line="144" selection-start-column="44" selection-end-line="144" selection-end-column="44" />
+            <state relative-caret-position="425">
+              <caret line="178" column="21" selection-start-line="178" selection-start-column="21" selection-end-line="178" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tonghopketqua.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PhongDaoTao/tonghopketqua.php">
+      <file leaf-file-name="ajax_xu_ly_sinh_vien_nhap_diem.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PhongDaoTao/ajax_xu_ly_sinh_vien_nhap_diem.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
-              <caret line="66" column="68" selection-start-line="66" selection-start-column="68" selection-end-line="66" selection-end-column="68" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="-561">
+              <caret line="18" column="112" selection-start-line="18" selection-start-column="112" selection-end-line="18" selection-end-column="112" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_l_function.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PhongDaoTao/_l_function.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="94" column="235" selection-start-line="94" selection-start-column="235" selection-end-line="94" selection-end-column="235" />
             </state>
           </provider>
         </entry>
@@ -118,6 +125,8 @@
       <find>14005002</find>
       <find>14003097</find>
       <find>1427</find>
+      <find>hoàng anh</find>
+      <find>14004004</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -154,7 +163,6 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/c63c0dc6-36b2-4ba9-b7fe-378ddc1ba968/console_3.sql" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/c63c0dc6-36b2-4ba9-b7fe-378ddc1ba968/console_4.sql" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/c63c0dc6-36b2-4ba9-b7fe-378ddc1ba968/console_5.sql" />
-        <option value="$PROJECT_DIR$/PhongDaoTao/_l_function.php" />
         <option value="$PROJECT_DIR$/PhongDaoTao/sinhvien.php" />
         <option value="$PROJECT_DIR$/PhongDaoTao/ajax_import_file_sinh_vien.php" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/c63c0dc6-36b2-4ba9-b7fe-378ddc1ba968/console_7.sql" />
@@ -162,6 +170,8 @@
         <option value="$PROJECT_DIR$/GiaoVien/xembangdiem.php" />
         <option value="$PROJECT_DIR$/PhongDaoTao/tonghopketqua.php" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/c63c0dc6-36b2-4ba9-b7fe-378ddc1ba968/console_8.sql" />
+        <option value="$PROJECT_DIR$/PhongDaoTao/ajax_xu_ly_sinh_vien_nhap_diem.php" />
+        <option value="$PROJECT_DIR$/PhongDaoTao/_l_function.php" />
         <option value="$PROJECT_DIR$/PhongDaoTao/tonghopkqht.php" />
       </list>
     </option>
@@ -254,12 +264,12 @@
       <workItem from="1527729455837" duration="7703000" />
       <workItem from="1527776112488" duration="2755000" />
       <workItem from="1527807678871" duration="1714000" />
-      <workItem from="1528201078295" duration="19268000" />
+      <workItem from="1528201078295" duration="23096000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="132357000" />
+    <option name="totallyTimeSpent" value="136185000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -274,7 +284,7 @@
       <window_info anchor="bottom" id="Database Console" order="11" weight="0.24422443" />
       <window_info content_ui="combo" id="Project" order="0" weight="0.20121029" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="3" weight="0.2344932" />
+      <window_info active="true" anchor="right" id="Database" order="3" visible="true" weight="0.2344932" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -318,27 +328,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/c63c0dc6-36b2-4ba9-b7fe-378ddc1ba968/console_1.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/QuanTri/check_login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/QuanTri/ajax_luu_thong_tin_tai_khoan.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="11" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/QuanTri/thongtintaikhoan.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -528,13 +517,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PhongDaoTao/_l_function.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1360">
-          <caret line="80" column="28" selection-start-line="80" selection-start-column="28" selection-end-line="80" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PhongDaoTao/sinhvien.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="303">
@@ -633,21 +615,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://c63c0dc6-36b2-4ba9-b7fe-378ddc1ba968/schema/SA/table/PHIEUDIEMHP">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://c63c0dc6-36b2-4ba9-b7fe-378ddc1ba968/schema/SA/table/HOCKY">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://c63c0dc6-36b2-4ba9-b7fe-378ddc1ba968/schema/SA/table/SV">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
@@ -663,13 +631,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PhongDaoTao/ajax_xu_ly_sinh_vien.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/c63c0dc6-36b2-4ba9-b7fe-378ddc1ba968/console_8.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" selection-start-line="11" selection-end-line="11" selection-end-column="201" />
-        </state>
-      </provider>
     </entry>
     <entry file="das://c63c0dc6-36b2-4ba9-b7fe-378ddc1ba968/schema/SA/table/DSLHP">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
@@ -696,10 +657,57 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/SinhVien/_l_function.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="95" column="28" lean-forward="true" selection-start-line="94" selection-end-line="103" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SinhVien/xembangdiem.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1734" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PhongDaoTao/ajax_xu_ly_sinh_vien_nhap_diem.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-561">
+          <caret line="18" column="112" selection-start-line="18" selection-start-column="112" selection-end-line="18" selection-end-column="112" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PhongDaoTao/_l_function.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="94" column="235" selection-start-line="94" selection-start-column="235" selection-end-line="94" selection-end-column="235" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/c63c0dc6-36b2-4ba9-b7fe-378ddc1ba968/console_8.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="99" lean-forward="true" selection-start-line="15" selection-start-column="99" selection-end-line="15" selection-end-column="99" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://c63c0dc6-36b2-4ba9-b7fe-378ddc1ba968/schema/SA/table/SV">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://c63c0dc6-36b2-4ba9-b7fe-378ddc1ba968/schema/SA/table/PHIEUDIEMHP">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/PhongDaoTao/tonghopkqht.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="144" column="44" selection-start-line="144" selection-start-column="44" selection-end-line="144" selection-end-column="44" />
+        <state relative-caret-position="425">
+          <caret line="178" column="21" selection-start-line="178" selection-start-column="21" selection-end-line="178" selection-end-column="21" />
         </state>
       </provider>
     </entry>

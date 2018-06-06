@@ -92,9 +92,41 @@
 	function lay_sinh_vien_lop_hoc_phan($id){
 	    $ketnoi = new _l_clsKetnoi();
 	    $conn = $ketnoi->ketnoi();
-		$sql = "SELECT DISTINCT ds.IDLHP,sv.IDSV, sv.HOTENSV, sv.MASV, l.MALOP FROM SV sv, LOPHOCPHAN lhp, DSLHP ds, LOP l WHERE lhp.IDLHP = ds.IDLHP AND sv.IDSV = ds.IDSV AND sv.IDLOP=l.IDLOP AND lhp.IDLHP = '$id'";
+		$sql = "SELECT DISTINCT ds.IDLHP,sv.IDSV, sv.HOTENSV, sv.MASV, l.MALOP FROM SV sv, LOPHOCPHAN lhp, DSLHP ds, LOP l WHERE lhp.IDLHP = ds.IDLHP AND sv.IDSV = ds.IDSV AND sv.IDLOP=l.IDLOP AND lhp.IDLHP = '$id' ORDER BY sv.MASV ASC";
 		$p_sql = oci_parse($conn, $sql);
 		oci_execute($p_sql);
 		return $p_sql;
 	}
+    function diem_he_10($cc, $gk, $ck, $tl){
+        $cc = floatval($cc);
+        $gk = floatval($gk);
+        $ck = floatval($ck);
+        $tl = floatval($tl);
+        if ($tl > $ck) {
+            $ck = $tl;
+        }
+        return round($cc*0.1+$gk*0.4+$ck*0.5,1);
+    }
+    function diem_chu($cc, $gk, $ck, $tl){
+        $diem = diem_he_10($cc, $gk, $ck,$tl);
+        if($diem>=8.5) return "A";
+        if($diem>=7.8) return "B+";
+        if ($diem>=7.0) return "B";
+        if($diem>=6.3) return "C+";
+        if($diem>=5.5) return "C";
+        if($diem>=4.8) return "D+";
+        if($diem>=4.0) return "D";
+        if($diem<4.0) return "F";
+    }
+    function diem_he_4($cc, $gk, $ck, $tl){
+        $diem = diem_he_10($cc, $gk, $ck, $tl);
+        if($diem>=8.5) return "4.0";
+        if($diem>=7.8) return "3.5";
+        if ($diem>=7.0) return "3.0";
+        if($diem>=6.3) return "2.5";
+        if($diem>=5.5) return "2";
+        if($diem>=4.8) return "1.5";
+        if($diem>=4.0) return "1";
+        if($diem<4.0) return "0";
+    }
  ?>
