@@ -38,13 +38,13 @@
                     <tbody>
                     	<?php $monhoc = lay_mon_hoc(); $stt = 1;
                     	while ($row = oci_fetch_assoc($monhoc)){ ?>
-                            <tr style="text-align: center;">
+                            <tr>
                                 <th><?php echo $stt; ?></th>
                                 <td><?php echo $row['MAMH'] ?></td>
                                 <td><?php echo $row['TENMH'] ?></td>
                                 <td lydata="<?php echo $row['IDKHOA'] ?>"><?php echo $row['TENKHOA'] ?></td>
-                                <td><?php echo $row['SOTCLT']; ?></td>
-                                <td><?php echo $row['SOTCTH']; ?></td>
+                                <td style="text-align: center;"><?php echo $row['SOTCLT']; ?></td>
+                                <td style="text-align: center;"><?php echo $row['SOTCTH']; ?></td>
                                 <td><button class="btn btn-primary btn-sm sua" lydata="<?php echo $row['IDMH'] ?>">Sửa</button>&ensp;<button class="btn btn-danger btn-sm xoa" lydata="<?php echo $row['IDMH'] ?>">Xóa</button></td>
                             </tr>
                         <?php $stt++; } ?>

@@ -40,14 +40,14 @@
                     <tbody>
                     	<?php $ctdt = lay_chi_tiet_dao_tao(); $stt = 1;
                     	while ($row = oci_fetch_assoc($ctdt)){ ?>
-                            <tr style="text-align: center;">
+                            <tr>
                                 <th><?php echo $stt; ?></th>
                                 <td><?php echo $row['MACTDT'] ?></td>
                                 <td><?php echo $row['TENCTDT'] ?></td>
                                 <td lydata="<?php echo $row['IDNDT']; ?>"><?php echo $row['TENNDT'] ?></td>
                                 <td lydata="<?php echo $row['IDKHOA']; ?>"><?php echo $row['TENKHOA'] ?></td>
-                                <td><?php echo $row['SOHOCPHAN'] ?></td>
-                                <td><?php echo $row['SOTINCHI'] ?></td>
+                                <td style="text-align: center;"><?php echo $row['SOHOCPHAN'] ?></td>
+                                <td style="text-align: center;"><?php echo $row['SOTINCHI'] ?></td>
                                 <td><?php echo $row['GHICHU'] ?></td>
                                 <td><button class="btn btn-primary btn-sm sua" lydata="<?php echo $row['IDCTDT'] ?>">Sửa</button>&ensp;<button class="btn btn-danger btn-sm xoa" lydata="<?php echo $row['IDCTDT'] ?>">Xóa</button></td>
                             </tr>

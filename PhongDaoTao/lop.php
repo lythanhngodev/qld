@@ -40,15 +40,15 @@
                     <tbody>
                     	<?php $lop = lay_lop(); $stt = 1;
                     	while ($row = oci_fetch_assoc($lop)){ ?>
-                            <tr style="text-align: center;">
+                            <tr>
                                 <th><?php echo $stt; ?></th>
                                 <td><?php echo $row['MALOP'] ?></td>
                                 <td><?php echo $row['TENLOP'] ?></td>
                                 <td lydata="<?php echo $row['IDCTDT']; ?>"><?php echo $row['TENCTDT'] ?></td>
                                 <td lydata="<?php echo $row['IDKHOA']; ?>"><?php echo $row['TENKHOA'] ?></td>
                                 <td lydata="<?php echo $row['IDGV']; ?>"><?php echo $row['HOTENGV'] ?></td>
-                                <td><?php echo $row['NAMTS'] ?></td>
-                                <td><?php echo $row['KHOAHOC'] ?></td>
+                                <td style="text-align: center;"><?php echo $row['NAMTS'] ?></td>
+                                <td style="text-align: center;"><?php echo $row['KHOAHOC'] ?></td>
                                 <td><button class="btn btn-primary btn-sm sua" lydata="<?php echo $row['IDLOP'] ?>">Sửa</button>&ensp;<button class="btn btn-danger btn-sm xoa" lydata="<?php echo $row['IDLOP'] ?>">Xóa</button></td>
                             </tr>
                         <?php $stt++; } ?>

@@ -38,7 +38,7 @@
                     <tbody>
                     	<?php $nganh = lay_nganh_dao_tao(); $stt = 1;
                     	while ($row = oci_fetch_assoc($nganh)){ ?>
-                            <tr style="text-align: center;">
+                            <tr>
                                 <th><?php echo $stt; ?></th>
                                 <td><?php echo $row['MANDT'] ?></td>
                                 <td><?php echo $row['TENNDT'] ?></td>
