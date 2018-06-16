@@ -30,6 +30,8 @@
                             <th>Mã khoa</th>
                             <th>Tên khoa</th>
                             <th>SĐT khoa</th>
+                            <td hidden="hidden"></td>
+                            <td hidden="hidden"></td>
                             <th>Thao tác</th>
                         </tr>
                     </thead>
@@ -41,7 +43,9 @@
                                 <td><?php echo $row['MAKHOA'] ?></td>
                                 <td><?php echo $row['TENKHOA'] ?></td>
                                 <td><?php echo $row['SDTKHOA'] ?></td>
-                                <td><button class="btn btn-primary btn-sm sua" lydata="<?php echo $row['IDKHOA'] ?>">Sửa</button>&ensp;<button class="btn btn-danger btn-sm xoa" lydata="<?php echo $row['IDKHOA'] ?>">Xóa</button></td>
+                                <td hidden="hidden"><?php echo $row['CHUCNANG'] ?></td>
+                                <td hidden="hidden"><?php echo $row['NHIEMVU'] ?></td>
+                                <td><button class="btn btn-default btn-sm xemchitiet">Thông tin</button>&ensp;<button class="btn btn-primary btn-sm sua" lydata="<?php echo $row['IDKHOA'] ?>">Sửa</button>&ensp;<button class="btn btn-danger btn-sm xoa" lydata="<?php echo $row['IDKHOA'] ?>">Xóa</button></td>
                             </tr>
                         <?php $stt++; } ?>
                     </tbody>
@@ -72,6 +76,14 @@
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Số điện thoại khoa</label>
             <input type="text" class="form-control" id="sdtk">
+          </div>
+          <div class="form-group">
+              <label for="recipient-name" class="col-form-label">Chức năng</label>
+              <textarea class="form-control" id="cn" rows="3"></textarea>
+          </div>
+          <div class="form-group">
+              <label for="recipient-name" class="col-form-label">Nhiệm vụ</label>
+              <textarea class="form-control" id="nv" rows="3"></textarea>
           </div>
       </div>
       <div class="modal-footer">
@@ -105,6 +117,14 @@
             <label for="recipient-name" class="col-form-label">Số điện thoại khoa</label>
             <input type="text" class="form-control" id="ssdtk">
           </div>
+          <div class="form-group">
+              <label for="recipient-name" class="col-form-label">Chức năng</label>
+              <textarea class="form-control" id="scn" rows="3"></textarea>
+          </div>
+          <div class="form-group">
+              <label for="recipient-name" class="col-form-label">Nhiệm vụ</label>
+              <textarea class="form-control" id="snv" rows="3"></textarea>
+          </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
@@ -112,6 +132,43 @@
       </div>
     </div>
   </div>
+</div>
+
+<!-- xem chi tiet -->
+<div class="modal fade" id="xemchitiet" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Thông tin</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12">
+                    <h6>Mã khoa</h6>
+                    <hr>
+                    <p id="ct-makhoa"></p>
+                    <h6>Tên khoa</h6>
+                    <hr>
+                    <p id="ct-tenkhoa"></p>
+                    <h6>Số điệm thoại</h6>
+                    <hr>
+                    <p id="ct-sdtkhoa"></p>
+                    <h6>Chức năng</h6>
+                    <hr>
+                    <p id="ct-chucnang"></p>
+                    <h6>Nhiệm vụ</h6>
+                    <hr>
+                    <p id="ct-nhiemvu"></p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                <button type="button" class="btn btn-primary" id="btsuakhoa">Lưu</button>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!-- Xóa -->
@@ -163,7 +220,9 @@
 	                data: {
 	                    mk: $('#mk').val().trim(),
 	                    tk: $('#tk').val().trim(),
-                        sdtk: $('#sdtk').val().trim()
+                        sdtk: $('#sdtk').val().trim(),
+                        cn: $('#cn').val().trim(),
+                        nv: $('#nv').val().trim()
                     },
 	                success: function (data) {
 	                    var mang = $.parseJSON(data);
@@ -186,6 +245,8 @@
                 $('#smk').val($(this).parent('td').parent('tr').find('td:nth-child(2)').text().trim());
                 $('#stk').val($(this).parent('td').parent('tr').find('td:nth-child(3)').text().trim());
                 $('#ssdtk').val($(this).parent('td').parent('tr').find('td:nth-child(4)').text().trim());
+                $('#scn').val($(this).parent('td').parent('tr').find('td:nth-child(5)').text().trim());
+                $('#snv').val($(this).parent('td').parent('tr').find('td:nth-child(6)').text().trim());
                 id = $(this).attr('lydata');
                 $('#suakhoa').modal('show');
             });
@@ -203,6 +264,8 @@
                         mk: $('#smk').val().trim(),
                         tk: $('#stk').val().trim(),
                         sdtk: $('#ssdtk').val().trim(),
+                        cn: $('#scn').val().trim(),
+                        nv: $('#snv').val().trim(),
                         id: id
                     },
                     success: function (data) {
@@ -251,6 +314,14 @@
                         khongthanhcong('Xảy ra lỗi! Vui lòng thử lại');
                     }
                 });
+            });
+            $('.xemchitiet').on('click',function () {
+                $('#ct-makhoa').html($(this).parent('td').parent('tr').find('td:nth-child(2)').text().trim());
+                $('#ct-tenkhoa').html($(this).parent('td').parent('tr').find('td:nth-child(3)').text().trim());
+                $('#ct-sdtkhoa').html($(this).parent('td').parent('tr').find('td:nth-child(4)').text().trim());
+                $('#ct-chucnang').html($(this).parent('td').parent('tr').find('td:nth-child(5)').text().trim());
+                $('#ct-nhiemvu').html($(this).parent('td').parent('tr').find('td:nth-child(6)').text().trim());
+                $('#xemchitiet').modal('show');
             });
         } );
 

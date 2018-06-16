@@ -34,7 +34,7 @@
                             <th>Cố vấn học tập</th>
                             <th>Năm tuyển sinh</th>
                             <th>Khóa học</th>
-                            <th>Thao tác</th>
+                            <th style="width: 100px;">Thao tác</th>
                         </tr>
                     </thead>
                     <tbody>

@@ -8,6 +8,8 @@ $kq = array(
 	$mk = $_POST['mk'];
 	$tk = $_POST['tk'];
     $sdtk = $_POST['sdtk'];
+    $cn = $_POST['cn'];
+    $nv = $_POST['nv'];
 
     $sqlk = "SELECT * FROM KHOACM WHERE (MAKHOA = :mk OR TENKHOA=:tk)";
     $p_sqlk = oci_parse($conn, $sqlk);
@@ -24,11 +26,13 @@ $kq = array(
     }
     oci_free_statement($p_sqlk);
 
-	$sql = "INSERT INTO KHOACM (MAKHOA, TENKHOA, SDTKHOA) VALUES (:mk, :tk, :sdtk)";
+	$sql = "INSERT INTO KHOACM (MAKHOA, TENKHOA, SDTKHOA, CHUCNANG, NHIEMVU) VALUES (:mk, :tk, :sdtk, :cn, :nv)";
 	$p_sql = oci_parse($conn, $sql);
 	oci_bind_by_name($p_sql, ":mk", $mk);
     oci_bind_by_name($p_sql, ":tk",$tk);
     oci_bind_by_name($p_sql, ":sdtk",$sdtk);
+    oci_bind_by_name($p_sql, ":cn",$cn);
+    oci_bind_by_name($p_sql, ":nv",$nv);
     oci_execute($p_sql);
     $r_sql = oci_num_rows($p_sql);
     oci_free_statement($p_sql);

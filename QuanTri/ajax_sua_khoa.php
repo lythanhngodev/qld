@@ -8,6 +8,8 @@ $kq = array(
 	$mk = $_POST['mk'];
 	$tk = $_POST['tk'];
     $sdtk = $_POST['sdtk'];
+    $cn = $_POST['cn'];
+    $nv = $_POST['nv'];
     $id = $_POST['id'];
 
     $sqlk = "SELECT * FROM KHOACM WHERE (MAKHOA = :mk OR TENKHOA=:tk) AND IDKHOA NOT IN (SELECT IDKHOA FROM KHOACM WHERE IDKHOA=:id)";
@@ -24,11 +26,13 @@ $kq = array(
         echo json_encode($kq);
         exit();
     }
-	$sql = "UPDATE KHOACM SET MAKHOA=:mk, TENKHOA=:tk, SDTKHOA=:sdtk WHERE IDKHOA = :id";
+	$sql = "UPDATE KHOACM SET MAKHOA=:mk, TENKHOA=:tk, SDTKHOA=:sdtk, CHUCNANG=:cn, NHIEMVU=:nv WHERE IDKHOA = :id";
 	$p_sql = oci_parse($conn, $sql);
 	oci_bind_by_name($p_sql, ":mk", $mk);
 	oci_bind_by_name($p_sql, ":tk",$tk);
 	oci_bind_by_name($p_sql, ":sdtk",$sdtk);
+    oci_bind_by_name($p_sql, ":cn",$cn);
+    oci_bind_by_name($p_sql, ":nv",$nv);
 	oci_bind_by_name($p_sql, ":id",$id);
 	oci_execute($p_sql);
 	$r_sql = oci_num_rows($p_sql);
