@@ -61,70 +61,52 @@ if (isset($_SESSION['us']) && isset($_SESSION['pa']) && !empty($_SESSION['us']) 
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">	
 	<link rel="icon" type="image/png" href="images/img-01.png"/>
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">	
-	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-	<link rel="stylesheet" type="text/css" href="css/util.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		form{
+		    position: absolute;
+		    width: 300px;
+		    margin: 0 auto;
+		    margin-top: 10rem;
+		    padding: 10px;
+		    border: 1px solid #a9a9a9;
+		    border-radius: 8px;
+		    top: 0;
+		    left: 0;
+		    right: 0;
+		    box-shadow: 0px 0px 6px 0px #b2d8ff;
+		    background: #eef7ff;
+		}
+		.nhap{width:  200px;float:  left;margin-top: 0.5rem;padding: 4px;border-radius:  4px;border: 1px solid #2f71b7;}
+		.form-title{
+			float: left;
+			font-size:  19px;
+			font-family:  sans-serif;
+			font-weight:  500;
+		}
+	</style>
 </head>
 <body>
-	<div class="limiter">
-		<div class="container-login100">
-			<div class="wrap-login100">
-				<div class="login100-pic js-tilt" data-tilt>
-					<img src="images/img-01.png" alt="IMG">
-				</div>
-				<form class="login100-form validate-form" method="post">
-					<span class="login100-form-title">
-						ĐĂNG NHẬP HỆ THỐNG
-					</span>
-					<div class="wrap-input100">
-						<input class="input100" type="text" name="tendangnhap" placeholder="Tên đăng nhập hoặc Mail">
-						<span class="focus-input100"></span>
-						<span class="symbol-input100">
-							<i class="fa fa-envelope" aria-hidden="true"></i>
-						</span>
-					</div>
-
-					<div class="wrap-input100">
-						<input class="input100" type="password" name="matkhau" placeholder="Mật khẩu">
-						<span class="focus-input100"></span>
-						<span class="symbol-input100">
-							<i class="fa fa-lock" aria-hidden="true"></i>
-						</span>
-					</div>
-					
-					<div class="container-login100-form-btn">
-						<button type="submit" class="login100-form-btn">
-							ĐĂNG NHẬP
-						</button>
-					</div>
-
-					<div class="text-center p-t-12">
-						<a class="txt2" href="#">
-							Quên mật khẩu?
-						</a>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-<!--===============================================================================================-->
-	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/bootstrap/js/popper.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/tilt/tilt.jquery.min.js"></script>
-	<script >
-		$('.js-tilt').tilt({
-			scale: 1.1
-		})
-	</script>
-<!--===============================================================================================-->
+    <header style="width: 100%; float: left;top:0;">
+        <img src="images/header.png" style="width: 100%;box-shadow: 0px 0px 4px 1px #676767;">
+    </header>
+    <form class="" method="post">
+        <div style="background-image: url('images/img-01.png');width: 80px;height: 80px;float: left;background-size: cover;background-position: center;margin-right: 10px;margin-top: 10px;"></div>
+        <span class="form-title">
+                ĐĂNG NHẬP
+            </span>
+        <input class="nhap" type="text" name="tendangnhap" placeholder="Tên đăng nhập hoặc Mail" required="required">
+        <input class="nhap" type="password" name="matkhau" placeholder="Mật khẩu" required="required">
+        <button type="submit" style="float: right;width: 96px;padding: 2px 0px;margin-top: 10px;font-size: 12px;">
+            ĐĂNG NHẬP
+        </button>
+        <div style="float: right;margin-right: 7px;margin-top: 13px;font-family:  sans-serif;font-size: 13px;"><a class="txt2" href="quenmatkhau.php">
+                Quên mật khẩu?
+            </a></div>
+    </form>
+<div style="position: fixed;margin-bottom: 0;left: 0;right:0;bottom: 0;height: 20px;width: 100%;background: #232323;color: #adadad;line-height:  20px;font-size: 85%;padding-left: 1rem;font-family:  monospace;">© Copyright of Nguyễn Ngọc Yến Linh (Faculty of Information Technology 2014)</div>
 </body>
 </html>
