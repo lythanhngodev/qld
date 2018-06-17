@@ -4,6 +4,20 @@
 <html>
 <head>
 	<?php require_once "head.php"; ?>
+    <style type="text/css">
+        .modal-dialog-m {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .modal-content-m {
+            height: auto;
+            min-height: 100%;
+            border-radius: 0;
+        }
+    </style>
 </head>
 <body>
 	<?php require_once "menu.php"; ?>
@@ -34,7 +48,7 @@
                             <th>Số học phần</th>
                             <th>Số tín chỉ</th>
                             <th>Ghi chú</th>
-                            <th style="width: 100px;">Thao tác</th>
+                            <th style="width: 160px;">Thao tác</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -49,7 +63,7 @@
                                 <td style="text-align: center;"><?php echo $row['SOHOCPHAN'] ?></td>
                                 <td style="text-align: center;"><?php echo $row['SOTINCHI'] ?></td>
                                 <td><?php echo $row['GHICHU'] ?></td>
-                                <td><button class="btn btn-primary btn-sm sua" lydata="<?php echo $row['IDCTDT'] ?>">Sửa</button>&ensp;<button class="btn btn-danger btn-sm xoa" lydata="<?php echo $row['IDCTDT'] ?>">Xóa</button></td>
+                                <td><button class="btn btn-default btn-sm thongtin" lydata="<?php echo $row['FILES'] ?>">Thông tin</button>&ensp;<button class="btn btn-primary btn-sm sua" lydata="<?php echo $row['IDCTDT'] ?>">Sửa</button>&ensp;<button class="btn btn-danger btn-sm xoa" lydata="<?php echo $row['IDCTDT'] ?>">Xóa</button></td>
                             </tr>
                         <?php $stt++; } ?>
                     </tbody>
@@ -121,6 +135,10 @@
                 <label for="recipient-name" class="col-form-label">Ghi chú</label>
                 <input type="text" class="form-control" id="gcct">
             </div>
+          <div class="form-group">
+              <label for="recipient-name" class="col-form-label">File chi tiết đào tạo</label>
+              <input type="file" class="form-control" accept="application/pdf" id="fct">
+          </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
@@ -193,6 +211,10 @@
                 <label for="recipient-name" class="col-form-label">Ghi chú</label>
                 <input type="text" class="form-control" id="sgcct">
             </div>
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">File chi tiết đào tạo</label>
+              <input type="file" class="form-control" accept="application/pdf" id="sfct">
+            </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
@@ -201,6 +223,26 @@
     </div>
   </div>
 </div>
+
+    <div class="modal fade" id="pdfchitietdaotao" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-m modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content modal-content-m">
+                <div class="modal-header">
+                    <h6 class="modal-title" id="exampleModalLongTitle">Thông tin</h6>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body noidungpdf">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                    <button type="button" class="btn btn-primary" id="btsuachitietdaotao">Lưu</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 <!-- Xóa -->
 <div class="modal fade" id="xoachitietdaotao" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -227,6 +269,14 @@
     </div>
 </div>
 
+    <div id="khungpdf" style="display: none;width: 90%;position: fixed;top: 1rem;z-index: 999999;margin: 0 auto;background: #fff;left: 0;right: 0;box-shadow: 0px 0px 7px 1px #696969;border-radius: 6px;">
+        <h6 style="padding: 10px 0px 0px 10px;">Thông tin</h6>
+        <hr>
+        <span id="dongpdf" style="position: absolute;top:0;right: 20px;background: #1b1e21;color: #fff;padding: 0px 8px;border-radius: 0px 0px 8px 8px;box-shadow: 0px 0px 4px 0px #c36363;cursor: pointer">X</span>
+        <div id="noidungpdf">
+
+        </div>
+    </div>
 
 <link rel="stylesheet" type="text/css" href="../css/datatables.min.css">
 <script src="../js/datatables.min.js" type="text/javascript"></script>
@@ -253,18 +303,23 @@
                 if(!$('#kct').val().trim()){
                     alert('Chọn đơn vị quản lý');return;
                 }
+                var form_data = new FormData();
+                //thêm files vào trong form data
+                form_data.append('file', $('#fct').prop('files')[0]);
+                form_data.append('mct',$('#mct').val().trim());
+                form_data.append('tct',$('#tct').val().trim());
+                form_data.append('ndtct',$('#ndtct').val().trim());
+                form_data.append('kct',$('#kct').val().trim());
+                form_data.append('shpct',($.isNumeric($('#shpct').val().trim()))?$('#shpct').val().trim():0);
+                form_data.append('stcct',($.isNumeric($('#stcct').val().trim()))?$('#stcct').val().trim():0);
+                form_data.append('gcct',$('#gcct').val().trim());
 	            $.ajax({
 	                url: 'ajax_them_chi_tiet_dao_tao.php',
 	                type: 'POST',
-	                data: {
-	                    mct: $('#mct').val().trim(),
-	                    tct: $('#tct').val().trim(),
-                        ndtct: $('#ndtct').val().trim(),
-                        kct: $('#kct').val().trim(),
-                        shpct: ($.isNumeric($('#shpct').val().trim()))?$('#shpct').val().trim():0,
-                        stcct: ($.isNumeric($('#stcct').val().trim()))?$('#stcct').val().trim():0,
-                        gcct: $('#gcct').val().trim()
-                    },
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+	                data: form_data,
 	                success: function (data) {
 	                    var mang = $.parseJSON(data);
 	                    if(mang.trangthai==1){
@@ -306,19 +361,24 @@
                 if(!$('#skct').val().trim()){
                     alert('Chọn đơn vị quản lý');return;
                 }
+                var form_data = new FormData();
+                //thêm files vào trong form data
+                form_data.append('file', $('#sfct').prop('files')[0]);
+                form_data.append('mct',$('#smct').val().trim());
+                form_data.append('tct',$('#stct').val().trim());
+                form_data.append('ndtct',$('#sndtct').val().trim());
+                form_data.append('kct',$('#skct').val().trim());
+                form_data.append('shpct',($.isNumeric($('#sshpct').val().trim()))?$('#sshpct').val().trim():0);
+                form_data.append('stcct',($.isNumeric($('#sstcct').val().trim()))?$('#sstcct').val().trim():0);
+                form_data.append('gcct',$('#gcct').val().trim());
+                form_data.append('id',id);
                 $.ajax({
                     url: 'ajax_sua_chi_tiet_dao_tao.php',
                     type: 'POST',
-                    data: {
-                        mct: $('#smct').val().trim(),
-                        tct: $('#stct').val().trim(),
-                        ndtct: $('#sndtct').val().trim(),
-                        kct: $('#skct').val().trim(),
-                        shpct: ($.isNumeric($('#sshpct').val().trim()))?$('#sshpct').val().trim():0,
-                        stcct: ($.isNumeric($('#sstcct').val().trim()))?$('#sstcct').val().trim():0,
-                        gcct: $('#sgcct').val().trim(),
-                        id: id
-                    },
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    data: form_data,
                     success: function (data) {
                         var mang = $.parseJSON(data);
                         if(mang.trangthai==1){
@@ -365,6 +425,21 @@
                         khongthanhcong('Xảy ra lỗi! Vui lòng thử lại');
                     }
                 });
+            });
+            $('.thongtin').click(function() {
+                if($(this).attr('lydata').trim().length > 0){
+                    var iframe = $('<iframe style="width:100%;height: '+($(window).height()-100)+'px">');
+                    iframe.attr("src","../files/"+$(this).attr('lydata')+"?options=first&second=here");
+                    $('#noidungpdf').html(iframe);
+                    $('#khungpdf').css('display','block');
+                }
+                else{
+                    alert('Không có thông tin');
+                }
+            });
+            $('#dongpdf').click(function () {
+                $('#noidungpdf').html('');
+                $('#khungpdf').css('display','none');
             });
         } );
 

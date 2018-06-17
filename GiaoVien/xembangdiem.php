@@ -133,6 +133,7 @@
             </tbody>
         </table>
     </div>
+    <?php include_once "footer.php"; ?>
 
 <link rel="stylesheet" type="text/css" href="../css/datatables.min.css">
 <script src="../js/datatables.min.js" type="text/javascript"></script>

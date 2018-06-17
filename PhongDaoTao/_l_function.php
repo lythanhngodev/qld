@@ -3,7 +3,7 @@
 	function lay_chi_tiet_dao_tao(){
 	    $ketnoi = new _l_clsKetnoi();
 	    $conn = $ketnoi->ketnoi();
-		$sql = "SELECT ct.IDCTDT,ct.IDNDT, n.TENNDT, ct.IDKHOA, k.TENKHOA, ct.MACTDT, TENCTDT, SOHOCPHAN, SOTINCHI, GHICHU FROM CTDAOTAO ct, NGANHDT n, KHOACM k WHERE ct.IDNDT = n.IDNDT AND ct.IDKHOA = k.IDKHOA";
+		$sql = "SELECT ct.IDCTDT,ct.IDNDT, n.TENNDT, ct.IDKHOA, k.TENKHOA, ct.MACTDT, ct.FILES, TENCTDT, SOHOCPHAN, SOTINCHI, GHICHU FROM CTDAOTAO ct, NGANHDT n, KHOACM k WHERE ct.IDNDT = n.IDNDT AND ct.IDKHOA = k.IDKHOA";
 		$p_sql = oci_parse($conn, $sql);
 		oci_execute($p_sql);
 		return $p_sql;
