@@ -38,7 +38,7 @@
 <body>
     <?php require_once "menu.php"; ?>
     <br>
-    <div class="container-fluid">
+    <div class="container-fluid" id="noidungin">
         <div class="row">
             <div class="col-12">
                 <div id="thongbao">
