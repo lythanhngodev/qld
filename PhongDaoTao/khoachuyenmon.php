@@ -152,7 +152,7 @@
                     <h6>Tên khoa</h6>
                     <hr>
                     <p id="ct-tenkhoa"></p>
-                    <h6>Số điệm thoại</h6>
+                    <h6>Số điện thoại</h6>
                     <hr>
                     <p id="ct-sdtkhoa"></p>
                     <h6>Chức năng</h6>

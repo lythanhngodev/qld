@@ -2,11 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1adc70ce-3879-4dd5-a3c9-3a6de5ce998f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/GiaoVien/menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/GiaoVien/menu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GiaoVien/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/GiaoVien/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/images/header.png" beforeDir="false" afterPath="$PROJECT_DIR$/Login/images/header.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Login/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PhongDaoTao/menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/PhongDaoTao/menu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QuanTri/menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/QuanTri/menu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SinhVien/menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/SinhVien/menu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_l_config.php" beforeDir="false" afterPath="$PROJECT_DIR$/_l_config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QuanTri/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/QuanTri/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SinhVien/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/SinhVien/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/header.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/header.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/header.psd" beforeDir="false" afterPath="$PROJECT_DIR$/images/header.psd" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -42,6 +46,13 @@
         <item name="SA: schema" type="ac44c5e0:OracleImplModel$Schema" />
         <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@desktop-84pbfhu" type="feb32156:DbDataSourceImpl" />
+        <item name="SA: schema" type="ac44c5e0:OracleImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="KHOACM: table" type="be4db629:OracleImplModel$Table" />
+      </path>
     </expand>
     <select />
   </component>
@@ -50,17 +61,53 @@
       <file leaf-file-name="_l_config.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_l_config.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="126" column="62" selection-start-line="126" selection-start-column="62" selection-end-line="126" selection-end-column="62" />
+            <state relative-caret-position="2125">
+              <caret line="125" column="62" selection-start-line="125" selection-start-column="62" selection-end-line="125" selection-end-column="62" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_doimatkhau.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="_doimatkhau.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Login/_doimatkhau.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="306">
-              <caret line="18" column="18" lean-forward="true" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+              <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CTDAOTAO" pinned="false" current-in-tab="false">
+        <entry file="das://c63c0dc6-36b2-4ba9-b7fe-378ddc1ba968/schema/SA/table/CTDAOTAO">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GV" pinned="false" current-in-tab="false">
+        <entry file="das://c63c0dc6-36b2-4ba9-b7fe-378ddc1ba968/schema/SA/table/GV">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SV" pinned="false" current-in-tab="false">
+        <entry file="das://c63c0dc6-36b2-4ba9-b7fe-378ddc1ba968/schema/SA/table/SV">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KHOACM" pinned="false" current-in-tab="true">
+        <entry file="das://c63c0dc6-36b2-4ba9-b7fe-378ddc1ba968/schema/SA/table/KHOACM">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
@@ -161,7 +208,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -178,6 +224,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -245,29 +292,32 @@
       <workItem from="1529190392045" duration="1298000" />
       <workItem from="1529210623158" duration="10250000" />
       <workItem from="1529224971233" duration="1425000" />
-      <workItem from="1529288428546" duration="479000" />
+      <workItem from="1529288428546" duration="1075000" />
+      <workItem from="1529319636141" duration="140000" />
+      <workItem from="1529320814393" duration="344000" />
+      <workItem from="1529330381811" duration="44000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="176548000" />
+    <option name="totallyTimeSpent" value="177672000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15204236" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
-      <window_info anchor="right" id="Database" order="3" weight="0.3161876" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32838285" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Database Console" order="11" visible="true" weight="0.339934" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.15431164" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info active="true" anchor="right" id="Database" order="3" visible="true" weight="0.3161876" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -275,19 +325,18 @@
       <window_info anchor="bottom" id="SQL Generator" order="13" weight="0.32838285" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Database Console" order="11" weight="0.339934" />
       <window_info anchor="bottom" id="Find" order="1" />
     </layout>
     <layout-to-restore>
       <window_info active="true" anchor="bottom" id="Database Console" order="11" visible="true" weight="0.24422443" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="0" weight="0.20121029" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="SQL Generator" order="13" weight="0.32838285" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -295,7 +344,7 @@
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32838285" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
@@ -320,20 +369,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/GiaoVien/covanhoctap.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1156">
-          <caret line="68" column="39" selection-start-line="68" selection-start-column="39" selection-end-line="68" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GiaoVien/chitietlop.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1377">
-          <caret line="81" column="39" selection-start-line="81" selection-start-column="39" selection-end-line="81" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SinhVien/doimatkhau.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
@@ -383,13 +418,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://c63c0dc6-36b2-4ba9-b7fe-378ddc1ba968/schema/SA/table/CTDAOTAO">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/QuanTri/ajax_them_chi_tiet_dao_tao.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -415,13 +443,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://c63c0dc6-36b2-4ba9-b7fe-378ddc1ba968/schema/SA/table/GV">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -651,15 +672,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/_l_config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="126" column="62" selection-start-line="126" selection-start-column="62" selection-end-line="126" selection-end-column="62" />
+        <state relative-caret-position="2125">
+          <caret line="125" column="62" selection-start-line="125" selection-start-column="62" selection-end-line="125" selection-end-column="62" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Login/_doimatkhau.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
-          <caret line="18" column="18" lean-forward="true" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+          <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://c63c0dc6-36b2-4ba9-b7fe-378ddc1ba968/schema/SA/table/CTDAOTAO">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://c63c0dc6-36b2-4ba9-b7fe-378ddc1ba968/schema/SA/table/GV">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://c63c0dc6-36b2-4ba9-b7fe-378ddc1ba968/schema/SA/table/SV">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://c63c0dc6-36b2-4ba9-b7fe-378ddc1ba968/schema/SA/table/KHOACM">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>

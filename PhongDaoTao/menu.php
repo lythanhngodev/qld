@@ -11,7 +11,7 @@
                     Điểm
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a id="nhapdiemlophocphan" class="dropdown-item" href="nhapdiemlophocphan.php">Nhập điểm lớp học phần</a>s
+                    <a id="nhapdiemlophocphan" class="dropdown-item" href="nhapdiemlophocphan.php">Nhập điểm lớp học phần</a>
                     <a id="tonghopketqua" class="dropdown-item" href="tonghopketqua.php">Tổng hợp kết quả học tập</a>
                 </div>
             </li>
