@@ -25,7 +25,7 @@ oci_free_statement($p_sqlk);
         <th>Giáo viên giảng dạy:</th>
         <td><?php echo $thongtin['HOTENGV'] ?></td>
         <th>Học kỳ:</th>
-        <td><?php echo $thongtin['TENHK']." - ".$thongtin['NAMHOC'] ?></td>
+        <td><?php echo $thongtin['TENHK']." , ".$thongtin['NAMHOC'] ?></td>
     </tr>
 </table>
 <table id="bangsv" class="table table-bordered table-hover table-striped" style="width: 100%;">

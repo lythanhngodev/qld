@@ -91,7 +91,7 @@ if (isset($_SESSION['us']) && isset($_SESSION['pa']) && !empty($_SESSION['us']) 
 </head>
 <body>
     <header style="width: 100%; float: left;top:0;">
-        <img src="images/headerlg.png" style="width: 100%;box-shadow: 0px 0px 4px 1px #676767;">
+        <img src="images/header.png" style="width: 100%;box-shadow: 0px 0px 4px 1px #676767;">
     </header>
     <form class="" method="post">
         <div style="background-image: url('images/img-01.png');width: 80px;height: 80px;float: left;background-size: cover;background-position: center;margin-right: 10px;margin-top: 10px;"></div>

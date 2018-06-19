@@ -49,7 +49,7 @@
                         <option value="">---- Chọn học kỳ - năm học ---</option>
                     <?php $hk = lay_hoc_ky();
                     while ($row = oci_fetch_assoc($hk)) {
-                         echo "<option value='".$row['IDHK']."'>".$row['TENHK']." - ".$row['NAMHOC']."</option>";
+                         echo "<option value='".$row['IDHK']."'>".$row['TENHK'].", ".$row['NAMHOC']."</option>";
                      } ?>
                     </select>            
                 </div>
