@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1adc70ce-3879-4dd5-a3c9-3a6de5ce998f" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/images/headerlg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Login/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhongDaoTao/giaovien.php" beforeDir="false" afterPath="$PROJECT_DIR$/PhongDaoTao/giaovien.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhongDaoTao/lophocphan.php" beforeDir="false" afterPath="$PROJECT_DIR$/PhongDaoTao/lophocphan.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -42,13 +38,6 @@
         <item name="SA: schema" type="ac44c5e0:OracleImplModel$Schema" />
         <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@desktop-84pbfhu" type="feb32156:DbDataSourceImpl" />
-        <item name="SA: schema" type="ac44c5e0:OracleImplModel$Schema" />
-        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="CBPDT: table" type="be4db629:OracleImplModel$Table" />
-      </path>
     </expand>
     <select />
   </component>
@@ -81,7 +70,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GV" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GV" pinned="false" current-in-tab="true">
         <entry file="das://c63c0dc6-36b2-4ba9-b7fe-378ddc1ba968/schema/SA/table/GV">
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state>
@@ -117,8 +106,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CBPDT" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CBPDT" pinned="false" current-in-tab="false">
         <entry file="das://c63c0dc6-36b2-4ba9-b7fe-378ddc1ba968/schema/SA/table/CBPDT">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PHIEUDK" pinned="false" current-in-tab="false">
+        <entry file="das://c63c0dc6-36b2-4ba9-b7fe-378ddc1ba968/schema/SA/table/PHIEUDK">
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state>
               <filtering enabled="true" />
@@ -312,11 +310,14 @@
       <workItem from="1529330381811" duration="44000" />
       <workItem from="1529381283826" duration="1138000" />
       <workItem from="1529399297766" duration="632000" />
+      <workItem from="1529564479093" duration="607000" />
+      <workItem from="1529568486394" duration="249000" />
+      <workItem from="1529574204429" duration="448000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="179442000" />
+    <option name="totallyTimeSpent" value="180746000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -347,12 +348,12 @@
       <window_info active="true" anchor="bottom" id="Database Console" order="11" visible="true" weight="0.24422443" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="0" weight="0.20121029" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="SQL Generator" order="13" weight="0.32838285" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -360,7 +361,7 @@
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32838285" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
@@ -385,13 +386,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/QuanTri/khoachuyenmon.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="90" column="33" selection-end-line="330" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PhongDaoTao/footer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -693,13 +687,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://c63c0dc6-36b2-4ba9-b7fe-378ddc1ba968/schema/SA/table/GV">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://c63c0dc6-36b2-4ba9-b7fe-378ddc1ba968/schema/SA/table/SV">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -722,6 +709,20 @@
       </provider>
     </entry>
     <entry file="das://c63c0dc6-36b2-4ba9-b7fe-378ddc1ba968/schema/SA/table/CBPDT">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://c63c0dc6-36b2-4ba9-b7fe-378ddc1ba968/schema/SA/table/PHIEUDK">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://c63c0dc6-36b2-4ba9-b7fe-378ddc1ba968/schema/SA/table/GV">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
