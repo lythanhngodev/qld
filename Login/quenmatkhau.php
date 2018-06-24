@@ -44,6 +44,9 @@
             </span>
             <p style="float:  left;width: 210px;color: #f00;">Nhập địa chỉ mail của bạn, chúng tôi sẽ gửi mật khẩu mới cho bạn</p>
         <input class="nhap" id="dcmail" type="text" placeholder="Nhập mail">
+        <div style="float: right;margin-right: 7px;margin-top: 13px;font-family:  sans-serif;font-size: 13px;margin-left: 10px;"><a class="txt2" href="index.php">
+                Quay lại đăng nhập
+            </a></div>
         <button id="gui" style="float: right;width: 60px;padding: 2px 0px;margin-top: 10px;font-size: 12px;">
             Gửi
         </button>

@@ -4,6 +4,8 @@
 <html>
 <head>
 	<?php require_once "head.php"; ?>
+    <script src="../ckeditor/ckeditor.js"></script>
+    <script src="../ckfinder/ckfinder.js"></script> 
 </head>
 <body>
 	<?php require_once "menu.php"; ?>
@@ -43,8 +45,8 @@
                                 <td><?php echo $row['MAKHOA'] ?></td>
                                 <td><?php echo $row['TENKHOA'] ?></td>
                                 <td><?php echo $row['SDTKHOA'] ?></td>
-                                <td hidden="hidden"><?php echo $row['CHUCNANG'] ?></td>
-                                <td hidden="hidden"><?php echo $row['NHIEMVU'] ?></td>
+                                <td hidden="hidden"><textarea><?php echo $row['CHUCNANG'] ?></textarea></td>
+                                <td hidden="hidden"><textarea><?php echo $row['NHIEMVU'] ?></textarea></td>
                                 <td><button class="btn btn-default btn-sm xemchitiet">Thông tin</button>&ensp;<button class="btn btn-primary btn-sm sua" lydata="<?php echo $row['IDKHOA'] ?>">Sửa</button>&ensp;<button class="btn btn-danger btn-sm xoa" lydata="<?php echo $row['IDKHOA'] ?>">Xóa</button></td>
                             </tr>
                         <?php $stt++; } ?>
@@ -56,7 +58,7 @@
 <?php include_once "footer.php"; ?>
 <!-- Thêm -->
 <div class="modal fade" id="themkhoa" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLongTitle">Thêm khoa</h5>
@@ -96,7 +98,7 @@
 
 <!-- Sửa -->
 <div class="modal fade" id="suakhoa" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLongTitle">Sửa khoa</h5>
@@ -136,7 +138,7 @@
 
 <!-- xem chi tiet -->
 <div class="modal fade" id="xemchitiet" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLongTitle">Thông tin</h5>
@@ -197,10 +199,40 @@
 </div>
 
 
+<script type="text/javascript">
+    CKEDITOR.replace( 'cn', {
+      filebrowserBrowseUrl : '../ckfinder/ckfinder.html',
+      filebrowserImageBrowseUrl : '../ckfinder/ckfinder.html?type=Images',
+      filebrowserFlashBrowseUrl : '../ckfinder/ckfinder.html?type=Flash',
+      filebrowserImageUploadUrl : '../ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+      filebrowserFlashUploadUrl : '../ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash'
+    });
+    CKEDITOR.replace( 'nv', {
+      filebrowserBrowseUrl : '../ckfinder/ckfinder.html',
+      filebrowserImageBrowseUrl : '../ckfinder/ckfinder.html?type=Images',
+      filebrowserFlashBrowseUrl : '../ckfinder/ckfinder.html?type=Flash',
+      filebrowserImageUploadUrl : '../ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+      filebrowserFlashUploadUrl : '../ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash'
+    });
+</script>
 <link rel="stylesheet" type="text/css" href="../css/datatables.min.css">
 <script src="../js/datatables.min.js" type="text/javascript"></script>
 <script src="../js/bootstrap.min.js" type="text/javascript"></script>
     <script type="text/javascript">
+        function lamrong(){
+    if (typeof CKEDITOR != 'undefined') {
+        $('form').on('reset', function(e) {
+            if ($(CKEDITOR.instances).length) {
+                for (var key in CKEDITOR.instances) {
+                    var instance = CKEDITOR.instances[key];
+                    if ($(instance.element.$).closest('form').attr('name') == $(e.target).attr('name')) {
+                        instance.setData(instance.element.$.defaultValue);
+                    }
+                }
+            }
+        });
+    }
+        }
         $(document).ready(function() {
             $('body .dropdown-toggle').dropdown();
             $('#daotao').addClass('active');
@@ -221,8 +253,8 @@
 	                    mk: $('#mk').val().trim(),
 	                    tk: $('#tk').val().trim(),
                         sdtk: $('#sdtk').val().trim(),
-                        cn: $('#cn').val().trim(),
-                        nv: $('#nv').val().trim()
+                        cn: CKEDITOR.instances['cn'].getData(),
+                        nv: CKEDITOR.instances['nv'].getData()
                     },
 	                success: function (data) {
 	                    var mang = $.parseJSON(data);
@@ -242,13 +274,29 @@
 	            });
            });
             $('.sua').on('click',function(){
+                $('#scn').html('');
+                $('#snv').html('');
                 $('#smk').val($(this).parent('td').parent('tr').find('td:nth-child(2)').text().trim());
                 $('#stk').val($(this).parent('td').parent('tr').find('td:nth-child(3)').text().trim());
                 $('#ssdtk').val($(this).parent('td').parent('tr').find('td:nth-child(4)').text().trim());
-                $('#scn').val($(this).parent('td').parent('tr').find('td:nth-child(5)').text().trim());
-                $('#snv').val($(this).parent('td').parent('tr').find('td:nth-child(6)').text().trim());
                 id = $(this).attr('lydata');
                 $('#suakhoa').modal('show');
+                $('#scn').html($(this).parent('td').parent('tr').find('td:nth-child(5) textarea').html());
+                $('#snv').html($(this).parent('td').parent('tr').find('td:nth-child(6) textarea').html());
+                CKEDITOR.replace( 'scn', {
+                  filebrowserBrowseUrl : '../ckfinder/ckfinder.html',
+                  filebrowserImageBrowseUrl : '../ckfinder/ckfinder.html?type=Images',
+                  filebrowserFlashBrowseUrl : '../ckfinder/ckfinder.html?type=Flash',
+                  filebrowserImageUploadUrl : '../ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+                  filebrowserFlashUploadUrl : '../ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash'
+                });
+                CKEDITOR.replace( 'snv', {
+                  filebrowserBrowseUrl : '../ckfinder/ckfinder.html',
+                  filebrowserImageBrowseUrl : '../ckfinder/ckfinder.html?type=Images',
+                  filebrowserFlashBrowseUrl : '../ckfinder/ckfinder.html?type=Flash',
+                  filebrowserImageUploadUrl : '../ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+                  filebrowserFlashUploadUrl : '../ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash'
+                });
             });
             $('#btsuakhoa').on('click',function(){
                 if(!$('#stk').val().trim()){
@@ -264,8 +312,8 @@
                         mk: $('#smk').val().trim(),
                         tk: $('#stk').val().trim(),
                         sdtk: $('#ssdtk').val().trim(),
-                        cn: $('#scn').val().trim(),
-                        nv: $('#snv').val().trim(),
+                        cn: CKEDITOR.instances['scn'].getData(),
+                        nv: CKEDITOR.instances['snv'].getData(),
                         id: id
                     },
                     success: function (data) {
@@ -325,6 +373,16 @@
             });
         } );
 
+    </script>
+    <script type="text/javascript">
+        $('#suakhoa').on('hidden.bs.modal', function () {
+            for(name in CKEDITOR.instances)
+            {
+                if (name != 'cn' && name != 'nv') {
+                    CKEDITOR.instances[name].destroy(true);
+                }
+            }
+        });
     </script>
     <script src="../js/bootstrap-notify.min.js"></script>
 </body>

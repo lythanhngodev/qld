@@ -3,29 +3,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<?php require_once "head.php"; ?>
+    <?php require_once "head.php"; ?>
+    <script type="text/javascript" src="../js/popper.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap-select.min.css">
 </head>
 <body>
-	<?php require_once "menu.php"; ?>
-	<br>
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-12">
-				<div id="thongbao">
-				</div>	
-			</div>
-			<div class="col-md-12">
-				<h5>Lớp chuyên ngành</h5>
-				<hr>
-			</div>	
-		</div>
-		<div class="row">
-			<div class="col-12">
-				<button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#themlop">Thêm lớp</button>
-				<br><br>
+    <?php require_once "menu.php"; ?>
+    <br>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div id="thongbao">
+                </div>  
+            </div>
+            <div class="col-md-12">
+                <h5>Lớp chuyên ngành</h5>
+                <hr>
+            </div>  
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#themlop">Thêm lớp</button>
+                <br><br>
                 <table id="banglhp" class="table table-bordered table-hover table-striped">
                     <thead>
-                    	<tr style="text-align: center;">
+                        <tr style="text-align: center;">
                             <th>STT</th>
                             <th>Mã lớp</th>
                             <th>Tên lớp</th>
@@ -38,8 +40,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                    	<?php $lop = lay_lop(); $stt = 1;
-                    	while ($row = oci_fetch_assoc($lop)){ ?>
+                        <?php $lop = lay_lop(); $stt = 1;
+                        while ($row = oci_fetch_assoc($lop)){ ?>
                             <tr>
                                 <th><?php echo $stt; ?></th>
                                 <td><?php echo $row['MALOP'] ?></td>
@@ -54,9 +56,9 @@
                         <?php $stt++; } ?>
                     </tbody>
                     </table>
-			</div>
-		</div>
-	</div>
+            </div>
+        </div>
+    </div>
 <?php include_once "footer.php"; ?>
 <!-- Thêm -->
 <div class="modal fade" id="themlop" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -95,7 +97,7 @@
             </div>
             <div class="form-group">
                 <label for="recipient-name" class="col-form-label">Đơn vị quản lý</label>
-                <select class="form-control chonkhoa" id="kl">
+                <select class="form-control selectpicker chonkhoa" data-live-search="true" id="kl">
                     <option value="">--- Chọn khoa ---</option>
                 <?php $khoa = lay_khoa_chuyen_mon();
                 while ($row = oci_fetch_assoc($khoa)) {
@@ -105,7 +107,7 @@
             </div> 
             <div class="form-group">
                 <label for="recipient-name" class="col-form-label">Cố vấn học tập</label>
-                <select class="form-control choncovan" id="cvhtl">
+                <select class="form-control selectpicker choncovan" data-live-search="true" id="cvhtl">
                     <option value="">--- Chọn giáo viên cố vấn ---</option>
                 <?php $gv = lay_giao_vien();
                 while ($row = oci_fetch_assoc($gv)) {
@@ -173,7 +175,7 @@
             </div>
             <div class="form-group">
                 <label for="recipient-name" class="col-form-label">Đơn vị quản lý</label>
-                <select class="form-control chonkhoa" id="skl">
+                <select class="form-control selectpicker chonkhoa" data-live-search="true" id="skl">
                     <option value="">--- Chọn khoa ---</option>
                 <?php $khoa = lay_khoa_chuyen_mon();
                 while ($row = oci_fetch_assoc($khoa)) {
@@ -183,7 +185,7 @@
             </div> 
             <div class="form-group">
                 <label for="recipient-name" class="col-form-label">Cố vấn học tập</label>
-                <select class="form-control choncovan" id="scvhtl">
+                <select class="form-control selectpicker choncovan" data-live-search="true" id="scvhtl">
                     <option value="">--- Chọn giáo viên cố vấn ---</option>
                 <?php $gv = lay_giao_vien();
                 while ($row = oci_fetch_assoc($gv)) {
@@ -252,12 +254,12 @@
                 "scrollX": true
             });
             $('#btthemlop').on('click',function(){
-            	if(!$('#ml').val().trim()){
-            		alert('Nhập mã lớp');return;
-            	}
-            	if(!$('#tl').val().trim()){
-            		alert('Nhập tên lớp');return;
-            	}
+                if(!$('#ml').val().trim()){
+                    alert('Nhập mã lớp');return;
+                }
+                if(!$('#tl').val().trim()){
+                    alert('Nhập tên lớp');return;
+                }
                 if(!$('#dtl').val().trim()){
                     alert('Chọn chương trình đào tạo');return;
                 }
@@ -273,41 +275,41 @@
                 if(!$('#khl').val().trim()){
                     alert('Nhập khóa học');return;
                 }
-	            $.ajax({
-	                url: 'ajax_them_lop.php',
-	                type: 'POST',
-	                data: {
-	                    ml: $('#ml').val().trim(),
-	                    tl: $('#tl').val().trim(),
+                $.ajax({
+                    url: 'ajax_them_lop.php',
+                    type: 'POST',
+                    data: {
+                        ml: $('#ml').val().trim(),
+                        tl: $('#tl').val().trim(),
                         dtl: $('#dtl').val().trim(),
                         kl: $('#kl').val().trim(),
                         cvhtl: $('#cvhtl').val().trim(),
                         ntsl: ($.isNumeric($('#ntsl').val().trim()))?$('#ntsl').val().trim():0,
                         khl: ($.isNumeric($('#khl').val().trim()))?$('#khl').val().trim():0
                     },
-	                success: function (data) {
-	                    var mang = $.parseJSON(data);
-	                    if(mang.trangthai==1){
-	                        thanhcong('Đã lưu lớp');
+                    success: function (data) {
+                        var mang = $.parseJSON(data);
+                        if(mang.trangthai==1){
+                            thanhcong('Đã lưu lớp');
                             setTimeout(function () {
                                 window.location.reload(true);
                             },800);
-	                    }
-	                    else{
-	                    	khongthanhcong(mang.thongbao);
-	                    }
-	                },
-	                error: function () {
-	                    khongthanhcong('Xảy ra lỗi! Vui lòng thử lại');
-	                }
-	            });
+                        }
+                        else{
+                            khongthanhcong(mang.thongbao);
+                        }
+                    },
+                    error: function () {
+                        khongthanhcong('Xảy ra lỗi! Vui lòng thử lại');
+                    }
+                });
            });
             $('.sua').on('click',function(){
                 $('#sml').val($(this).parent('td').parent('tr').find('td:nth-child(2)').text().trim());
                 $('#stl').val($(this).parent('td').parent('tr').find('td:nth-child(3)').text().trim());
                 $('#sdtl').val($(this).parent('td').parent('tr').find('td:nth-child(4)').attr('lydata'));
-                $('#skl').val($(this).parent('td').parent('tr').find('td:nth-child(5)').attr('lydata'));
-                $('#scvhtl').val($(this).parent('td').parent('tr').find('td:nth-child(6)').attr('lydata'));
+                $('#skl').val($(this).parent('td').parent('tr').find('td:nth-child(5)').attr('lydata')).change();
+                $('#scvhtl').val($(this).parent('td').parent('tr').find('td:nth-child(6)').attr('lydata')).change();
                 $('#sntsl').val($(this).parent('td').parent('tr').find('td:nth-child(7)').text().trim());
                 $('#skhl').val($(this).parent('td').parent('tr').find('td:nth-child(8)').text().trim());
                 id = $(this).attr('lydata');
@@ -399,5 +401,6 @@
 
     </script>
     <script src="../js/bootstrap-notify.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap-select.min.js"></script>
 </body>
 </html>
