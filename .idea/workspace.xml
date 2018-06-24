@@ -3,6 +3,24 @@
   <component name="ChangeListManager">
     <list default="true" id="1adc70ce-3879-4dd5-a3c9-3a6de5ce998f" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GiaoVien/ajax_doi_mat_khau.php" beforeDir="false" afterPath="$PROJECT_DIR$/GiaoVien/ajax_doi_mat_khau.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GiaoVien/doimatkhau.php" beforeDir="false" afterPath="$PROJECT_DIR$/GiaoVien/doimatkhau.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GiaoVien/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/GiaoVien/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Login/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/quenmatkhau.php" beforeDir="false" afterPath="$PROJECT_DIR$/Login/quenmatkhau.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PhongDaoTao/ajax_doi_mat_khau.php" beforeDir="false" afterPath="$PROJECT_DIR$/PhongDaoTao/ajax_doi_mat_khau.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PhongDaoTao/chitietdaotao.php" beforeDir="false" afterPath="$PROJECT_DIR$/PhongDaoTao/chitietdaotao.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PhongDaoTao/doimatkhau.php" beforeDir="false" afterPath="$PROJECT_DIR$/PhongDaoTao/doimatkhau.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PhongDaoTao/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/PhongDaoTao/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QuanTri/ajax_doi_mat_khau.php" beforeDir="false" afterPath="$PROJECT_DIR$/QuanTri/ajax_doi_mat_khau.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QuanTri/ajax_xu_ly_sinh_vien.php" beforeDir="false" afterPath="$PROJECT_DIR$/QuanTri/ajax_xu_ly_sinh_vien.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QuanTri/chitietdaotao.php" beforeDir="false" afterPath="$PROJECT_DIR$/QuanTri/chitietdaotao.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QuanTri/doimatkhau.php" beforeDir="false" afterPath="$PROJECT_DIR$/QuanTri/doimatkhau.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QuanTri/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/QuanTri/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QuanTri/sinhvien.php" beforeDir="false" afterPath="$PROJECT_DIR$/QuanTri/sinhvien.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SinhVien/ajax_doi_mat_khau.php" beforeDir="false" afterPath="$PROJECT_DIR$/SinhVien/ajax_doi_mat_khau.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SinhVien/doimatkhau.php" beforeDir="false" afterPath="$PROJECT_DIR$/SinhVien/doimatkhau.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SinhVien/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/SinhVien/footer.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -38,20 +56,18 @@
         <item name="SA: schema" type="ac44c5e0:OracleImplModel$Schema" />
         <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@desktop-84pbfhu" type="feb32156:DbDataSourceImpl" />
+        <item name="SA: schema" type="ac44c5e0:OracleImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="SV: table" type="be4db629:OracleImplModel$Table" />
+      </path>
     </expand>
     <select />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="_l_config.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_l_config.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2125">
-              <caret line="125" column="62" selection-start-line="125" selection-start-column="62" selection-end-line="125" selection-end-column="62" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="_doimatkhau.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Login/_doimatkhau.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -84,6 +100,24 @@
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state>
               <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ajax_sua_sinh_vien.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/QuanTri/ajax_sua_sinh_vien.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="30" column="54" selection-start-line="30" selection-start-column="54" selection-end-line="30" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sinhvien.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/QuanTri/sinhvien.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="239">
+              <caret line="243" column="52" selection-start-line="243" selection-start-column="52" selection-end-line="243" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -132,7 +166,7 @@
       <find>14005002</find>
       <find>14003097</find>
       <find>1427</find>
-      <find>hoàng anh</find>
+      <find />
       <find>14004004</find>
       <find>140040</find>
       <find>1403</find>
@@ -146,8 +180,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/c63c0dc6-36b2-4ba9-b7fe-378ddc1ba968/console_5.sql" />
-        <option value="$PROJECT_DIR$/PhongDaoTao/sinhvien.php" />
         <option value="$PROJECT_DIR$/PhongDaoTao/ajax_import_file_sinh_vien.php" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/c63c0dc6-36b2-4ba9-b7fe-378ddc1ba968/console_7.sql" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/c63c0dc6-36b2-4ba9-b7fe-378ddc1ba968/console_6.sql" />
@@ -197,6 +229,8 @@
         <option value="$PROJECT_DIR$/Login/index.php" />
         <option value="$PROJECT_DIR$/_l_config.php" />
         <option value="$PROJECT_DIR$/Login/_doimatkhau.php" />
+        <option value="$PROJECT_DIR$/QuanTri/ajax_sua_sinh_vien.php" />
+        <option value="$PROJECT_DIR$/QuanTri/sinhvien.php" />
       </list>
     </option>
   </component>
@@ -220,6 +254,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -230,13 +265,12 @@
             <path>
               <item name="qld" type="b2602c69:ProjectViewProjectNode" />
               <item name="qld" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Login" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="QuanTri" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -313,14 +347,17 @@
       <workItem from="1529564479093" duration="607000" />
       <workItem from="1529568486394" duration="249000" />
       <workItem from="1529574204429" duration="448000" />
+      <workItem from="1529806909101" duration="2700000" />
+      <workItem from="1529813205028" duration="795000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="180746000" />
+    <option name="totallyTimeSpent" value="184241000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
@@ -328,10 +365,10 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32838285" />
-      <window_info active="true" anchor="bottom" id="Database Console" order="11" visible="true" weight="0.339934" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.15431164" />
+      <window_info anchor="bottom" id="Database Console" order="11" weight="0.339934" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.15355521" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.3161876" />
+      <window_info active="true" anchor="right" id="Database" order="3" visible="true" weight="0.3161876" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -386,20 +423,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/PhongDaoTao/footer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="9" lean-forward="true" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/QuanTri/lop.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="36" column="53" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PhongDaoTao/_l_function.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -687,13 +710,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://c63c0dc6-36b2-4ba9-b7fe-378ddc1ba968/schema/SA/table/SV">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://c63c0dc6-36b2-4ba9-b7fe-378ddc1ba968/schema/SA/table/KHOACM">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -708,6 +724,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="das://c63c0dc6-36b2-4ba9-b7fe-378ddc1ba968/schema/SA/table/PHIEUDK">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
     <entry file="das://c63c0dc6-36b2-4ba9-b7fe-378ddc1ba968/schema/SA/table/CBPDT">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -715,7 +738,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://c63c0dc6-36b2-4ba9-b7fe-378ddc1ba968/schema/SA/table/PHIEUDK">
+    <entry file="file://$PROJECT_DIR$/QuanTri/ajax_sua_sinh_vien.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="54" selection-start-line="30" selection-start-column="54" selection-end-line="30" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/QuanTri/sinhvien.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="243" column="52" selection-start-line="243" selection-start-column="52" selection-end-line="243" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://c63c0dc6-36b2-4ba9-b7fe-378ddc1ba968/schema/SA/table/SV">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />

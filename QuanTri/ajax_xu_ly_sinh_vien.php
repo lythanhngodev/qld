@@ -1,4 +1,3 @@
-<?php sleep(2) ?>
 <?php require_once "check_login.php"; ?>
 <?php require_once "_l_function.php"; ?>
 <?php if (!isset($_POST['id']) || empty($_POST['id']) || intval($_POST['id']) == 0) {

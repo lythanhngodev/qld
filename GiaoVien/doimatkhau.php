@@ -19,6 +19,13 @@
 			</div>	
 		</div>
 		<div class="row">
+			<div class="col-md-12">
+			  <div class="form-group">
+			    <label for="tags">Mật khẩu hiện tại</label>
+			    <input type="password" class="form-control col-6" id="mkht">
+                  <small id="loimkht" class="form-text text-danger"></small>
+			  </div>
+			</div>
 			<div class="col-md-6">
 			  <div class="form-group">
 			    <label for="tags">Mật khẩu mới</label>
@@ -41,13 +48,17 @@
 			</div>
 		</div>
 	</div>
-    <?php include_once "footer.php"; ?>
 <script type="text/javascript">
 	$(document).ready(function(){
 		$('#taikhoan').addClass('active');
 		$('#luu').on('click', function(){
+			var mkht = $('#mkht').val().trim();
 		    var mk1 = $('#mk1').val().trim();
 		    var mk2 = $('#mk2').val().trim();
+		    if(!mkht){
+		    	$('#loimkht').html('Không được bỏ trống');
+		    	return;
+		    } 
 		    if(!mk1){
 		    	$('#loimk1').html('Không được bỏ trống');
 		    	return;
@@ -73,8 +84,8 @@
                 url: 'ajax_doi_mat_khau.php',
                 type: 'POST',
                 data: {
-                    mk: mk1,
-                    id: '<?php echo $idgv; ?>'
+                	mkht : mkht,
+                    mk: mk1
                 },
                 success: function (data) {
                     var mang = $.parseJSON(data);
@@ -82,7 +93,7 @@
                         $('#thongbao').html('<div class="alert alert-success alert-dismissible fade show" role="alert"><strong>Đã lưu!</strong> Đã lưu thông tin<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
                     }
                     else{
-                        $('#thongbao').html('<div class="alert alert-success alert-dismissible fade show" role="alert"><strong>Không lưu!</strong> Kiểm tra lại thông tin<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+                        $('#thongbao').html('<div class="alert alert-danger alert-dismissible fade show" role="alert"><strong>Không lưu!</strong> Kiểm tra lại thông tin<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
                     }
                 },
                 error: function () {

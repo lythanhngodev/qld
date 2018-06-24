@@ -370,7 +370,7 @@
             form_data.append('kct',$('#skct').val().trim());
             form_data.append('shpct',($.isNumeric($('#sshpct').val().trim()))?$('#sshpct').val().trim():0);
             form_data.append('stcct',($.isNumeric($('#sstcct').val().trim()))?$('#sstcct').val().trim():0);
-            form_data.append('gcct',$('#gcct').val().trim());
+            form_data.append('gcct',$('#sgcct').val().trim());
             form_data.append('id',id);
             $.ajax({
                 url: 'ajax_sua_chi_tiet_dao_tao.php',

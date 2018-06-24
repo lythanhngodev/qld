@@ -48,6 +48,7 @@
             Gửi
         </button>
     </div>
+<?php include_once "footer.php"; ?>
 <div style="position: fixed;margin-bottom: 0;left: 0;right:0;bottom: 0;height: 20px;width: 100%;background: #232323;color: #adadad;line-height:  20px;font-size: 85%;padding-left: 1rem;font-family:  monospace;">© Copyright of Nguyễn Ngọc Yến Linh (Faculty of Information Technology 2014)</div>
 </body>
 <script type="text/javascript" src="jquery-3.3.1.min.js"></script>

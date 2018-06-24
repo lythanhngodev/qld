@@ -5,14 +5,16 @@ $kq = array(
 );
 	$conn = $ketnoi->ketnoi();
 	$mk = $_POST['mk'];
-	$id = $_POST['id'];
-    if (empty($mk)) {
+    $mkht = $_POST['mkht'];
+	$id = $idnqt;
+    if (empty($mk) || empty($mkht) || $mkht!=$_SESSION['pa']) {
         echo json_encode($kq);
         exit();
     }
 	$sql = "UPDATE NQT SET MATKHAU=:mk WHERE IDNQT = :id";
 	$p_sql = oci_parse($conn, $sql);
     $mk = md5($mk);
+    $mkht = md5($mkht);
 	oci_bind_by_name($p_sql, ":mk", $mk);
     oci_bind_by_name($p_sql, ":id",$id);
     oci_execute($p_sql);

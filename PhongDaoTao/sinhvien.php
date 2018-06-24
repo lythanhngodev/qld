@@ -77,6 +77,55 @@
 		</div>
 	</div>
     <?php include_once "footer.php"; ?>
+
+<!-- Sửa -->
+<div class="modal fade" id="suasinhvien" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Sửa sinh viên</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Mã sinh viên</label>
+            <input type="text" class="form-control" id="smsv">
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Tên sinh viên</label>
+            <input type="text" class="form-control" id="stsv">
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Ngày sinh sinh viên</label>
+            <input type="date" class="form-control" id="snssv">
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Giới tính sinh viên</label>
+            <select class="form-control" id="sgtsv">
+                <option value="Nam">Nam</option>
+                <option value="Nữ">Nữ</option>
+                <option value="Khác">Khác</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Mail sinh viên</label>
+            <input type="text" class="form-control" id="smailsv">
+          </div>
+          <div class="form-group">
+            <label for="tags" class="col-form-label">Quê quán sinh viên</label>
+            <input type="text" class="form-control" id="sqqsv">
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+        <button type="button" class="btn btn-primary" id="btsuasinhvien">Lưu</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <link rel="stylesheet" type="text/css" href="../css/datatables.min.css">
 <script src="../js/datatables.min.js" type="text/javascript"></script>
 <script src="../js/bootstrap.min.js" type="text/javascript"></script>
@@ -88,6 +137,7 @@
         }
         ?>
         var _lop_ = <?php echo json_encode($lop); ?>;
+        var id=0;
         $(document).ready(function() {
             $('body .dropdown-toggle').dropdown();
             $('#sinhvien').addClass('active');
@@ -115,7 +165,7 @@
             $('#chonnganh').on('change',function(){
                 var th = $(this).val();
                 $('#chonlop option:not(:first)').remove();
-                _lop_.forEach(function (l) {
+                _lop_.map(function (l) {
                     if (th == l[3])
                         $('#chonlop').append('<option value="'+l[0]+'">'+l[7]+' - '+l[8]+'</option>'); 
                 });
@@ -147,6 +197,109 @@
                     error: function () {
                         $.notifyClose();
                         khongthanhcong('Không thể tải file');
+                    }
+                });
+            });
+            $(document).on('click','.sua',function(){
+                $('#smsv').val($(this).parent('td').parent('tr').find('td:nth-child(2)').text().trim());
+                $('#stsv').val($(this).parent('td').parent('tr').find('td:nth-child(3)').text().trim());
+                var da = $(this).parent('td').parent('tr').find('td:nth-child(4)').text().trim();
+                var _da;
+                if(!jQuery.isEmptyObject(da)){
+                    _da=da.split("-");
+                    $('#snssv').val(_da[2]+"-"+_da[1]+"-"+_da[0]);
+                }
+                $('#sgtsv').val($(this).parent('td').parent('tr').find('td:nth-child(5)').text().trim());
+                $('#smailsv').val($(this).parent('td').parent('tr').find('td:nth-child(6)').text().trim());
+                $('#sqqsv').val($(this).parent('td').parent('tr').find('td:nth-child(7)').text().trim());
+                id = $(this).attr('lydata');
+                $('#suasinhvien').modal('show');
+            });
+            $(document).on('click','#btsuasinhvien',function(){
+                var masv = $('#smsv').val();
+                var tensv = $('#stsv').val();
+                var ngaysinhsv = $('#snssv').val();
+                var gioitinhsv = $('#sgtsv').val();
+                var mailsv = $('#smailsv').val();
+                var quequansv = $('#sqqsv').val();
+                if(tensv==''){
+                    khongthanhcong('Tên sinh viên không bỏ trống');return;
+                }
+                if(masv==''){
+                    khongthanhcong('Mã sinh viên không bỏ trống');return;
+                }
+                $.ajax({
+                    url: 'ajax_sua_sinh_vien.php',
+                    type: 'POST',
+                    data: {
+                        msv: masv,
+                        tsv: tensv,
+                        nssv: ngaysinhsv,
+                        gtsv: gioitinhsv,
+                        mailsv: mailsv,
+                        qqsv: quequansv,
+                        id: id
+                    },
+                    success: function (data) {
+                        var mang = jQuery.parseJSON(data);
+                        if (mang.trangthai==1) {
+                            thanhcong('Đã sửa sinh viên');
+                            $('#suasinhvien').find('input').val('');
+                            $('#suasinhvien').modal('hide');
+                            $.ajax({
+                                url: 'ajax_xu_ly_sinh_vien.php',
+                                type: 'POST',
+                                data: {
+                                    id: $('#chonlop').val()
+                                },
+                                success: function (data) {
+                                    $('#than').html(data);
+                                },
+                                error: function () {
+                                    khongthanhcong('Xảy ra lỗi! Vui lòng thử lại');
+                                }
+                            });
+                        }
+                        else{
+                            khongthanhcong('Có lỗi, vui lòng thử lại');
+                        }
+                    },
+                    error: function () {
+                        khongthanhcong('Xảy ra lỗi! Vui lòng thử lại');
+                    }
+                });
+            });
+            $(document).on('click','.xoa',function(){
+                if(!confirm('Bạn có chắc xóa sinh viên này?')) return;
+                $.ajax({
+                    url: 'ajax_xoa_sinh_vien.php',
+                    type: 'POST',
+                    data: {
+                        id: $(this).attr('lydata')
+                    },
+                    success: function (data) {
+                        var mang = jQuery.parseJSON(data);
+                        if (mang.trangthai==1) {
+                            thanhcong('Đã xóa sinh viên');
+                            $.ajax({
+                                url: 'ajax_xu_ly_sinh_vien.php',
+                                type: 'POST',
+                                data: {
+                                    id: $('#chonlop').val()
+                                },
+                                success: function (data) {
+                                    $('#than').html(data);
+                                },
+                                error: function () {
+                                    khongthanhcong('Xảy ra lỗi! Vui lòng thử lại');
+                                }
+                            });
+                        }else{
+                            khongthanhcong('Xảy ra lỗi, vui lòng thử lại');
+                        }
+                    },
+                    error: function () {
+                        khongthanhcong('Xảy ra lỗi! Vui lòng thử lại');
                     }
                 });
             });
