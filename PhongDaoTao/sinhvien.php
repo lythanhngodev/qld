@@ -66,7 +66,7 @@
                 <div class="col-md-4">
                     <label>Nhập sinh viên</label>
                     <br>
-                    <button class="btn btn-primary btn-sm" id="nhapfile">Nhập file Excel</button><br><br>
+                    <button class="btn btn-success btn-sm" id="nhapfile">Nhập file Excel</button><br><br>
                     <input type="file" hidden="hidden" id="taptin" accept="application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
                 </div>
             <div class="col-md-12">

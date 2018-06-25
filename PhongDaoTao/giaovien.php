@@ -22,7 +22,7 @@
 		<div class="row">
 			<div class="col-12">
 				<button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#themgiaovien">Thêm giáo viên</button>&ensp;
-                <button class="btn btn-primary btn-sm" id="btnhapgiaovien" data-toggle="modal">Import từ Excel</button>
+                <button class="btn btn-primary btn-sm" id="btnhapgiaovien" data-toggle="modal">Nhập file Excel</button>
                 <input id="nhapgiaovien" hidden="hidden" type="file" name="" accept="application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
 				<br><br>
                 <div id="bangdanhsach">

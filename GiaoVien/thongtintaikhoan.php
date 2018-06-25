@@ -22,7 +22,7 @@
 			<div class="col-md-6">
 			  <div class="form-group">
 			    <label for="tags">Mã giáo viên</label>
-			    <input type="email" class="form-control" id="ma" placeholder="VD: NQT001" value="<?php echo $magv; ?>">
+			    <input type="email" class="form-control" id="ma" placeholder="VD: 331783894" value="<?php echo $magv; ?>">
                   <small id="loima" class="form-text text-danger"></small>
 			  </div>
 			</div>

@@ -21,7 +21,7 @@
 		<div class="row">
 			<div class="col-md-12">
 			  <div class="form-group">
-			    <label for="tags">Mật khẩu hiện tại</label>
+			    <label for="tags">Mật khẩu cũ</label>
 			    <input type="password" class="form-control col-6" id="mkht">
                   <small id="loimkht" class="form-text text-danger"></small>
 			  </div>

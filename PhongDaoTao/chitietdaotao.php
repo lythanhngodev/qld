@@ -63,7 +63,7 @@
                         <td style="text-align: center;"><?php echo $row['SOHOCPHAN'] ?></td>
                         <td style="text-align: center;"><?php echo $row['SOTINCHI'] ?></td>
                         <td><?php echo $row['GHICHU'] ?></td>
-                        <td><button class="btn btn-default btn-sm thongtin" lydata="<?php echo $row['FILES'] ?>">Thông tin</button>&ensp;<button class="btn btn-primary btn-sm sua" lydata="<?php echo $row['IDCTDT'] ?>">Sửa</button>&ensp;<button class="btn btn-danger btn-sm xoa" lydata="<?php echo $row['IDCTDT'] ?>">Xóa</button></td>
+                        <td><button class="btn btn-success btn-sm thongtin" lydata="<?php echo $row['FILES'] ?>">Thông tin</button>&ensp;<button class="btn btn-primary btn-sm sua" lydata="<?php echo $row['IDCTDT'] ?>">Sửa</button>&ensp;<button class="btn btn-danger btn-sm xoa" lydata="<?php echo $row['IDCTDT'] ?>">Xóa</button></td>
                     </tr>
                     <?php $stt++; } ?>
                 </tbody>

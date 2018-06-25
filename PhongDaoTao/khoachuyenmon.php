@@ -47,7 +47,7 @@
                                 <td><?php echo $row['SDTKHOA'] ?></td>
                                 <td hidden="hidden"><textarea><?php echo $row['CHUCNANG'] ?></textarea></td>
                                 <td hidden="hidden"><textarea><?php echo $row['NHIEMVU'] ?></textarea></td>
-                                <td><button class="btn btn-default btn-sm xemchitiet">Thông tin</button>&ensp;<button class="btn btn-primary btn-sm sua" lydata="<?php echo $row['IDKHOA'] ?>">Sửa</button>&ensp;<button class="btn btn-danger btn-sm xoa" lydata="<?php echo $row['IDKHOA'] ?>">Xóa</button></td>
+                                <td><button class="btn btn-success btn-sm xemchitiet">Thông tin</button>&ensp;<button class="btn btn-primary btn-sm sua" lydata="<?php echo $row['IDKHOA'] ?>">Sửa</button>&ensp;<button class="btn btn-danger btn-sm xoa" lydata="<?php echo $row['IDKHOA'] ?>">Xóa</button></td>
                             </tr>
                         <?php $stt++; } ?>
                     </tbody>

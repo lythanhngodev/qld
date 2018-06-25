@@ -22,7 +22,7 @@
 		<div class="row">
 			<div class="col-12">
 				<button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#themgiaovien">Thêm giáo viên</button>&ensp;
-                <button class="btn btn-primary btn-sm" id="btnhapgiaovien" data-toggle="modal">Import từ Excel</button>
+                <button class="btn btn-primary btn-sm" id="btnhapgiaovien" data-toggle="modal">Nhập file Excel</button>
                 <input id="nhapgiaovien" hidden="hidden" type="file" name="" accept="application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
 				<br><br>
                 <div id="bangdanhsach">
@@ -47,7 +47,7 @@
                                     <td style="text-align: left;"><?php echo $row['HOTENGV'] ?></td>
                                     <td style="text-align: left;"><?php echo $row['SDTGV'] ?></td>
                                     <td style="text-align: left;"><?php echo $row['EMAILGV'] ?></td>
-                                    <td lydata="<?php echo $row['IDKHOA'] ?>"><?php echo $row['TENKHOA'] ?></td>
+                                    <td style="text-align: left;" lydata="<?php echo $row['IDKHOA'] ?>"><?php echo $row['TENKHOA'] ?></td>
                                     <td><button class="btn btn-primary btn-sm sua" lydata="<?php echo $row['IDGV'] ?>">Sửa</button>&ensp;<button class="btn btn-danger btn-sm xoa" lydata="<?php echo $row['IDGV'] ?>">Xóa</button></td>
                                 </tr>
                             <?php $stt++; } ?>
