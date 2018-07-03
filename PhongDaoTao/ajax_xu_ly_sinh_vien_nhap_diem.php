@@ -25,6 +25,10 @@ function diem($idlhp, $idsv){
     return $p_sql;
 }
  ?>
+<form action="xuatphieudiem.php" method="POST" target="_blank">
+    <input type="text" name="lophocphan" hidden="hidden" value="<?php echo $id; ?>">
+    <input type="submit" name="" value="Xuất phiếu điểm" class="btn btn-warning" style="float: right;margin-bottom: 1rem;" >
+</form>
 <table class="table">
     <tr>
         <th>Mã lớp học phần:</th>
@@ -36,7 +40,7 @@ function diem($idlhp, $idsv){
         <th>Giáo viên giảng dạy:</th>
         <td><?php echo $thongtin['HOTENGV'] ?></td>
         <th>Học kỳ:</th>
-        <td><?php echo $thongtin['TENHK']." , ".$thongtin['NAMHOC'] ?></td>
+        <td><?php echo $thongtin['TENHK']." - ".$thongtin['NAMHOC'] ?></td>
     </tr>
 </table>
 <table id="bangsv" class="table table-bordered table-hover table-striped" style="width: 100%;">

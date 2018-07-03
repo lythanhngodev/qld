@@ -22,14 +22,14 @@
 			<div class="col-md-6">
 			  <div class="form-group">
 			    <label for="tags">Mã sinh viên</label>
-			    <input type="email" class="form-control" placeholder="VD: 140040xx" disabled="disabled" value="<?php echo $masv; ?>">
+			    <input type="text" class="form-control" placeholder="VD: 140040xx" disabled="disabled" value="<?php echo $masv; ?>">
                   <small id="loima" class="form-text text-danger"></small>
 			  </div>
 			</div>
 			<div class="col-md-6">
 			  <div class="form-group">
 			    <label for="tags">Họ và Tên</label>
-			    <input type="email" class="form-control" id="hoten" disabled="disabled" value="<?php echo $hotensv ?>">
+			    <input type="text" class="form-control" id="hoten" disabled="disabled" value="<?php echo $hotensv ?>">
                   <small id="loihoten" class="form-text text-danger"></small>
 			  </div>
 			</div>

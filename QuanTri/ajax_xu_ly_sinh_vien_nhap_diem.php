@@ -25,6 +25,10 @@ function diem($idlhp, $idsv){
     return $p_sql;
 }
  ?>
+<form action="xuatphieudiem.php" method="POST" target="_blank">
+    <input type="text" name="lophocphan" hidden="hidden" value="<?php echo $id; ?>">
+    <input type="submit" name="" value="Xuất phiếu điểm" class="btn btn-warning" style="float: right;margin-bottom: 1rem;" >
+</form>
 <table class="table">
     <tr>
         <th>Mã lớp học phần:</th>

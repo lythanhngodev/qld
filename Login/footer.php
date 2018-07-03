@@ -12,7 +12,7 @@
     right: 0;
     bottom: 0;
     font-family: sans-serif;
-    font-size: 12px;
+    font-size: 14px;
     border-top: 2px solid #a9a9a9;
 }
 </style>

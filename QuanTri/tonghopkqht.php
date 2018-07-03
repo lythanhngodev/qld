@@ -41,6 +41,12 @@ while ($row_lop = oci_fetch_assoc($p_sql_lop)) {
             'rgb' => 'FFFFFF'
         )
     ));
+    $styleArray_de = array(
+        'font'  => array(
+            'name'  => 'Times New Roman'
+        ));
+    $objPHPExcel->getActiveSheet()->getDefaultStyle()
+    ->applyFromArray($styleArray_de);
     // định dạng header
     $numrow = 6;
     $objPHPExcel->setActiveSheetIndex($numberSheet)->mergeCells('A2:E2'); // tên trường

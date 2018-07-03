@@ -207,7 +207,6 @@ $objPHPExcel->getActiveSheet()->getStyle('H6:I'.($dong-1))->getFont()->setBold(t
 $sheet->setCellValue("B".($dong+3),"Trưởng khoa");
 $sheet->setCellValue("F".($dong+2),"Vĩnh Long, ngày ".date('d')." tháng ".date('m')." năm ".date('Y'));
 $sheet->setCellValue("F".($dong+3),"Giáo viên giảng dạy");
-$sheet->setCellValue("F".($dong+7),$hotengv);
 
 $objPHPExcel->getActiveSheet()->getStyle('B'.($dong+3))->getFont()->setBold(true);
 $objPHPExcel->getActiveSheet()->getStyle('F'.($dong+3))->getFont()->setBold(true);
