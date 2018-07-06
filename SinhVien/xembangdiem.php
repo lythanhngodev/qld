@@ -33,12 +33,23 @@
     .header_item_list{
         border-top: 0 !important;
     }
+    .langgach{
+        border-bottom: 2px solid #ffbf00;color: #d92e28;
+    }
     </style>
 </head>
 <body>
     <?php require_once "menu.php"; ?>
     <br>
+    <div class="col-md-12">
+        <button class="btn btn-primary" onclick="printData();">Xem bảng in</button>
+    </div>   
     <div class="container-fluid" id="noidungin">
+        <style type="text/css">
+            th{
+                text-align: left;
+            }
+        </style>
         <div class="row">
             <div class="col-12">
                 <div id="thongbao">
@@ -100,16 +111,23 @@
                 </tr>
             </thead>
             <tbody>
-                <?php $hocky = lay_toan_bo_hoc_ky_cua_sv($idsv);
+                <?php 
+                $tongtc=0;
+                $tongdiem=0;
+                $hocky = lay_toan_bo_hoc_ky_cua_sv($idsv);
                 while ($hk = oci_fetch_assoc($hocky)) { ?>
                 <tr>
-                    <th style="border-bottom: 2px solid #ffbf00;color: #d92e28;" colspan="13"><?php echo $hk['TENHK'].", ".$hk['NAMHOC'] ?></th>
+                    <th class="langgach" style="text-align: left;" colspan="13"><?php echo $hk['TENHK'].", ".$hk['NAMHOC'] ?></th>
                 </tr>
                 <?php
                 $stt_mh = 1;
                 $idhk = $hk['IDHK'];
+                $tongtchk=0;
+                $tongdiemhk=0;
                 $monhoc = lay_sinh_vien_mon_hoc_trong_hoc_ky($idhk, $idsv);
-                while ($mh = oci_fetch_assoc($monhoc)) { ?>
+                while ($mh = oci_fetch_assoc($monhoc)) {
+                    $tongtchk+=$mh['SOTINCHI'];
+                 ?>
                     <tr style="border-bottom: 1px solid #dee2e6;">
                         <td style="text-align:center; "><?php echo $stt_mh; ?></td>
                         <td style="text-align:center; " colspan="1"><?php echo $mh['MAMH']; ?></td>
@@ -119,6 +137,7 @@
                             $idlhp = $mh['IDLHP'];
                             $diem = lay_sinh_vien_phieu_diem_lop_hoc_phan($idlhp, $idsv);
                             $d = oci_fetch_assoc($diem);
+                            $tongdiemhk+=diem_he_10($d['DIEMCC'],$d['DIEMGK'],$d['DIEMCK'],$d['DIEMTHILAI'])*$mh['SOTINCHI'];
                          ?>
                         <td style="text-align:center; "><?php if(empty($d['DIEMCC']) || $d['DIEMCC']=='null') echo ""; else echo $d['DIEMCC'] ?></td>
                         <td style="text-align:center; "><?php if(empty($d['DIEMGK']) || $d['DIEMGK']=='null') echo ""; else echo $d['DIEMGK'] ?></td>
@@ -128,7 +147,22 @@
                         <td style="text-align:center; "><?php echo diem_he_4($d['DIEMCC'],$d['DIEMGK'],$d['DIEMCK'],$d['DIEMTHILAI']); ?></td>
                     </tr>
                 <?php $stt_mh++; } ?>
+                    <tr>
+                        <th colspan="13">Điểm trung bình học kỳ: <?php echo round($tongdiemhk/$tongtchk,2); ?></th>
+                    </tr>
+                    <?php 
+                    $tongtc+=$tongtchk;
+                    $tongdiem+=$tongdiemhk;
+                     ?>
                 <?php } ?>
+                    <tr>
+                        <th colspan="13">
+                            <br>
+                            <br>
+                            Số tín chỉ tích lũy: <?php echo $tongtc; ?>
+                            <br>
+                            Điểm trung bình tích lũy: <?php echo round($tongdiem/$tongtc,2); ?></th>
+                    </tr>
             </tbody>
         </table>
     </div>
@@ -143,5 +177,15 @@
         } );
     </script>
     <script src="../js/bootstrap-notify.min.js"></script>
+<script type="text/javascript">
+    function printData()
+    {
+       var divToPrint=document.getElementById("noidungin");
+       newWin= window.open("");
+       newWin.document.write(divToPrint.outerHTML);
+       newWin.print();
+       newWin.close();
+    }
+</script>
 </body>
 </html>

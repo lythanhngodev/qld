@@ -119,7 +119,7 @@
             var tr = $(t).parent('td').parent('tr');
             var idsv = tr.attr('id');
             var idlhp = tr.attr('idlhp');
-            var cc = (!tr.find('td:nth-child(5) input').val().trim() || !$.isNumeric(tr.find('td:nth-child(5) input').val().trim()) || parseFloat(tr.find('td:nth-child(5) input').val().trim()) <= 0 || parseFloat(tr.find('td:nth-child(5) input').val().trim()) > 10) ? 0 :parseFloat(tr.find('td:nth-child(5) input').val().trim());
+            var cc = (!tr.find('td:nth-child(5) input').val().trim() || !$.isNumeric(tr.find('td:nth-child(5) input').val().trim()) || parseFloat(tr.find('td:nth-child(5) input').val().trim()) < 0 || parseFloat(tr.find('td:nth-child(5) input').val().trim()) > 10 || ((parseFloat(tr.find('td:nth-child(5) input').val().trim()))*10%10!=5 && (parseFloat(tr.find('td:nth-child(5) input').val().trim()))*10%10!=0)) ? 0 :parseFloat(tr.find('td:nth-child(5) input').val().trim());
             if(cc<=0){
                 $(t).val('');
                 tinhdiem('cc',idsv,idlhp, 0);
@@ -131,7 +131,7 @@
             var tr = $(t).parent('td').parent('tr');
             var idsv = tr.attr('id');
             var idlhp = tr.attr('idlhp');
-            var gk = (!tr.find('td:nth-child(6) input').val().trim() || !$.isNumeric(tr.find('td:nth-child(6) input').val().trim()) || parseFloat(tr.find('td:nth-child(6) input').val().trim()) <= 0 || parseFloat(tr.find('td:nth-child(6) input').val().trim()) > 10) ? 0 :parseFloat(tr.find('td:nth-child(6) input').val().trim());
+            var gk = (!tr.find('td:nth-child(6) input').val().trim() || !$.isNumeric(tr.find('td:nth-child(6) input').val().trim()) || parseFloat(tr.find('td:nth-child(6) input').val().trim()) < 0 || parseFloat(tr.find('td:nth-child(6) input').val().trim()) > 10 || ((parseFloat(tr.find('td:nth-child(6) input').val().trim()))*10%10!=5 && (parseFloat(tr.find('td:nth-child(6) input').val().trim()))*10%10!=0)) ? 0 :parseFloat(tr.find('td:nth-child(6) input').val().trim());
             if(gk<=0){
                 $(t).val('');
                 tinhdiem('gk',idsv,idlhp, 0);
@@ -143,7 +143,7 @@
             var tr = $(t).parent('td').parent('tr');
             var idsv = tr.attr('id');
             var idlhp = tr.attr('idlhp');
-            var ck = (!tr.find('td:nth-child(7) input').val().trim() || !$.isNumeric(tr.find('td:nth-child(7) input').val().trim()) || parseFloat(tr.find('td:nth-child(7) input').val().trim()) <= 0 || parseFloat(tr.find('td:nth-child(7) input').val().trim()) > 10) ? 0 :parseFloat(tr.find('td:nth-child(7) input').val().trim());
+            var ck = (!tr.find('td:nth-child(7) input').val().trim() || !$.isNumeric(tr.find('td:nth-child(7) input').val().trim()) || parseFloat(tr.find('td:nth-child(7) input').val().trim()) < 0 || parseFloat(tr.find('td:nth-child(7) input').val().trim()) > 10 || ((parseFloat(tr.find('td:nth-child(7) input').val().trim()))*10%10!=5 && (parseFloat(tr.find('td:nth-child(7) input').val().trim()))*10%10!=0)) ? 0 :parseFloat(tr.find('td:nth-child(7) input').val().trim());
             if(ck<=0){
                 $(t).val('');
                 tinhdiem('ck',idsv,idlhp, 0);
@@ -155,7 +155,7 @@
             var tr = $(t).parent('td').parent('tr');
             var idsv = tr.attr('id');
             var idlhp = tr.attr('idlhp');
-            var tl = (!tr.find('td:nth-child(8) input').val().trim() || !$.isNumeric(tr.find('td:nth-child(8) input').val().trim()) || parseFloat(tr.find('td:nth-child(8) input').val().trim()) <= 0 || parseFloat(tr.find('td:nth-child(8) input').val().trim()) > 10) ? 0 :parseFloat(tr.find('td:nth-child(8) input').val().trim());
+            var tl = (!tr.find('td:nth-child(8) input').val().trim() || !$.isNumeric(tr.find('td:nth-child(8) input').val().trim()) || parseFloat(tr.find('td:nth-child(8) input').val().trim()) < 0 || parseFloat(tr.find('td:nth-child(8) input').val().trim()) > 10 || ((parseFloat(tr.find('td:nth-child(8) input').val().trim()))*10%10!=5 && (parseFloat(tr.find('td:nth-child(8) input').val().trim()))*10%10!=0)) ? 0 :parseFloat(tr.find('td:nth-child(8) input').val().trim());
             if(tl<=0){
                 $(t).val('');
                 tinhdiem('tl',idsv,idlhp, 0);

@@ -136,4 +136,37 @@
         if($diem>=2.0) return "Trung bình";
         if($diem<2.0) return "Yếu";
     }
+	function lay_thong_tin_cua_sv($idsv){
+	    $ketnoi = new _l_clsKetnoi();
+	    $conn = $ketnoi->ketnoi();
+		$sql = "SELECT HOTENSV, MASV, HOTENSV, NGAYSINHSV, QUEQUANSV, ndt.TENNDT, ndt.TRINHDODT, l.MALOP, l.KHOAHOC FROM SV sv, LOP l, NGANHDT ndt, CTDAOTAO cd WHERE sv.IDLOP = l.IDLOP AND l.IDCTDT = cd.IDCTDT AND cd.IDNDT = ndt.IDNDT AND sv.IDSV = $idsv";
+		$p_sql = oci_parse($conn, $sql);
+		oci_execute($p_sql);
+		$so = oci_fetch_assoc($p_sql);
+		return $so;
+	}
+	function lay_toan_bo_hoc_ky_cua_sv($idsv){
+	    $ketnoi = new _l_clsKetnoi();
+	    $conn = $ketnoi->ketnoi();
+		$sql = "SELECT DISTINCT hk.TENHK, hk.NAMHOC, hk.IDHK FROM LOPHOCPHAN lhp, HOCKY hk, DSLHP dl WHERE dl.IDSV = $idsv AND dl.IDLHP = lhp.IDLHP AND lhp.IDHK = hk.IDHK ORDER BY hk.IDHK ASC";
+		$p_sql = oci_parse($conn, $sql);
+		oci_execute($p_sql);
+		return $p_sql;
+	}
+	function lay_sinh_vien_mon_hoc_trong_hoc_ky($idhk, $idsv){
+	    $ketnoi = new _l_clsKetnoi();
+	    $conn = $ketnoi->ketnoi();
+		$sql = "SELECT DISTINCT mh.MAMH, mh.TENMH,mh.SOTINCHI, lhp.IDLHP FROM HOCKY hk, LOPHOCPHAN lhp, MONHOC mh, DSLHP dl WHERE hk.IDHK = lhp.IDHK AND lhp.IDMH=mh.IDMH AND lhp.IDLHP = dl.IDLHP AND dl.IDSV = $idsv AND hk.IDHK = $idhk";
+		$p_sql = oci_parse($conn, $sql);
+		oci_execute($p_sql);
+		return $p_sql;
+	}
+	function lay_sinh_vien_phieu_diem_lop_hoc_phan($idlhp, $idsv){
+	    $ketnoi = new _l_clsKetnoi();
+	    $conn = $ketnoi->ketnoi();
+		$sql = "SELECT DISTINCT DIEMCC, DIEMGK, DIEMCK, DIEMTHILAI FROM DSLHP dl, PHIEUDIEMHP ph WHERE dl.IDLHP = ph.IDLHP AND dl.IDSV = ph.IDSV AND ph.IDSV = $idsv AND dl.IDLHP = $idlhp";
+		$p_sql = oci_parse($conn, $sql);
+		oci_execute($p_sql);
+		return $p_sql;
+	}
  ?>
