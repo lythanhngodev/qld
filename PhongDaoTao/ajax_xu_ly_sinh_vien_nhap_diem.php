@@ -68,10 +68,10 @@ function diem($idlhp, $idsv){
                 <td><?php echo $row['MALOP'] ?></td>
                 <?php $diemhp = diem($id, $row['IDSV']);$ktd=0;
                 while ($d = oci_fetch_assoc($diemhp)) {?>
-                    <td><input type="number" min="0" max="10" onmouseout="tinhdiemcc(this)" class="form-control" style="text-align: center;" value="<?php if($d['DIEMCC']!=0)echo $d['DIEMCC']; ?>"></td>
-                    <td><input type="number" min="0" max="10" onmouseout="tinhdiemgk(this)" class="form-control" style="text-align: center;" value="<?php if($d['DIEMGK']!=0)echo $d['DIEMGK']; ?>"></td>
-                    <td><input type="number" min="0" max="10" onmouseout="tinhdiemck(this)" class="form-control" style="text-align: center;" value="<?php if($d['DIEMCK']!=0)echo $d['DIEMCK']; ?>"></td>
-                    <td><input type="number" min="0" max="10" onmouseout="tinhdiemtl(this)" class="form-control" style="text-align: center;" value="<?php if($d['DIEMCK']!=0)echo $d['DIEMTHILAI']; ?>"></td>
+                    <td><input type="number" min="0" max="10" onmouseout="tinhdiemcc(this)" class="form-control" style="text-align: center;" value="<?php if($d['DIEMCC']>=0)echo $d['DIEMCC']; ?>"></td>
+                    <td><input type="number" min="0" max="10" onmouseout="tinhdiemgk(this)" class="form-control" style="text-align: center;" value="<?php if($d['DIEMGK']>=0)echo $d['DIEMGK']; ?>"></td>
+                    <td><input type="number" min="0" max="10" onmouseout="tinhdiemck(this)" class="form-control" style="text-align: center;" value="<?php if($d['DIEMCK']>=0)echo $d['DIEMCK']; ?>"></td>
+                    <td><input type="number" min="0" max="10" onmouseout="tinhdiemtl(this)" class="form-control" style="text-align: center;" value="<?php if($d['DIEMCK']>=0)echo $d['DIEMTHILAI']; ?>"></td>
                     <td><input type="number" min="0" max="10" readonly class="form-control" style="text-align: center;"></td>
                     <td style="text-align: center;"><input type="checkbox" onclick="camthi(this)" <?php if($d['CAMTHI']==1) echo "checked"; ?>></td>
                 <?php $ktd++;} 
