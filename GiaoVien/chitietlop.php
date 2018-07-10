@@ -70,7 +70,7 @@
                     <td style="text-align: center;"><?php echo $row['MASV'] ?></td>
                     <td><?php echo $row['HOTENSV'] ?></td>
                     <td style="text-align: center;"><?php if($row['GIOITINHSV']!='null') echo $row['GIOITINHSV']; else echo "-"; ?></td>
-                    <td style="text-align: center;"><?php if(empty($row['NGAYSINHSV'])) echo date('d/m/Y',strtotime($row['NGAYSINHSV'])); else echo "-"; ?></td>
+                    <td style="text-align: center;"><?php if($row['NGAYSINHSV']!='null' && !empty($row['NGAYSINHSV'])) echo date("d-m-Y", strtotime($row['NGAYSINHSV'])); else echo "-"; ?></td>
                     <td><?php if($row['EMAILSV']!='null') echo $row['EMAILSV']; else echo "-"; ?></td>
                     <td style="text-align: center;"><?php echo $row['KHOAHOC']; ?></td>
                     <td style="text-align: center;"><a href="xembangdiem.php?id=<?php echo $row['IDSV'] ?>" class="btn btn-primary btn-sm">Xem bảng điểm >></a></td>

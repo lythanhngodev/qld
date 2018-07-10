@@ -34,7 +34,7 @@
         border-top: 0 !important;
     }
     .langgach{
-        border-bottom: 2px solid #ffbf00;color: #d92e28;
+        border-bottom: 2px solid #ffbf00 !important;color: #d92e28;
     }
     </style>
 </head>
@@ -49,6 +49,9 @@
             th{
                 text-align: left;
             }
+    .langgach{
+        border-bottom: 1px solid #212121;
+    }
         </style>
         <div class="row">
             <div class="col-12">
@@ -148,7 +151,7 @@
                     </tr>
                 <?php $stt_mh++; } ?>
                     <tr>
-                        <th colspan="13">Điểm trung bình học kỳ: <?php echo round($tongdiemhk/$tongtchk,2); ?></th>
+                        <th colspan="13" style="border-top: 1px solid #f1f1f1;margin-top: 5px;">Điểm trung bình học kỳ: <?php echo round($tongdiemhk/$tongtchk,2); ?></th>
                     </tr>
                     <?php 
                     $tongtc+=$tongtchk;

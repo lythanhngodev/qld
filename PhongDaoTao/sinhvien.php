@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<?php require_once "head.php"; ?>
+    <?php require_once "head.php"; ?>
     <style>
     .loader {
       margin: 0 auto;
@@ -29,20 +29,20 @@
     </style>
 </head>
 <body>
-	<?php require_once "menu.php"; ?>
-	<br>
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-12">
-				<div id="thongbao">
-				</div>	
-			</div>
-			<div class="col-md-12">
-				<h5>Sinh viên</h5>
-				<hr>
-			</div>	
-		</div>
-		<div class="row">
+    <?php require_once "menu.php"; ?>
+    <br>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div id="thongbao">
+                </div>  
+            </div>
+            <div class="col-md-12">
+                <h5>Sinh viên</h5>
+                <hr>
+            </div>  
+        </div>
+        <div class="row">
                 <div class="col-md-4">
                     <label>Chọn loại đào tạo</label>
                     <select class="form-control" id="chonnganh">
@@ -53,7 +53,7 @@
                      } ?>
                     </select>            
                 </div>
-				<div class="col-md-4">
+                <div class="col-md-4">
                     <label>Chọn lớp</label>
                     <select class="form-control" id="chonlop">
                         <option value="">---- Chọn lớp ---</option>
@@ -66,7 +66,7 @@
                 <div class="col-md-4">
                     <label>Nhập sinh viên</label>
                     <br>
-                    <button class="btn btn-success btn-sm" id="nhapfile">Nhập file Excel</button><br><br>
+                    <button class="btn btn-primary btn-sm" id="nhapfile">Nhập file Excel</button><br><br>
                     <input type="file" hidden="hidden" id="taptin" accept="application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
                 </div>
             <div class="col-md-12">
@@ -74,8 +74,8 @@
                 <div id="than">
                 </div>
             </div>
-		</div>
-	</div>
+        </div>
+    </div>
     <?php include_once "footer.php"; ?>
 
 <!-- Sửa -->
@@ -125,7 +125,31 @@
     </div>
   </div>
 </div>
-
+<!-- Xóa -->
+<div class="modal fade" id="xoasinhvien" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Xóa sinh viên khỏi lớp học phần</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-danger" role="alert">
+                    <strong>Bạn có chắc xóa sinh viên này ra khỏi lớp học phần?</strong><hr>
+                    <b>Mã số:</b> <span id="xmasv"></span><br>
+                    <b>Họ và Tên sinh:</b> <span id="xtensv"></span>
+                    <input type="text" hidden="hidden" id="xidsv">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                <button type="button" class="btn btn-danger" id="btxoasv">Xóa</button>
+            </div>
+        </div>
+    </div>
+</div>
 <link rel="stylesheet" type="text/css" href="../css/datatables.min.css">
 <script src="../js/datatables.min.js" type="text/javascript"></script>
 <script src="../js/bootstrap.min.js" type="text/javascript"></script>
@@ -243,6 +267,7 @@
                     success: function (data) {
                         var mang = jQuery.parseJSON(data);
                         if (mang.trangthai==1) {
+                            $('#suasinhvien').modal('hide');
                             thanhcong('Đã sửa sinh viên');
                             $('#suasinhvien').find('input').val('');
                             $('#suasinhvien').modal('hide');
@@ -270,12 +295,17 @@
                 });
             });
             $(document).on('click','.xoa',function(){
-                if(!confirm('Bạn có chắc xóa sinh viên này?')) return;
+                $('#xmasv').text($(this).parent('td').parent('tr').find('td:nth-child(2)').text().trim());
+                $('#xtensv').text($(this).parent('td').parent('tr').find('td:nth-child(3)').text().trim());
+                $('#xidsv').val($(this).attr('lydata'));
+                $('#xoasinhvien').modal('show');
+            });
+            $(document).on('click','#btxoasv',function(){
                 $.ajax({
                     url: 'ajax_xoa_sinh_vien.php',
                     type: 'POST',
                     data: {
-                        id: $(this).attr('lydata')
+                        id: $('#xidsv').val().trim()
                     },
                     success: function (data) {
                         var mang = jQuery.parseJSON(data);
@@ -289,9 +319,6 @@
                                 },
                                 success: function (data) {
                                     $('#than').html(data);
-                                },
-                                error: function () {
-                                    khongthanhcong('Xảy ra lỗi! Vui lòng thử lại');
                                 }
                             });
                         }else{
