@@ -125,7 +125,31 @@
     </div>
   </div>
 </div>
-
+<!-- Xóa -->
+<div class="modal fade" id="xoasinhvien" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Xóa sinh viên khỏi lớp học phần</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-danger" role="alert">
+                    <strong>Bạn có chắc xóa sinh viên này ra khỏi lớp học phần?</strong><hr>
+                    <b>Mã số:</b> <span id="xmasv"></span><br>
+                    <b>Họ và Tên sinh:</b> <span id="xtensv"></span>
+                    <input type="text" hidden="hidden" id="xidsv">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                <button type="button" class="btn btn-danger" id="btxoasv">Xóa</button>
+            </div>
+        </div>
+    </div>
+</div>
 <link rel="stylesheet" type="text/css" href="../css/datatables.min.css">
 <script src="../js/datatables.min.js" type="text/javascript"></script>
 <script src="../js/bootstrap.min.js" type="text/javascript"></script>
@@ -243,6 +267,7 @@
                     success: function (data) {
                         var mang = jQuery.parseJSON(data);
                         if (mang.trangthai==1) {
+                            $('#suasinhvien').modal('hide');
                             thanhcong('Đã sửa sinh viên');
                             $('#suasinhvien').find('input').val('');
                             $('#suasinhvien').modal('hide');
@@ -270,12 +295,17 @@
                 });
             });
             $(document).on('click','.xoa',function(){
-                if(!confirm('Bạn có chắc xóa sinh viên này?')) return;
+                $('#xmasv').text($(this).parent('td').parent('tr').find('td:nth-child(2)').text().trim());
+                $('#xtensv').text($(this).parent('td').parent('tr').find('td:nth-child(3)').text().trim());
+                $('#xidsv').val($(this).attr('lydata'));
+                $('#xoasinhvien').modal('show');
+            });
+            $(document).on('click','#btxoasv',function(){
                 $.ajax({
                     url: 'ajax_xoa_sinh_vien.php',
                     type: 'POST',
                     data: {
-                        id: $(this).attr('lydata')
+                        id: $('#xidsv').val().trim()
                     },
                     success: function (data) {
                         var mang = jQuery.parseJSON(data);
@@ -289,9 +319,6 @@
                                 },
                                 success: function (data) {
                                     $('#than').html(data);
-                                },
-                                error: function () {
-                                    khongthanhcong('Xảy ra lỗi! Vui lòng thử lại');
                                 }
                             });
                         }else{
