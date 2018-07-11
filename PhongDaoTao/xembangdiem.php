@@ -82,7 +82,7 @@
                     </tr>
                     <tr>
                         <td>Quê quán</td>
-                        <th><?php echo $tt['QUEQUANSV'] ?></th>
+                        <th><?php if(empty($tt['QUEQUANSV']) || $tt['QUEQUANSV'] == 'null') echo "";else echo $tt['QUEQUANSV'] ?></th>
                         <td>Khóa học</td>
                         <th><?php echo $tt['KHOAHOC'] ?></th>
                     </tr>
