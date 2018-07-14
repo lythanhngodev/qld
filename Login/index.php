@@ -97,7 +97,7 @@ if (isset($_SESSION['us']) && isset($_SESSION['pa']) && !empty($_SESSION['us']) 
         <div style="background-image: url('images/img-01.png');width: 80px;height: 80px;float: left;background-size: cover;background-position: center;margin-right: 10px;margin-top: 10px;"></div>
         <span class="form-title">
                 ĐĂNG NHẬP
-            </span>
+        </span>
         <input class="nhap" type="text" name="tendangnhap" placeholder="Tên đăng nhập hoặc Mail" required="required">
         <input class="nhap" type="password" name="matkhau" placeholder="Mật khẩu" required="required">
         <button type="submit" style="float: right;width: 96px;padding: 2px 0px;margin-top: 10px;font-size: 12px;">
