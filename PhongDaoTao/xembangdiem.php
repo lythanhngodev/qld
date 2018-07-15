@@ -56,34 +56,34 @@
                 </div>  
             </div>
             <div class="col-md-12">
-                <h5 style="text-align: center;" class="text-success">BẢNG KẾT QUẢ HỌC TẬP</h5>
+                <h5 style="text-align: center;" class="text-danger">BẢNG KẾT QUẢ HỌC TẬP</h5>
                 <br>
             </div>  
             <?php $tt=lay_thong_tin_cua_sv($idsv); ?>
             <div class="col-md-12">
                 <table class="table" style="width: 100%">
                     <tr>
-                        <td>Họ và Tên</td>
+                        <td>Họ và tên:</td>
                         <th><?php echo $tt['HOTENSV'] ?></th>
-                        <td>Ngành</td>
+                        <td>Ngành:</td>
                         <th><?php echo $tt['TENNDT'] ?></th>
                     </tr>
                     <tr>
-                        <td>Mã số sinh viên</td>
+                        <td>Mã số sinh viên:</td>
                         <th><?php echo $tt['MASV'] ?></th>
-                        <td>Trình độ đào tạo</td>
+                        <td>Trình độ đào tạo:</td>
                         <th><?php echo $tt['TRINHDODT'] ?></th>
                     </tr>
                     <tr>
-                        <td>Ngày sinh</td>
+                        <td>Ngày sinh:</td>
                         <th><?php if(empty($tt['NGAYSINHSV']) || $tt['NGAYSINHSV'] == 'null') echo ""; else echo date('d/m/Y', strtotime($tt['NGAYSINHSV'])); ?></th>
-                        <td>Lớp</td>
+                        <td>Lớp:</td>
                         <th><?php echo $tt['MALOP'] ?></th>
                     </tr>
                     <tr>
-                        <td>Quê quán</td>
+                        <td>Quê quán:</td>
                         <th><?php if(empty($tt['QUEQUANSV']) || $tt['QUEQUANSV'] == 'null') echo "";else echo $tt['QUEQUANSV'] ?></th>
-                        <td>Khóa học</td>
+                        <td>Khóa học:</td>
                         <th><?php echo $tt['KHOAHOC'] ?></th>
                     </tr>
                 </table>
@@ -148,7 +148,7 @@
                     </tr>
                 <?php $stt_mh++; } ?>
                     <tr>
-                        <th colspan="13">Điểm trung bình học kỳ: <?php echo round($tongdiemhk/$tongtchk,2); ?></th>
+                        <th colspan="13" style= "color: #d92e28;">Điểm trung bình học kỳ: <?php echo round($tongdiemhk/$tongtchk,2); ?></th>
                     </tr>
                     <?php 
                     $tongtc+=$tongtchk;
@@ -156,7 +156,7 @@
                      ?>
                 <?php } ?>
                     <tr>
-                        <th colspan="13">
+                        <th colspan="13" style= "color: #d92e28;">
                             <br>
                             <br>
                             Số tín chỉ tích lũy: <?php echo $tongtc; ?>
