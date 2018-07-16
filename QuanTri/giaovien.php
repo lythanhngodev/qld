@@ -220,7 +220,7 @@
 	                }
 	            });
            });
-            $('.sua').on('click',function(){
+            $(document).on('click','.sua',function(){
                 $('#smgv').val($(this).parent('td').parent('tr').find('td:nth-child(2)').text().trim());
                 $('#stgv').val($(this).parent('td').parent('tr').find('td:nth-child(3)').text().trim());
                 $('#ssdtgv').val($(this).parent('td').parent('tr').find('td:nth-child(4)').text().trim());

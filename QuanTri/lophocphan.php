@@ -235,7 +235,7 @@
 	                }
 	            });
            });
-            $('.sua').on('click',function(){
+            $(document).on('click','.sua',function(){
                 $('#smlhp').val($(this).parent('td').parent('tr').find('td:nth-child(2)').text().trim());
                 $('#smhlhp').val($(this).parent('td').parent('tr').find('td:nth-child(3)').attr('lydata'));
                 $('#shklhp').val($(this).parent('td').parent('tr').find('td:nth-child(4)').attr('lydata'));

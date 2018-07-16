@@ -247,7 +247,7 @@
 	                }
 	            });
            });
-            $('.sua').on('click',function(){
+            $(document).on('click','.sua',function(){
                 $('#smmh').val($(this).parent('td').parent('tr').find('td:nth-child(2)').text().trim());
                 $('#stmh').val($(this).parent('td').parent('tr').find('td:nth-child(3)').text().trim());
                 $('#skmh').val($(this).parent('td').parent('tr').find('td:nth-child(4)').attr('lydata'));
