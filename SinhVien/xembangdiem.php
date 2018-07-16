@@ -34,7 +34,7 @@
         border-top: 0 !important;
     }
     .langgach{
-        border-bottom: 2px solid #ffbf00;color: #d92e28;
+        border-bottom: 2px solid #ffbf00 !important;color: #d92e28;
     }
     </style>
 </head>
@@ -48,6 +48,9 @@
         <style type="text/css">
             th{
                 text-align: left;
+            }
+            .langgach{
+                border-bottom: 1px solid #212121;
             }
         </style>
         <div class="row">

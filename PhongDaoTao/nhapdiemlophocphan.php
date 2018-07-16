@@ -120,8 +120,8 @@
             var tr = $(t).parent('td').parent('tr');
             var idsv = tr.attr('id');
             var idlhp = tr.attr('idlhp');
-            var cc = (!tr.find('td:nth-child(5) input').val().trim() || !$.isNumeric(tr.find('td:nth-child(5) input').val().trim()) || parseFloat(tr.find('td:nth-child(5) input').val().trim()) < 0 || parseFloat(tr.find('td:nth-child(5) input').val().trim()) > 10 || ((parseFloat(tr.find('td:nth-child(5) input').val().trim()))*10%10!=5 && (parseFloat(tr.find('td:nth-child(5) input').val().trim()))*10%10!=0)) ? 0 :parseFloat(tr.find('td:nth-child(5) input').val().trim());
-            if(cc<=0){
+            var cc = (!tr.find('td:nth-child(5) input').val().trim() || !$.isNumeric(tr.find('td:nth-child(5) input').val().trim()) || parseFloat(tr.find('td:nth-child(5) input').val().trim()) < 0 || parseFloat(tr.find('td:nth-child(5) input').val().trim()) > 10 || ((parseFloat(tr.find('td:nth-child(5) input').val().trim()))*10%10!=5 && (parseFloat(tr.find('td:nth-child(5) input').val().trim()))*10%10!=0)) ? 99 :parseFloat(tr.find('td:nth-child(5) input').val().trim());
+            if(cc==99){
                 $(t).val('');
                 tinhdiem('cc',idsv,idlhp, 0);
             }else{
@@ -182,6 +182,7 @@
                     diem: diem
                 },
                 success: function (data) {
+                    //$('body').append(data);
                     return;
                 },
                 error: function () {
