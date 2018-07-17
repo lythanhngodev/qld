@@ -110,7 +110,7 @@ $objPHPExcel->getActiveSheet()->getStyle('I4')->getAlignment()->setWrapText(true
 
 $sheet->setCellValue("J4","Ký tên");
 $sheet->setCellValue("K4","Ghi chú");
-$objPHPExcel->getActiveSheet()->getStyle('E4')->getNumberFormat() ->setFormatCode('#,##0.0')->getAlignment()->setWrapText(true);
+$objPHPExcel->getActiveSheet()->getStyle('E4')->getAlignment()->setWrapText(true);
 $sheet->setCellValue("E5","10%");
 $objPHPExcel->getActiveSheet()->getStyle('F4')->getAlignment()->setWrapText(true);
 $sheet->setCellValue("F5","40%");
