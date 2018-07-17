@@ -30,7 +30,7 @@
     		}
     		break;
     	case 'giaovien':
-    		// gửi mail quên mật khẩu cho sinh viên
+    		// gửi mail quên mật khẩu cho giáo viên
     		$matkhau = rand_string(8);
     		if ($ketnoi->capnhatmatkhau($_POST['dcmail'], $kq ,md5($matkhau))) {
     			if(guimail('Quên mật khẩu',"Mật khẩu mới của bạn: $matkhau", $_POST['dcmail'])){
@@ -39,7 +39,7 @@
     		}
     		break;
     	case 'phongdaotao':
-    		// gửi mail quên mật khẩu cho sinh viên
+    		// gửi mail quên mật khẩu cho phòng đào tạo
     		$matkhau = rand_string(8);
     		if ($ketnoi->capnhatmatkhau($_POST['dcmail'], $kq ,md5($matkhau))) {
     			if(guimail('Quên mật khẩu',"Mật khẩu mới của bạn: $matkhau", $_POST['dcmail'])){
@@ -48,7 +48,7 @@
     		}
     		break;
     	case 'quantri':
-    		// gửi mail quên mật khẩu cho sinh viên
+    		// gửi mail quên mật khẩu cho quản trị
     		$matkhau = rand_string(8);
     		if ($ketnoi->capnhatmatkhau($_POST['dcmail'], $kq ,md5($matkhau))) {
     			if(guimail('Quên mật khẩu',"Mật khẩu mới của bạn: $matkhau", $_POST['dcmail'])){
