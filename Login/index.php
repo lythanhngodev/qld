@@ -12,7 +12,9 @@ if (isset($_POST['tendangnhap']) && isset($_POST['matkhau'])){
     		header("Location: ".$qld['HOST']."QuanTri");
     		break;
     	case 'phongdaotao':
+            //đăng ký session
     		session_start();
+            // lưu trữ session
     		$_SESSION['us'] = $us;
     		$_SESSION['pa'] = $pa;
     		header("Location: ".$qld['HOST']."PhongDaoTao");
