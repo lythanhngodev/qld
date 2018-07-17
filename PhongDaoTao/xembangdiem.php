@@ -59,7 +59,7 @@
                 </div>  
             </div>
             <div class="col-md-12">
-                <h5 style="text-align: center;" class="text-danger">BẢNG KẾT QUẢ HỌC TẬP</h5>
+                <h5 style="text-align: center; color: #A30000; " class="text-danger">BẢNG KẾT QUẢ HỌC TẬP</h5>
                 <br>
             </div>  
             <?php $tt=lay_thong_tin_cua_sv($idsv); ?>
@@ -85,7 +85,7 @@
                     </tr>
                     <tr>
                         <td>Quê quán:</td>
-                        <th><?php if(empty($tt['QUEQUANSV']) || $tt['QUEQUANSV'] == 'null') echo "";else echo $tt['QUEQUANSV'] ?></th>
+                        <th><?php if(empty($tt['QUEQUANSV']) || $tt['QUEQUANSV'] == 'null') echo ""; else echo $tt['QUEQUANSV'] ?></th>
                         <td>Khóa học:</td>
                         <th><?php echo $tt['KHOAHOC'] ?></th>
                     </tr>
@@ -151,7 +151,7 @@
                     </tr>
                 <?php $stt_mh++; } ?>
                     <tr>
-                        <th colspan="13" style= "color: #d92e28;">Điểm trung bình học kỳ: <?php echo round($tongdiemhk/$tongtchk,2); ?></th>
+                        <th colspan="13" style= "color: #d92e28">Điểm trung bình học kỳ: <?php echo round($tongdiemhk/$tongtchk,2); ?></th>
                     </tr>
                     <?php 
                     $tongtc+=$tongtchk;
@@ -159,12 +159,12 @@
                      ?>
                 <?php } ?>
                     <tr>
-                        <th colspan="13" style= "color: #d92e28;">
+                        <th colspan="13" style= "color: #d92e28">
                             <br>
                             <br>
                             Số tín chỉ tích lũy: <?php echo $tongtc; ?>
                             <br>
-                            Điểm trung bình tích lũy: <?php echo round($tongdiem/$tongtc,2); ?></th>
+                            Điểm trung bình tích lũy: <?php if($tongtc!=0) echo round($tongdiem/$tongtc,2); else echo "0"; ?></th>
                     </tr>
             </tbody>
         </table>

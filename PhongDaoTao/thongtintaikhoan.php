@@ -14,7 +14,7 @@
 				</div>	
 			</div>
 			<div class="col-md-12">
-				<h5>Thông tin tài khoản</h5>
+				<h5>Thông tin cá nhân</h5>
 				<hr>
 			</div>	
 		</div>
@@ -28,7 +28,7 @@
 			</div>
 			<div class="col-md-6">
 			  <div class="form-group">
-			    <label for="tags">Họ và Tên</label>
+			    <label for="tags">Họ và tên</label>
 			    <input type="text" class="form-control" id="hoten" placeholder="VD: Nguyễn Văn An" value="<?php echo $hotencb ?>">
                   <small id="loihoten" class="form-text text-danger"></small>
 			  </div>
@@ -50,7 +50,7 @@
 			<div class="col-md-12">
 				<hr>
 				<center>
-					<button class="btn btn-primary" id="luu">Lưu thông tin</button>
+					<button class="btn btn-primary" id="luu">Cập nhật</button>
 				</center>
 			</div>
 		</div>

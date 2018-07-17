@@ -127,6 +127,11 @@ while ($row_lop = oci_fetch_assoc($p_sql_lop)) {
             ));
         $cot_lhp+=2;
     }
+    // tổng số tín chỉ
+    $objPHPExcel->setActiveSheetIndex($numberSheet)->mergeCells(getNameFromNumber($cot_lhp)."6:".getNameFromNumber($cot_lhp)."9");
+    $sheet->setCellValue(getNameFromNumber($cot_lhp)."6","Tổng TC đăng ký");
+    $objPHPExcel->getActiveSheet()->getColumnDimension(getNameFromNumber($cot_lhp))->setWidth(7);
+    $cot_lhp++;
     $objPHPExcel->setActiveSheetIndex($numberSheet)->mergeCells(getNameFromNumber($cot_lhp)."6:".getNameFromNumber($cot_lhp)."9");
     $sheet->setCellValue(getNameFromNumber($cot_lhp)."6","Điểm TB chung HK");
     $objPHPExcel->getActiveSheet()->getColumnDimension(getNameFromNumber($cot_lhp))->setWidth(7);
@@ -134,11 +139,11 @@ while ($row_lop = oci_fetch_assoc($p_sql_lop)) {
     $objPHPExcel->setActiveSheetIndex($numberSheet)->mergeCells(getNameFromNumber($cot_lhp)."6:".getNameFromNumber($cot_lhp)."9");
     $sheet->setCellValue(getNameFromNumber($cot_lhp)."6","Kết quả");
     $objPHPExcel->getActiveSheet()->getColumnDimension(getNameFromNumber($cot_lhp))->setWidth(14);
-    $objPHPExcel->getActiveSheet()->getStyle(getNameFromNumber($cot_lhp-1)."6:".getNameFromNumber($cot_lhp)."9")->getFont()->setBold(true);
-    $sheet->getStyle(getNameFromNumber($cot_lhp-1)."6:".getNameFromNumber($cot_lhp)."9")->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
-    $sheet->getStyle(getNameFromNumber($cot_lhp-1)."6:".getNameFromNumber($cot_lhp)."9")->getAlignment()->setVertical(PHPExcel_Style_Alignment::VERTICAL_CENTER);
-    $objPHPExcel->getActiveSheet()->getStyle(getNameFromNumber($cot_lhp-1)."6:".getNameFromNumber($cot_lhp)."9")->getAlignment()->setWrapText(true);
-    $sheet->getStyle(getNameFromNumber($cot_lhp-1)."6:".getNameFromNumber($cot_lhp)."9")
+    $objPHPExcel->getActiveSheet()->getStyle(getNameFromNumber($cot_lhp-2)."6:".getNameFromNumber($cot_lhp)."9")->getFont()->setBold(true);
+    $sheet->getStyle(getNameFromNumber($cot_lhp-2)."6:".getNameFromNumber($cot_lhp)."9")->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+    $sheet->getStyle(getNameFromNumber($cot_lhp-2)."6:".getNameFromNumber($cot_lhp)."9")->getAlignment()->setVertical(PHPExcel_Style_Alignment::VERTICAL_CENTER);
+    $objPHPExcel->getActiveSheet()->getStyle(getNameFromNumber($cot_lhp-2)."6:".getNameFromNumber($cot_lhp)."9")->getAlignment()->setWrapText(true);
+    $sheet->getStyle(getNameFromNumber($cot_lhp-2)."6:".getNameFromNumber($cot_lhp)."9")
         ->applyFromArray(array(
             'borders' => array(
                 'allborders' => array(
@@ -201,6 +206,8 @@ while ($row_lop = oci_fetch_assoc($p_sql_lop)) {
             $cot_diem+=2;
         }
         if($tongsotinchi==0) $tongsotinchi=1;
+        $sheet->setCellValue(getNameFromNumber($cot_diem).$numrowsv,$tongsotinchi);
+        $cot_diem++;
         $sheet->setCellValue(getNameFromNumber($cot_diem).$numrowsv,round($tongdiem/$tongsotinchi,1));
         $sheet->setCellValue(getNameFromNumber($cot_diem+1).$numrowsv,xep_loai(round($tongdiem/$tongsotinchi,1)));
         $bangdiem[] = round($tongdiem/$tongsotinchi,1);
@@ -220,6 +227,8 @@ while ($row_lop = oci_fetch_assoc($p_sql_lop)) {
                 )
             )
         ));
+    $objPHPExcel->getActiveSheet()->getStyle('D10:'.getNameFromNumber($cot_lhp).($numrowsv-1))->getNumberFormat() ->setFormatCode(PHPExcel_Style_NumberFormat::FORMAT_NUMBER_COMMA_SEPARATED1);
+    $objPHPExcel->getActiveSheet()->getStyle('D10:'.getNameFromNumber($cot_lhp).($numrowsv-1))->getNumberFormat() ->setFormatCode('#,##0.0'); // kết quả dạng 36,774.2
     //////////////////////
     $xuatsac=0;
     $gioi=0;

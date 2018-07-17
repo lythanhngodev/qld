@@ -164,7 +164,7 @@
                             <br>
                             Số tín chỉ tích lũy: <?php echo $tongtc; ?>
                             <br>
-                            Điểm trung bình tích lũy: <?php echo round($tongdiem/$tongtc,2); ?></th>
+                            Điểm trung bình tích lũy: <?php if($tongtc!=0) echo round($tongdiem/$tongtc,2); else echo "0"; ?></th>
                     </tr>
             </tbody>
         </table>
