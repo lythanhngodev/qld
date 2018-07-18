@@ -131,8 +131,8 @@
             var tr = $(t).parent('td').parent('tr');
             var idsv = tr.attr('id');
             var idlhp = tr.attr('idlhp');
-            var gk = (!tr.find('td:nth-child(6) input').val().trim() || !$.isNumeric(tr.find('td:nth-child(6) input').val().trim()) || parseFloat(tr.find('td:nth-child(6) input').val().trim()) < 0 || parseFloat(tr.find('td:nth-child(6) input').val().trim()) > 10 || ((parseFloat(tr.find('td:nth-child(6) input').val().trim()))*10%10!=5 && (parseFloat(tr.find('td:nth-child(6) input').val().trim()))*10%10!=0)) ? 0 :parseFloat(tr.find('td:nth-child(6) input').val().trim());
-            if(gk<=0){
+            var gk = (!tr.find('td:nth-child(6) input').val().trim() || !$.isNumeric(tr.find('td:nth-child(6) input').val().trim()) || parseFloat(tr.find('td:nth-child(6) input').val().trim()) < 0 || parseFloat(tr.find('td:nth-child(6) input').val().trim()) > 10 || ((parseFloat(tr.find('td:nth-child(6) input').val().trim()))*10%10!=5 && (parseFloat(tr.find('td:nth-child(6) input').val().trim()))*10%10!=0)) ? 99 :parseFloat(tr.find('td:nth-child(6) input').val().trim());
+            if(gk==99){
                 $(t).val('');
                 tinhdiem('gk',idsv,idlhp, 0);
             }else{
@@ -143,8 +143,8 @@
             var tr = $(t).parent('td').parent('tr');
             var idsv = tr.attr('id');
             var idlhp = tr.attr('idlhp');
-            var ck = (!tr.find('td:nth-child(7) input').val().trim() || !$.isNumeric(tr.find('td:nth-child(7) input').val().trim()) || parseFloat(tr.find('td:nth-child(7) input').val().trim()) < 0 || parseFloat(tr.find('td:nth-child(7) input').val().trim()) > 10 || ((parseFloat(tr.find('td:nth-child(7) input').val().trim()))*10%10!=5 && (parseFloat(tr.find('td:nth-child(7) input').val().trim()))*10%10!=0)) ? 0 :parseFloat(tr.find('td:nth-child(7) input').val().trim());
-            if(ck<=0){
+            var ck = (!tr.find('td:nth-child(7) input').val().trim() || !$.isNumeric(tr.find('td:nth-child(7) input').val().trim()) || parseFloat(tr.find('td:nth-child(7) input').val().trim()) < 0 || parseFloat(tr.find('td:nth-child(7) input').val().trim()) > 10 || ((parseFloat(tr.find('td:nth-child(7) input').val().trim()))*10%10!=5 && (parseFloat(tr.find('td:nth-child(7) input').val().trim()))*10%10!=0)) ? 99 :parseFloat(tr.find('td:nth-child(7) input').val().trim());
+            if(ck==99){
                 $(t).val('');
                 tinhdiem('ck',idsv,idlhp, 0);
             }else{
@@ -155,8 +155,8 @@
             var tr = $(t).parent('td').parent('tr');
             var idsv = tr.attr('id');
             var idlhp = tr.attr('idlhp');
-            var tl = (!tr.find('td:nth-child(8) input').val().trim() || !$.isNumeric(tr.find('td:nth-child(8) input').val().trim()) || parseFloat(tr.find('td:nth-child(8) input').val().trim()) < 0 || parseFloat(tr.find('td:nth-child(8) input').val().trim()) > 10 || ((parseFloat(tr.find('td:nth-child(8) input').val().trim()))*10%10!=5 && (parseFloat(tr.find('td:nth-child(8) input').val().trim()))*10%10!=0)) ? 0 :parseFloat(tr.find('td:nth-child(8) input').val().trim());
-            if(tl<=0){
+            var tl = (!tr.find('td:nth-child(8) input').val().trim() || !$.isNumeric(tr.find('td:nth-child(8) input').val().trim()) || parseFloat(tr.find('td:nth-child(8) input').val().trim()) < 0 || parseFloat(tr.find('td:nth-child(8) input').val().trim()) > 10 || ((parseFloat(tr.find('td:nth-child(8) input').val().trim()))*10%10!=5 && (parseFloat(tr.find('td:nth-child(8) input').val().trim()))*10%10!=0)) ? 99 :parseFloat(tr.find('td:nth-child(8) input').val().trim());
+            if(tl==99){
                 $(t).val('');
                 tinhdiem('tl',idsv,idlhp, 0);
             }else{

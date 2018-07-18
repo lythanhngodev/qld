@@ -28,7 +28,9 @@ oci_bind_by_name($p_sql_lop, ":id", $_POST['lophocphan']);
 oci_execute($p_sql_lop);
 $row_lop = oci_fetch_assoc($p_sql_lop);
 $objPHPExcel->createSheet();
+////Chọn trang cần ghi (là số từ 0->n)
 $objPHPExcel->setActiveSheetIndex(0);
+// //Tạo tiêu đề cho trang
 $sheet = $objPHPExcel->getActiveSheet()->setTitle($row_lop['MALHP']);
 $objPHPExcel->getActiveSheet()->getStyle('A1:Z200')->getFill()->applyFromArray(array(
     'type' => PHPExcel_Style_Fill::FILL_SOLID,
@@ -45,7 +47,9 @@ $objPHPExcel->getActiveSheet()->getDefaultStyle()
 $objPHPExcel->setActiveSheetIndex($numberSheet)->mergeCells('A1:B1');
 $objDrawing = new PHPExcel_Worksheet_Drawing();
 $objDrawing->setPath('../images/logo.jpg');
+// muốn chèn ảnh vào vị trí cố định A1
 $objDrawing->setCoordinates('A1');
+// chèn ảnh và tạo lk giữa ảnh và excel
 $objDrawing->setWorksheet($objPHPExcel->getActiveSheet());
 
 $styleArray = array(
@@ -76,6 +80,7 @@ $sheet->getStyle('A1:K1')
             )
         )
     ));
+
 $sheet->setCellValue("A2",$row_lop['TENHK']);
 $sheet->setCellValue("C2",$row_lop['NAMHOC']);
 $sheet->setCellValue("G2","Mã lớp học phần: ".$row_lop['MALHP']);
@@ -218,7 +223,7 @@ $objPHPExcel->setActiveSheetIndex($numberSheet)->mergeCells('F'.($dong+2).':K'.(
 $objPHPExcel->setActiveSheetIndex($numberSheet)->mergeCells('F'.($dong+3).':K'.($dong+3));
 $objPHPExcel->setActiveSheetIndex($numberSheet)->mergeCells('F'.($dong+7).':K'.($dong+7));
 
-
+    //Khởi tạo đối tượng PHPExcel_IOFactory để thực hiện ghi file
     $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
     header("Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
     header("Content-Disposition: attachment; filename= Phieu diem hoc phan.xlsx");

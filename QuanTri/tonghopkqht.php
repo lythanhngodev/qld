@@ -53,7 +53,7 @@ while ($row_lop = oci_fetch_assoc($p_sql_lop)) {
     $objPHPExcel->setActiveSheetIndex($numberSheet)->mergeCells('A3:E3'); // phòng đào tạo
     $objPHPExcel->setActiveSheetIndex($numberSheet)->mergeCells('A4:D4'); // học kỳ
     $objPHPExcel->setActiveSheetIndex($numberSheet)->mergeCells('E4:H4'); // năm học
-    $objPHPExcel->setActiveSheetIndex($numberSheet)->mergeCells('F2:W2'); // tiêu đề chính
+    $objPHPExcel->setActiveSheetIndex($numberSheet)->mergeCells('F2:W2'); // tiêu đề chính Bảng THKQHT
     $sheet->setCellValue("A2","TRƯỜNG ĐHSP KỸ THUẬT VĨNH LONG");
     $sheet->getStyle('A2:E2')->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
     $sheet->getStyle('A2:E2')->getAlignment()->setVertical(PHPExcel_Style_Alignment::VERTICAL_CENTER);
@@ -77,7 +77,7 @@ while ($row_lop = oci_fetch_assoc($p_sql_lop)) {
     $objPHPExcel->setActiveSheetIndex($numberSheet)->mergeCells('B6:B9'); // mã sv
     $sheet->setCellValue("B6","MÃ SV");
     $objPHPExcel->getActiveSheet()->getColumnDimension('B')->setWidth(10);
-    $objPHPExcel->setActiveSheetIndex($numberSheet)->mergeCells('C6:C9'); // học và tên
+    $objPHPExcel->setActiveSheetIndex($numberSheet)->mergeCells('C6:C9'); // họ và tên
     $sheet->setCellValue("C6","HỌ VÀ TÊN");
     $objPHPExcel->getActiveSheet()->getColumnDimension('C')->setWidth(25);
 
