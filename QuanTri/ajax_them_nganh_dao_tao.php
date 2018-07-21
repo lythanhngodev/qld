@@ -2,7 +2,7 @@
 <?php
 $kq = array(
     'trangthai' => 0,
-    'thongbao' => 'Mã môn học, hoặc tên môn học bị trùng'
+    'thongbao' => 'Mã ngành đào tạo bị trùng'
 );
 	$conn = $ketnoi->ketnoi();
 	$mn = $_POST['mn'];

@@ -273,7 +273,7 @@
             $('#btnhapgiaovien').on('click',function(){
                 $('#nhapgiaovien').click();
             });
-            $('.xoa').on('click',function(){
+            $(document).on('click','.xoa', function(){
                 $('#xmgv').text($(this).parent('td').parent('tr').find('td:nth-child(2)').text().trim());
                 $('#xtgv').text($(this).parent('td').parent('tr').find('td:nth-child(3)').text().trim());
                 id = $(this).attr('lydata');

@@ -12,7 +12,7 @@ function guimail($tieude,$than,$dc){
     $mail->Password = 'vlutelibktv@2017';                 // SMTP password
     $mail->SMTPSecure = 'tls';               // Enable TLS encryption, `ssl` also accepted
     $mail->Port = 587;                       // TCP port to connect to
-    $mail->setFrom('vlutelibktv@gmail.com', 'Phòng đào tạo');
+    $mail->setFrom('vlutelibktv@gmail.com', 'Phần mềm QUẢN LÝ KẾT QUẢ HỌC TẬP TRƯỜNG ĐHSPKTVL');
     $mail->addAddress($dc);     // Add a recipient
     $mail->isHTML(true);                                  // Set email format to HTML
     $mail->Subject = $tieude;

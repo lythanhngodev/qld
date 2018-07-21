@@ -130,14 +130,14 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Xóa sinh viên khỏi lớp học phần</h5>
+                <h5 class="modal-title" id="exampleModalLongTitle">Xóa sinh viên</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
                 <div class="alert alert-danger" role="alert">
-                    <strong>Bạn có chắc xóa sinh viên này ra khỏi lớp học phần?</strong><hr>
+                    <strong>Bạn có chắc xóa sinh viên này không?</strong><hr>
                     <b>Mã số:</b> <span id="xmasv"></span><br>
                     <b>Họ và Tên sinh:</b> <span id="xtensv"></span>
                     <input type="text" hidden="hidden" id="xidsv">

@@ -86,7 +86,7 @@ if ($demthanhcong > 0) { ?>
 }else{ ?>
     <script type="text/javascript">
         $(document).ready(function(){
-            thanhcong('Đã thêm giáo viên');
+            thanhcong('Đã thêm giáo viên thất bại');
             setTimeout(function () {
                 window.location.reload(true);
             }, 1500);

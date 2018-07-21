@@ -118,7 +118,7 @@ if ($demthanhcong > 0) { ?>
 }else{ ?>
     <script type="text/javascript">
         $(document).ready(function(){
-            thanhcong('Đã nhập thành công');
+            thanhcong('Đã nhập không thành công');
             setTimeout(function () {
                 window.location.reload(true);
             }, 1500);
