@@ -14,26 +14,26 @@
 				</div>	
 			</div>
 			<div class="col-md-12">
-				<h5>Thông tin tài khoản</h5>
+				<h5>Đổi mật khẩu</h5>
 				<hr>
 			</div>	
 		</div>
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-md-8">
 			  <div class="form-group">
 			    <label for="tags">Mật khẩu hiện tại</label>
-			    <input type="password" class="form-control col-6" id="mkht">
+			    <input type="password" class="form-control" id="mkht">
                   <small id="loimkht" class="form-text text-danger"></small>
 			  </div>
 			</div>
-			<div class="col-md-6">
+			<div class="col-md-8">
 			  <div class="form-group">
 			    <label for="tags">Mật khẩu mới</label>
 			    <input type="password" class="form-control" id="mk1">
                   <small id="loimk1" class="form-text text-danger"></small>
 			  </div>
 			</div>
-			<div class="col-md-6">
+			<div class="col-md-8">
 			  <div class="form-group">
 			    <label for="tags">Nhập lại mật khẩu mới</label>
 			    <input type="password" class="form-control" id="mk2">

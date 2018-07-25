@@ -3,14 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1adc70ce-3879-4dd5-a3c9-3a6de5ce998f" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/mail/guimail.php" beforeDir="false" afterPath="$PROJECT_DIR$/Login/mail/guimail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QuanTri/ajax_import_file_giao_vien.php" beforeDir="false" afterPath="$PROJECT_DIR$/QuanTri/ajax_import_file_giao_vien.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QuanTri/ajax_import_file_sinh_vien.php" beforeDir="false" afterPath="$PROJECT_DIR$/QuanTri/ajax_import_file_sinh_vien.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QuanTri/ajax_them_nganh_dao_tao.php" beforeDir="false" afterPath="$PROJECT_DIR$/QuanTri/ajax_them_nganh_dao_tao.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QuanTri/doimatkhau.php" beforeDir="false" afterPath="$PROJECT_DIR$/QuanTri/doimatkhau.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QuanTri/giaovien.php" beforeDir="false" afterPath="$PROJECT_DIR$/QuanTri/giaovien.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QuanTri/sinhvien.php" beforeDir="false" afterPath="$PROJECT_DIR$/QuanTri/sinhvien.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QuanTri/thongtintaikhoan.php" beforeDir="false" afterPath="$PROJECT_DIR$/QuanTri/thongtintaikhoan.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -51,7 +43,7 @@
         <item name="@desktop-84pbfhu" type="feb32156:DbDataSourceImpl" />
         <item name="SA: schema" type="ac44c5e0:OracleImplModel$Schema" />
         <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="PHIEUDIEMHP: table" type="be4db629:OracleImplModel$Table" />
+        <item name="GV: table" type="be4db629:OracleImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -79,7 +71,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GV" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GV" pinned="false" current-in-tab="true">
         <entry file="das://c63c0dc6-36b2-4ba9-b7fe-378ddc1ba968/schema/SA/table/GV">
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state>
@@ -97,7 +89,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PHIEUDIEMHP" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PHIEUDIEMHP" pinned="false" current-in-tab="false">
         <entry file="das://c63c0dc6-36b2-4ba9-b7fe-378ddc1ba968/schema/SA/table/PHIEUDIEMHP">
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state>
@@ -207,6 +199,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -218,7 +211,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -322,20 +314,22 @@
       <workItem from="1532174333007" duration="1111000" />
       <workItem from="1532176986291" duration="973000" />
       <workItem from="1532178293934" duration="210000" />
+      <workItem from="1532423199528" duration="765000" />
+      <workItem from="1532442378996" duration="28000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="221685000" />
+    <option name="totallyTimeSpent" value="222478000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27458397" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28366113" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
-      <window_info active="true" anchor="right" id="Database" order="3" visible="true" weight="0.18532526" />
+      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.18532526" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="10" />
@@ -350,7 +344,7 @@
       <window_info anchor="bottom" id="SQL Generator" order="13" weight="0.32838285" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Database Console" order="11" visible="true" weight="0.36633664" />
+      <window_info active="true" anchor="bottom" id="Database Console" order="11" visible="true" weight="0.36633664" />
       <window_info anchor="bottom" id="Find" order="1" />
     </layout>
     <layout-to-restore>
@@ -732,13 +726,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://c63c0dc6-36b2-4ba9-b7fe-378ddc1ba968/schema/SA/table/GV">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://c63c0dc6-36b2-4ba9-b7fe-378ddc1ba968/schema/SA/table/SV">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -747,6 +734,13 @@
       </provider>
     </entry>
     <entry file="das://c63c0dc6-36b2-4ba9-b7fe-378ddc1ba968/schema/SA/table/PHIEUDIEMHP">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://c63c0dc6-36b2-4ba9-b7fe-378ddc1ba968/schema/SA/table/GV">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />

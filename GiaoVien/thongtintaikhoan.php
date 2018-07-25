@@ -14,7 +14,7 @@
 				</div>	
 			</div>
 			<div class="col-md-12">
-				<h5>Thông tin tài khoản</h5>
+				<h5>Thông tin cá nhân</h5>
 				<hr>
 			</div>	
 		</div>
